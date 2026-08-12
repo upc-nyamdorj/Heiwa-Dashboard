@@ -1,0 +1,177 @@
+@import 'tailwindcss';
+
+/* ------------------------------------------------------------------ tokens
+   Chart surfaces, ink and the categorical slots come from the validated
+   data-viz palette. Light and dark are two selected sets stepped for their own
+   surface, not an automatic flip.                                            */
+
+:root {
+  color-scheme: light;
+
+  --plane: #f9f9f7;
+  --surface-1: #fcfcfb;
+  --surface-2: #f2f2ee;
+  --text-primary: #0b0b0b;
+  --text-secondary: #52514e;
+  --text-muted: #898781;
+  --grid: #e1e0d9;
+  --axis: #c3c2b7;
+  --border: rgb(11 11 11 / 0.10);
+  --border-strong: rgb(11 11 11 / 0.18);
+  --seq-zero: #f0efec;
+
+  --series-1: #2a78d6;
+  --series-2: #eb6834;
+  --series-3: #1baf7a;
+  --series-4: #eda100;
+  --series-5: #e87ba4;
+  --series-6: #008300;
+  --series-7: #4a3aa7;
+
+  --status-good: #0ca30c;
+  --status-warning: #fab219;
+  --status-serious: #ec835a;
+  --status-critical: #d03b3b;
+  --success-text: #006300;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  --plane: #0d0d0d;
+  --surface-1: #1a1a19;
+  --surface-2: #232322;
+  --text-primary: #ffffff;
+  --text-secondary: #c3c2b7;
+  --text-muted: #898781;
+  --grid: #2c2c2a;
+  --axis: #383835;
+  --border: rgb(255 255 255 / 0.10);
+  --border-strong: rgb(255 255 255 / 0.20);
+  --seq-zero: #383835;
+
+  --series-1: #3987e5;
+  --series-2: #d95926;
+  --series-3: #199e70;
+  --series-4: #c98500;
+  --series-5: #d55181;
+  --series-6: #008300;
+  --series-7: #9085e9;
+
+  --success-text: #0ca30c;
+}
+
+@theme inline {
+  --color-plane: var(--plane);
+  --color-surface: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-ink: var(--text-primary);
+  --color-ink-2: var(--text-secondary);
+  --color-ink-3: var(--text-muted);
+  --color-hairline: var(--border);
+  --color-hairline-strong: var(--border-strong);
+  --font-sans: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+}
+
+* { border-color: var(--border); }
+
+html, body {
+  background: var(--plane);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, 'Segoe UI', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Numeric columns must line up; hero figures keep proportional figures. */
+.tnum { font-variant-numeric: tabular-nums; }
+
+/* ------------------------------------------------------------------ chrome */
+
+.card {
+  background: var(--surface-1);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 11px;
+  line-height: 18px;
+  border: 1px solid var(--border);
+  background: var(--surface-2);
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.btn {
+  padding: 6px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  color: var(--text-secondary);
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 120ms ease, color 120ms ease;
+}
+.btn:hover { background: var(--surface-2); color: var(--text-primary); }
+.btn[data-active='true'] {
+  background: var(--text-primary);
+  color: var(--surface-1);
+  border-color: var(--text-primary);
+}
+
+.field {
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  font-size: 13px;
+  outline: none;
+}
+.field:focus { border-color: var(--series-1); }
+
+table.grid { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 13px; }
+table.grid thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface-1);
+  color: var(--text-muted);
+  font-weight: 500;
+  font-size: 11px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 8px 10px;
+  border-bottom: 1px solid var(--axis);
+  white-space: nowrap;
+  cursor: pointer;
+  user-select: none;
+}
+table.grid tbody td {
+  padding: 7px 10px;
+  border-bottom: 1px solid var(--grid);
+  color: var(--text-secondary);
+  vertical-align: top;
+}
+table.grid tbody tr:hover td { background: var(--surface-2); }
+table.grid td.strong { color: var(--text-primary); font-weight: 500; }
+
+/* Scrollbars stay recessive so they never compete with the marks. */
+.scroll::-webkit-scrollbar { width: 10px; height: 10px; }
+.scroll::-webkit-scrollbar-thumb {
+  background: var(--axis);
+  border-radius: 999px;
+  border: 3px solid var(--surface-1);
+}
+.scroll::-webkit-scrollbar-track { background: transparent; }
+
+@media print {
+  .no-print { display: none !important; }
+  .card { break-inside: avoid; }
+}
