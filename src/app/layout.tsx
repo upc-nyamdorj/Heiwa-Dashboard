@@ -1,16 +1,21 @@
-import type { Metadata, Viewport } from 'next';
-import './globals.css';
+import type { Metadata, Viewport } from "next";
+import "./globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
+import { TooltipProvider } from "@/components/ui/tooltip";
+
+const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 
 export const metadata: Metadata = {
-  title: 'Хэйва хотхон — Төслийн хяналтын самбар',
+  title: "Хэйва хотхон — Төслийн хяналтын самбар",
   description:
-    'UPH Heiwa Project: баримт бичиг, гэрээ, санхүүжилт, захидал харилцаа, зургийн бүртгэлийн нэгдсэн хяналт.',
+    "UPH Heiwa Project: баримт бичиг, гэрээ, санхүүжилт, захидал харилцаа, зургийн бүртгэлийн нэгдсэн хяналт.",
 };
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f9f9f7' },
-    { media: '(prefers-color-scheme: dark)', color: '#0d0d0d' },
+    { media: "(prefers-color-scheme: light)", color: "#f9f9f7" },
+    { media: "(prefers-color-scheme: dark)", color: "#0d0d0d" },
   ],
 };
 
@@ -25,19 +30,30 @@ const THEME_BOOT = `
     var dark = saved ? saved === 'dark'
       : window.matchMedia('(prefers-color-scheme: dark)').matches;
     document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+    document.documentElement.classList.toggle('dark', dark);
   } catch (e) {
     document.documentElement.setAttribute('data-theme', 'light');
   }
 })();
 `;
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
-    <html lang="mn" suppressHydrationWarning>
+    <html
+      lang="mn"
+      suppressHydrationWarning
+      className={cn("font-sans", geist.variable)}
+    >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />
       </head>
-      <body>{children}</body>
+      <body>
+        <TooltipProvider>{children}</TooltipProvider>
+      </body>
     </html>
   );
 }
