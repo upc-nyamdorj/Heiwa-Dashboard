@@ -3,6 +3,7 @@
 import React, { useMemo, useState } from "react";
 import { Card, StatTile, Legend } from "@/components/chart-kit";
 import { Heatmap, RankBar } from "@/components/charts";
+import { FloorPlan, type FloorPlanBlock } from "@/components/FloorPlan";
 import {
   DataTable,
   SearchBox,
@@ -19,6 +20,7 @@ import {
   BLOCKS,
   blocksOf,
   documents,
+  quality,
 } from "@/lib/data";
 import type { Drawing } from "@/lib/types";
 import { num } from "@/lib/format";
@@ -61,6 +63,21 @@ export default function Drawings() {
       rows,
       get: (r: string, c: string) => Math.round(cells.get(`${r}|${c}`) ?? 0),
     };
+  }, []);
+
+  /** Per-block status for the schematic floor plan: quality issues first, then documentation coverage. */
+  const floorPlanBlocks: FloorPlanBlock[] = useMemo(() => {
+    return BLOCKS.map((b) => {
+      const qualityCount = quality.filter((q2) => blocksOf(q2).includes(b)).length;
+      const pages = drawings.reduce((s, d) => {
+        const blocks = blocksOf(d);
+        if (!blocks.includes(b)) return s;
+        return s + (d.pages ?? 0) / blocks.length;
+      }, 0);
+      const status: FloorPlanBlock["status"] =
+        qualityCount > 0 ? "critical" : pages > 0 ? "good" : "warning";
+      return { id: b, status, qualityCount, pages: Math.round(pages) };
+    });
   }, []);
 
   const byCompany = useMemo(() => {
@@ -215,6 +232,13 @@ export default function Drawings() {
           tone={noOriginal.length ? "warning" : "good"}
         />
       </div>
+
+      <Card
+        title="Блокийн бүдүүвч байршил"
+        subtitle="Схемчилсэн зураг — жинхэнэ байршлыг заахгүй, зөвхөн блокуудын харьцангуй бүлэглэлийг үзүүлнэ"
+      >
+        <FloorPlan blocks={floorPlanBlocks} />
+      </Card>
 
       <div className="grid gap-4 xl:grid-cols-[3fr_2fr]">
         <Card
