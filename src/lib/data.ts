@@ -226,6 +226,68 @@ export const drawingDisciplines = Array.from(
 export const totalDrawingPages = drawings.reduce((s, d) => s + (d.pages ?? 0), 0);
 export const drawingsPending = drawings.filter((d) => d.status !== 'Хүлээн авсан');
 
+/* --------------------------------------------------------- risk scorecard */
+
+export interface PartyRisk {
+  party: string;
+  category: string;
+  score: number;
+  tier: 'Бага' | 'Дунд' | 'Өндөр';
+  qualityCount: number;
+  overdueCount: number;
+  avgRfiTurnaround: number | null;
+  unpaidCount: number;
+}
+
+/**
+ * Placeholder weighting — signed off by business, not final:
+ *   чанарын зөрчил (NCR/акт)         40%
+ *   хугацаа хэтэрсэн гэрээ           30%
+ *   RFI хариу өгөх удаашрал          20%
+ *   санхүүжилтийн тайлан ирээгүй    10%
+ * Each input is scaled against the worst value seen in this project (not an
+ * absolute benchmark), so a score of 100 in one dimension means "the most
+ * exposed party in the archive on this measure", not a fixed threshold.
+ */
+const RISK_WEIGHTS = { quality: 0.4, overdue: 0.3, rfi: 0.2, unpaid: 0.1 };
+
+/** Ranked risk score (0-100) per contracting party, highest risk first. */
+export const partyRisk: PartyRisk[] = (() => {
+  const raw = byParty
+    .filter((p) => p.contractCount > 0)
+    .map((p) => {
+      const qualityCount = quality.filter((q) => q.party === p.party).length;
+      const overdueCount = overdueContracts.filter((c) => c.party === p.party).length;
+      const turnarounds = rfiThreads
+        .filter((t) => t.party === p.party && t.turnaround != null)
+        .map((t) => t.turnaround as number);
+      const avgRfiTurnaround = turnarounds.length
+        ? turnarounds.reduce((s, v) => s + v, 0) / turnarounds.length
+        : null;
+      const unpaidCount = unpaidContracts.filter((c) => c.party === p.party).length;
+      return { party: p.party, category: p.category, qualityCount, overdueCount, avgRfiTurnaround, unpaidCount };
+    });
+
+  const maxOf = (values: number[]) => Math.max(1, ...values);
+  const maxQuality = maxOf(raw.map((r) => r.qualityCount));
+  const maxOverdue = maxOf(raw.map((r) => r.overdueCount));
+  const maxTurnaround = maxOf(raw.map((r) => r.avgRfiTurnaround ?? 0));
+  const maxUnpaid = maxOf(raw.map((r) => r.unpaidCount));
+
+  return raw
+    .map((r) => {
+      const score = Math.round(
+        RISK_WEIGHTS.quality * (r.qualityCount / maxQuality) * 100
+        + RISK_WEIGHTS.overdue * (r.overdueCount / maxOverdue) * 100
+        + RISK_WEIGHTS.rfi * ((r.avgRfiTurnaround ?? 0) / maxTurnaround) * 100
+        + RISK_WEIGHTS.unpaid * (r.unpaidCount / maxUnpaid) * 100,
+      );
+      const tier: PartyRisk['tier'] = score >= 50 ? 'Өндөр' : score >= 20 ? 'Дунд' : 'Бага';
+      return { ...r, score, tier };
+    })
+    .sort((a, b) => b.score - a.score);
+})();
+
 /** Blocks referenced anywhere in the register, in building order. */
 export const BLOCKS = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'G1', 'G2', 'G3', 'G4', 'C1'];
 
