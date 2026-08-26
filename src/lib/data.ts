@@ -1,8 +1,20 @@
+import { z } from 'zod';
 import raw from '@/data/heiwa.json';
 import type { Dataset, Contract, Payment, DocumentRow } from './types';
+import { DatasetSchema } from './schema';
 import { monthKey, monthRange } from './format';
 
-export const data = raw as unknown as Dataset;
+function loadDataset(): Dataset {
+  const result = DatasetSchema.safeParse(raw);
+  if (!result.success) {
+    throw new Error(
+      `src/data/heiwa.json does not match the expected schema (see src/lib/schema.ts):\n\n${z.prettifyError(result.error)}`,
+    );
+  }
+  return result.data;
+}
+
+export const data: Dataset = loadDataset();
 
 export const {
   meta, documents, contracts, payments, correspondence, quality, drawings,
