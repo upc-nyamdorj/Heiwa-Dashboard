@@ -8,7 +8,8 @@
     "build": "next build && node inline.mjs",
     "start": "npx serve out",
     "lint": "eslint .",
-    "inline": "node inline.mjs"
+    "inline": "node inline.mjs",
+    "test": "vitest run"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",
@@ -32,6 +33,7 @@
     "eslint": "^9.39.5",
     "eslint-config-next": "^16.3.3",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5.7.3"
+    "typescript": "^5.7.3",
+    "vitest": "^4.1.11"
   }
 }

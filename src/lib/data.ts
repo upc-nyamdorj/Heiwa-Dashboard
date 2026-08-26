@@ -1,6 +1,6 @@
 import { z } from 'zod';
 import raw from '@/data/heiwa.json';
-import type { Dataset, Contract, Payment, DocumentRow } from './types';
+import type { Dataset, Contract, Payment, DocumentRow, Correspondence } from './types';
 import { DatasetSchema } from './schema';
 import { monthKey, monthRange } from './format';
 
@@ -25,7 +25,11 @@ export const {
 
 export const countedPayments = payments.filter((p) => p.counted);
 
-export const totalPaid = countedPayments.reduce((s, p) => s + (p.amount ?? 0), 0);
+export function computeTotalPaid(counted: Payment[]): number {
+  return counted.reduce((s, p) => s + (p.amount ?? 0), 0);
+}
+
+export const totalPaid = computeTotalPaid(countedPayments);
 
 export const supersededTotal = payments
   .filter((p) => p.supersededBy)
@@ -33,7 +37,11 @@ export const supersededTotal = payments
 
 export const mntContracts = contracts.filter((c) => c.currency === 'MNT' && c.value);
 
-export const totalContractValue = mntContracts.reduce((s, c) => s + (c.value ?? 0), 0);
+export function computeTotalContractValue(mntOnly: Contract[]): number {
+  return mntOnly.reduce((s, c) => s + (c.value ?? 0), 0);
+}
+
+export const totalContractValue = computeTotalContractValue(mntContracts);
 
 export const foreignContracts = contracts.filter((c) => c.currency !== 'MNT' && c.value);
 
@@ -54,21 +62,26 @@ export interface MonthPoint {
   contractValue: number;
 }
 
-export const byMonth: MonthPoint[] = (() => {
+export function computeByMonth(
+  monthsIn: string[],
+  countedPaymentsIn: Payment[],
+  documentsIn: DocumentRow[],
+  contractsIn: Contract[],
+): MonthPoint[] {
   const m = new Map<string, MonthPoint>();
-  months.forEach((k) =>
+  monthsIn.forEach((k) =>
     m.set(k, { key: k, paid: 0, cumulative: 0, docs: 0, contractsSigned: 0, contractValue: 0 }));
-  for (const p of countedPayments) {
+  for (const p of countedPaymentsIn) {
     if (!p.date) continue;
     const row = m.get(monthKey(p.date));
     if (row) row.paid += p.amount ?? 0;
   }
-  for (const d of documents) {
+  for (const d of documentsIn) {
     if (!d.date) continue;
     const row = m.get(monthKey(d.date));
     if (row) row.docs += 1;
   }
-  for (const c of contracts) {
+  for (const c of contractsIn) {
     if (!c.signedDate) continue;
     const row = m.get(monthKey(c.signedDate));
     if (!row) continue;
@@ -76,10 +89,12 @@ export const byMonth: MonthPoint[] = (() => {
     if (c.currency === 'MNT') row.contractValue += c.value ?? 0;
   }
   let run = 0;
-  const out = months.map((k) => m.get(k)!);
+  const out = monthsIn.map((k) => m.get(k)!);
   for (const row of out) { run += row.paid; row.cumulative = run; }
   return out;
-})();
+}
+
+export const byMonth: MonthPoint[] = computeByMonth(months, countedPayments, documents, contracts);
 
 /* --------------------------------------------------------- party roll-ups */
 
@@ -96,7 +111,11 @@ export interface PartyRoll {
   currencies: string[];
 }
 
-export const byParty: PartyRoll[] = (() => {
+export function computeByParty(
+  documentsIn: DocumentRow[],
+  contractsIn: Contract[],
+  countedPaymentsIn: Payment[],
+): PartyRoll[] {
   const m = new Map<string, PartyRoll>();
   const touch = (party: string, category: string) => {
     if (!m.has(party)) {
@@ -108,18 +127,18 @@ export const byParty: PartyRoll[] = (() => {
     }
     return m.get(party)!;
   };
-  for (const d of documents) {
+  for (const d of documentsIn) {
     if (d.party === '—') continue;
     touch(d.party, d.category).docCount += 1;
   }
-  for (const c of contracts) {
+  for (const c of contractsIn) {
     const r = touch(c.party, c.category);
     r.contractCount += 1;
     if (c.currency === 'MNT') r.contractValue += c.value ?? 0;
     if (!r.currencies.includes(c.currency)) r.currencies.push(c.currency);
     if (c.rateBased) r.rateBased = true;
   }
-  for (const p of countedPayments) {
+  for (const p of countedPaymentsIn) {
     const r = touch(p.party, p.category);
     r.paid += p.amount ?? 0;
     r.paymentCount += 1;
@@ -128,7 +147,9 @@ export const byParty: PartyRoll[] = (() => {
     r.paidPercent = r.contractValue > 0 ? (r.paid / r.contractValue) * 100 : null;
   }
   return Array.from(m.values()).sort((a, b) => b.contractValue - a.contractValue);
-})();
+}
+
+export const byParty: PartyRoll[] = computeByParty(documents, contracts, countedPayments);
 
 /* ------------------------------------------------------------- doc matrix */
 
@@ -175,9 +196,9 @@ export interface RfiPair {
  * RFIs are numbered; an outgoing 004 and an incoming 004 are the same thread.
  * Turnaround is the gap between the question leaving and the answer arriving.
  */
-export const rfiThreads: RfiPair[] = (() => {
+export function computeRfiThreads(rfiIn: Correspondence[]): RfiPair[] {
   const m = new Map<string, RfiPair>();
-  for (const c of rfi) {
+  for (const c of rfiIn) {
     const no = c.docNo ?? c.filename;
     if (!m.has(no)) {
       m.set(no, { no, outDate: null, inDate: null, turnaround: null, party: c.party });
@@ -192,7 +213,9 @@ export const rfiThreads: RfiPair[] = (() => {
     }
   }
   return Array.from(m.values()).sort((a, b) => a.no.localeCompare(b.no));
-})();
+}
+
+export const rfiThreads: RfiPair[] = computeRfiThreads(rfi);
 
 /* -------------------------------------------------------------- drawings */
 
