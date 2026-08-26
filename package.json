@@ -7,7 +7,7 @@
     "dev": "next dev",
     "build": "next build && node inline.mjs",
     "start": "npx serve out",
-    "lint": "next lint",
+    "lint": "eslint .",
     "inline": "node inline.mjs"
   },
   "dependencies": {
@@ -28,6 +28,8 @@
     "@types/node": "^22",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "^16.3.3",
     "tailwindcss": "^4.1.13",
     "typescript": "^5.7.3"
   }
