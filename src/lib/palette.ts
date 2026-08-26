@@ -2,8 +2,9 @@
  * Chart colour roles.
  *
  * These are the validated default categorical slots from the data-viz palette,
- * used in fixed order and never cycled. Both light and dark columns pass the
- * six checks against their own surface (`scripts/validate_palette.js`):
+ * used in fixed order and never cycled. Both light and dark columns were
+ * checked against their own surface with a one-off validation script (not
+ * included in this repo — re-verify by hand if these colours change):
  *   light — worst adjacent CVD ΔE 9.1, normal-vision ΔE 19.6
  *   dark  — worst adjacent CVD ΔE 8.4, normal-vision ΔE 19.3
  * Three light slots sit below 3:1 contrast, so every chart that uses them also
