@@ -7,7 +7,7 @@ import {
   meta, documents, contracts, payments, countedPayments, totalPaid, totalContractValue,
   byMonth, byParty, mntContracts, foreignContracts, supersededTotal, drawings,
   totalDrawingPages, drawingsPending, quality, rfiThreads, unpaidContracts,
-  correspondence,
+  correspondence, partyRisk,
 } from '@/lib/data';
 import { compact, mnt, monthLabel, monthShort, num, pct, date, bytes } from '@/lib/format';
 import { categoryColor, CATEGORY_SHORT, CATEGORY_ORDER, typeGroupColor, TYPE_GROUP, TYPE_GROUP_ORDER } from '@/lib/palette';
@@ -60,6 +60,16 @@ export default function Overview() {
   const avgTurn = answered.length
     ? answered.reduce((s, t) => s + (t.turnaround ?? 0), 0) / answered.length
     : null;
+
+  const riskTone = { 'Өндөр': 'var(--status-critical)', 'Дунд': 'var(--status-warning)', 'Бага': 'var(--status-good)' };
+  const topRisk = partyRisk.slice(0, 5).map((r) => ({
+    label: r.party,
+    value: r.score,
+    color: riskTone[r.tier],
+    sub: `${r.tier} эрсдэл · ${r.qualityCount} зөрчил · ${r.overdueCount} хугацаа хэтэрсэн гэрээ`
+      + ` · RFI ${r.avgRfiTurnaround != null ? `${r.avgRfiTurnaround.toFixed(0)} хоног` : '—'}`
+      + ` · ${r.unpaidCount} тайлангүй гэрээ`,
+  }));
 
   return (
     <div className="space-y-4">
@@ -128,6 +138,13 @@ export default function Overview() {
           </ul>
         </Card>
       </div>
+
+      <Card title="Хамгийн эрсдэлтэй 5 тал"
+        subtitle="Чанарын зөрчил 40% · хугацаа хэтрэлт 30% · RFI хариу удаашрал 20% · санхүүжилтийн хоцролт 10% (жин нь эцсийн бус, тохируулах боломжтой)">
+        {topRisk.length
+          ? <RankBar rows={topRisk} format={(v) => `${v}`} maxOverride={100} height={220} valueLabel="Эрсдэлийн оноо" />
+          : <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Гэрээт тал алга.</p>}
+      </Card>
 
       <Card title="Гэрээний хугацааны гүйцэтгэл"
         subtitle="Саарал зурвас = гэрээний хугацаа · өнгөт хэсэг = санхүүжсэн хувь · улаан босоо зураас = архивын сүүлийн огноо"
