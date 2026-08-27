@@ -1,24 +1,38 @@
 #!/usr/bin/env node
 /**
- * Phase 1: list the SharePoint "Heiwa Dashboard Sync" folder via app-only
- * Graph auth, diff against the last recorded sync state, and report what's
- * new/changed. PDF download + Claude extraction (Phase 2) lands in the
- * "Phase 2 will add..." block below — see the project plan.
+ * List the SharePoint "Heiwa Dashboard Sync" folder via app-only Graph auth,
+ * diff against the last recorded sync state, and for each new/changed PDF:
+ * download it, extract structured data with Claude (native PDF input, no
+ * separate OCR step), zod-validate the result, and append it to
+ * data-private/pending-review.json for human sign-off (Phase 3/4 add the
+ * Cloudflare Functions + UI that read and act on that file).
+ *
+ * Any single extraction/validation failure aborts the WHOLE run with no
+ * partial writes — sync-state.json and pending-review.json are only saved
+ * once every changed file in this run succeeded, so a failure just means
+ * "try again later," not "some silently-bad data got in."
  *
  * Required env: AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET,
- * ONEDRIVE_DRIVE_ID, ONEDRIVE_FOLDER_ID.
+ * ONEDRIVE_DRIVE_ID, ONEDRIVE_FOLDER_ID, and (unless --dry-run) ANTHROPIC_API_KEY.
  *
- * Flags: --dry-run (list + diff only, no state write) · --limit=N (cap how
- * many changed files this run processes — used to calibrate extraction cost
- * on a small real batch before an unlimited run).
+ * Flags: --dry-run (list + diff only, no download/extraction/writes) ·
+ * --limit=N (cap how many changed files this run processes — the lever for
+ * calibrating real extraction cost on a small batch before an unlimited run).
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getAppOnlyToken, listFolderChildren } from './lib/graph-client.mjs';
+import { getAppOnlyToken, listFolderChildren, downloadFileContent } from './lib/graph-client.mjs';
 import { loadSyncState, saveSyncState, diffAgainstState } from './lib/sync-state.mjs';
+import { loadPendingReview, savePendingReview } from './lib/pending-review-store.mjs';
+import { extractFromPdf, estimateCostUsd } from './lib/claude-extract.mjs';
+import { ExtractionResultSchema } from './lib/pending-review-schema.mjs';
+import { writeSyncStatus } from './lib/sync-status.mjs';
+import { z } from 'zod';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const STATE_PATH = path.join(here, '.sync-state.json');
+const PENDING_REVIEW_PATH = path.join(here, '..', 'data-private', 'pending-review.json');
+const SYNC_STATUS_PATH = path.join(here, '..', 'src', 'data', 'sync-status.json');
 
 function parseArgs(argv) {
   const args = { dryRun: false, limit: null };
@@ -61,29 +75,75 @@ async function main() {
   }
 
   if (args.dryRun) {
-    console.log('--dry-run: listing only, no download/extraction/state write.');
+    console.log('--dry-run: listing only, no download/extraction/writes.');
     for (const f of changed) console.log(`  would process: ${f.name} (${f.id})`);
     return;
   }
 
   if (changed.length === 0) {
     console.log('Nothing to do.');
+    writeSyncStatus(SYNC_STATUS_PATH, { status: 'success', message: 'Шинэ файл алга.', newFilesFound: 0 });
     return;
   }
 
-  // Phase 2 will add PDF download + Claude extraction + pending-review.json
-  // writes here, and move this state write to run only after each file's
-  // extraction is validated (so a failed run retries that file next time).
-  console.log('Extraction pipeline not implemented yet (Phase 2).');
-  for (const f of changed) console.log(`  pending extraction: ${f.name} (${f.id})`);
+  const apiKey = requireEnv('ANTHROPIC_API_KEY');
+  const pending = loadPendingReview(PENDING_REVIEW_PATH);
+
+  let totalInputTokens = 0;
+  let totalOutputTokens = 0;
+  const newRecords = [];
+
+  for (const f of changed) {
+    console.log(`Downloading ${f.name}...`);
+    const buffer = await downloadFileContent({ accessToken, driveId, itemId: f.id });
+    const pdfBase64 = buffer.toString('base64');
+
+    console.log(`Extracting ${f.name} via Claude (claude-opus-5)...`);
+    const result = await extractFromPdf({ apiKey, filename: f.name, pdfBase64 });
+    totalInputTokens += result.usage.input_tokens ?? 0;
+    totalOutputTokens += result.usage.output_tokens ?? 0;
+
+    const validation = ExtractionResultSchema.safeParse(result.parsed);
+    if (!validation.success) {
+      // Abort the whole run — nothing gets written this time, per spec.
+      throw new Error(
+        `Extraction for "${f.name}" failed schema validation:\n${z.prettifyError(validation.error)}`,
+      );
+    }
+
+    newRecords.push({
+      id: `pr-${f.id}`,
+      sourceFile: { name: f.name, webUrl: f.webUrl, itemId: f.id },
+      extracted: validation.data,
+      status: 'pending',
+      extractedAt: new Date().toISOString(),
+    });
+  }
 
   for (const f of changed) {
     state[f.id] = { eTag: f.eTag, lastModifiedDateTime: f.lastModifiedDateTime, name: f.name };
   }
+  savePendingReview(PENDING_REVIEW_PATH, [...pending, ...newRecords]);
   saveSyncState(STATE_PATH, state);
+
+  const cost = estimateCostUsd({ inputTokens: totalInputTokens, outputTokens: totalOutputTokens });
+  console.log(`Token usage: ${totalInputTokens} input, ${totalOutputTokens} output.`);
+  console.log(`Estimated cost this run: $${cost.toFixed(4)} (Claude Opus 5 pricing).`);
+
+  writeSyncStatus(SYNC_STATUS_PATH, {
+    status: 'success',
+    message: `${newRecords.length} шинэ баримт задарч, баталгаажуулах жагсаалтад орлоо.`,
+    newFilesFound: newRecords.length,
+    pendingReviewCount: pending.length + newRecords.length,
+  });
 }
 
 main().catch((err) => {
   console.error('Sync failed:', err.message);
+  try {
+    writeSyncStatus(SYNC_STATUS_PATH, { status: 'error', message: err.message });
+  } catch {
+    // best-effort — don't mask the original failure with a status-write error
+  }
   process.exitCode = 1;
 });
