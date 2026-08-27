@@ -1,0 +1,31 @@
+{
+  "value": [
+    {
+      "id": "01ABCDEF123456",
+      "name": "001 BI CWA Жишээ ХХК 20260115.pdf",
+      "eTag": "\"{ABC-1},1\"",
+      "lastModifiedDateTime": "2026-01-15T09:00:00Z",
+      "size": 2451200,
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/001%20BI%20CWA%20%D0%96%D0%B8%D1%88%D1%8D%D1%8D%20%D0%A5%D0%A5%D0%9A%2020260115.pdf",
+      "file": { "mimeType": "application/pdf" }
+    },
+    {
+      "id": "01ABCDEF789012",
+      "name": "002 UPC IPR Жишээ ХХК 20260118.pdf",
+      "eTag": "\"{DEF-2},1\"",
+      "lastModifiedDateTime": "2026-01-18T11:30:00Z",
+      "size": 987654,
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/002%20UPC%20IPR%20%D0%96%D0%B8%D1%88%D1%8D%D1%8D%20%D0%A5%D0%A5%D0%9A%2020260118.pdf",
+      "file": { "mimeType": "application/pdf" }
+    },
+    {
+      "id": "01ABCDEF345678",
+      "name": "Archive",
+      "eTag": "\"{GHI-3},1\"",
+      "lastModifiedDateTime": "2026-01-10T08:00:00Z",
+      "size": 0,
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/Archive",
+      "folder": { "childCount": 4 }
+    }
+  ]
+}
