@@ -2,6 +2,7 @@
 
 import React, { useEffect, useState } from "react";
 import {
+  ClipboardCheck,
   DraftingCompass,
   FileText,
   Handshake,
@@ -19,6 +20,7 @@ import Payments from "@/views/Payments";
 import CorrespondenceView from "@/views/Correspondence";
 import Drawings from "@/views/Drawings";
 import Audit from "@/views/Audit";
+import Review from "@/views/Review";
 import {
   meta,
   documents,
@@ -30,6 +32,8 @@ import {
 import { date, num } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import { SyncButton } from "@/components/SyncButton";
+import { SyncStatusBadge } from "@/components/SyncStatusBadge";
 import {
   Sidebar,
   SidebarContent,
@@ -87,6 +91,12 @@ const TABS = [
     label: "Шалгалт",
     hint: "Өгөгдлийн үнэн зөв байдал",
     icon: ShieldCheck,
+  },
+  {
+    id: "review",
+    label: "Баталгаажуулах",
+    hint: "AI-аар задалсан шинэ баримт — админ",
+    icon: ClipboardCheck,
   },
 ] as const;
 
@@ -177,9 +187,11 @@ export default function Page() {
             </p>
           </div>
           <div className="flex items-center gap-2 no-print">
+            <SyncStatusBadge />
             <Badge variant="secondary" className="hidden tnum sm:inline-flex">
               {num(meta.fileCount)} баримт
             </Badge>
+            <SyncButton />
             <Button
               variant="outline"
               size="icon"
@@ -200,6 +212,7 @@ export default function Page() {
           {tab === "correspondence" && <CorrespondenceView />}
           {tab === "drawings" && <Drawings />}
           {tab === "audit" && <Audit />}
+          {tab === "review" && <Review />}
         </main>
 
         <footer className="mx-auto w-full max-w-[1500px] px-3 pb-6 text-xs text-muted-foreground sm:px-4">
