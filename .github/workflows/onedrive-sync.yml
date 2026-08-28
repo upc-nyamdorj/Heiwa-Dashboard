@@ -1,0 +1,64 @@
+name: OneDrive sync
+
+on:
+  schedule:
+    # 22:00 UTC ≈ 06:00 Ulaanbaatar — once a day, per spec (no realtime need)
+    - cron: '0 22 * * *'
+  workflow_dispatch:
+    inputs:
+      limit:
+        description: 'Max changed files to process this run (empty = no limit). Use a small number to calibrate real extraction cost before an unlimited run.'
+        required: false
+        type: string
+      dry_run:
+        description: 'List/diff only — no download, extraction, or writes'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Run OneDrive sync
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          ONEDRIVE_DRIVE_ID: ${{ vars.ONEDRIVE_DRIVE_ID }}
+          ONEDRIVE_FOLDER_ID: ${{ vars.ONEDRIVE_FOLDER_ID }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
+          if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit=${{ inputs.limit }}"; fi
+          node scripts/sync-onedrive.mjs $ARGS
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          # --dry-run and "nothing to do" runs never write scripts/.sync-state.json,
+          # and it isn't seeded in the repo — `git add` on a path that doesn't
+          # exist yet fails the step (set -e), so only add what's actually there.
+          for f in scripts/.sync-state.json data-private/pending-review.json src/data/sync-status.json; do
+            [ -f "$f" ] && git add "$f"
+          done
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "chore: OneDrive sync $(date -u +%Y-%m-%dT%H:%M:%SZ)"
+            git push
+          fi
