@@ -24,33 +24,42 @@ export default function Review() {
 
   const loadRecords = useCallback(async () => {
     setLoadError(null);
-    const res = await fetch('/api/review-list');
-    if (res.status === 401) {
-      setAuthed(false);
-      return;
-    }
-    if (!res.ok) {
-      setLoadError('Жагсаалт татахад алдаа гарлаа.');
+    try {
+      const res = await fetch('/api/review-list');
+      if (res.status === 401) {
+        setAuthed(false);
+        return;
+      }
+      if (!res.ok) {
+        setLoadError('Жагсаалт татахад алдаа гарлаа — дахин оролдоно уу.');
+        setAuthed(true);
+        return;
+      }
+      const data = await res.json();
+      setRecords((data.records as PendingRecord[]).filter((r) => r.status === 'pending'));
       setAuthed(true);
-      return;
+    } catch {
+      setLoadError('Сүлжээний алдаа гарлаа — интернэт холболтоо шалгаад дахин оролдоно уу.');
+      setAuthed((prev) => prev ?? true);
     }
-    const data = await res.json();
-    setRecords((data.records as PendingRecord[]).filter((r) => r.status === 'pending'));
-    setAuthed(true);
   }, []);
 
   useEffect(() => { loadRecords(); }, [loadRecords]);
 
   async function login() {
     setLoginError(false);
-    const res = await fetch('/api/review-login', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ username, password }),
-    });
-    if (res.ok) {
-      await loadRecords();
-    } else {
+    try {
+      const res = await fetch('/api/review-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ username, password }),
+      });
+      if (res.ok) {
+        await loadRecords();
+      } else {
+        setLoginError(true);
+      }
+    } catch {
       setLoginError(true);
     }
   }
@@ -95,7 +104,12 @@ export default function Review() {
       </div>
 
       {loadError && (
-        <p className="text-sm" style={{ color: 'var(--status-critical)' }}>{loadError}</p>
+        <Card>
+          <p className="text-sm" style={{ color: 'var(--status-critical)' }}>{loadError}</p>
+          <Button size="sm" variant="outline" className="mt-2" onClick={loadRecords}>
+            Дахин оролдох
+          </Button>
+        </Card>
       )}
 
       {records?.length === 0 && (
@@ -133,21 +147,25 @@ function ReviewRecordCard({ record, onDone }: { record: PendingRecord; onDone: (
       }
     }
 
-    const res = await fetch('/api/review-action', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ recordId: record.id, decision, finalRecord }),
-    });
+    try {
+      const res = await fetch('/api/review-action', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ recordId: record.id, decision, finalRecord }),
+      });
 
-    if (res.ok) {
-      onDone();
-    } else {
-      const data = await res.json().catch(() => ({}) as { error?: string });
-      setError(
-        data.error === 'invalid_record'
-          ? 'Талбарууд буруу байна — доор шалгаад дахин оролдоно уу.'
-          : `Алдаа: ${data.error ?? res.status}`,
-      );
+      if (res.ok) {
+        onDone();
+      } else {
+        const data = await res.json().catch(() => ({}) as { error?: string });
+        setError(
+          data.error === 'invalid_record'
+            ? 'Талбарууд буруу байна — доор шалгаад дахин оролдоно уу.'
+            : `Алдаа: ${data.error ?? res.status}`,
+        );
+      }
+    } catch {
+      setError('Сүлжээний алдаа гарлаа — интернэт холболтоо шалгаад дахин оролдоно уу.');
     }
     setBusy(false);
   }

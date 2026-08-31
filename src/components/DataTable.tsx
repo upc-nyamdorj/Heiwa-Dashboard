@@ -78,7 +78,20 @@ export function DataTable<T>({
               {columns.map((c) => (
                 <th
                   key={c.key}
+                  role="button"
+                  tabIndex={0}
+                  aria-sort={
+                    sort.key === c.key
+                      ? sort.dir === "asc" ? "ascending" : "descending"
+                      : "none"
+                  }
                   onClick={() => toggle(c.key)}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      toggle(c.key);
+                    }
+                  }}
                   style={{ minWidth: c.width, textAlign: c.align ?? "left" }}
                 >
                   {c.header}
