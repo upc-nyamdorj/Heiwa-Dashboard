@@ -213,6 +213,10 @@ table.grid thead th {
   cursor: pointer;
   user-select: none;
 }
+table.grid thead th:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: -2px;
+}
 table.grid tbody td {
   padding: 6px 8px;
   border-bottom: 1px solid var(--grid);
@@ -247,6 +251,17 @@ table.grid td.strong {
   }
   .card {
     break-inside: avoid;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
 /* ---break---                                            */
