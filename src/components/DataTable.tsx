@@ -79,7 +79,7 @@ export function DataTable<T>({
                 <th
                   key={c.key}
                   onClick={() => toggle(c.key)}
-                  style={{ width: c.width, textAlign: c.align ?? "left" }}
+                  style={{ minWidth: c.width, textAlign: c.align ?? "left" }}
                 >
                   {c.header}
                   <span style={{ color: "var(--text-muted)" }}>
