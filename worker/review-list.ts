@@ -1,17 +1,13 @@
-import { getFile, decodeBase64Json } from '../../cf/lib/github';
-import { verifySessionToken, parseCookie, COOKIE_NAME } from '../../cf/lib/session';
-import { jsonResponse } from '../../cf/lib/response';
-
-interface Env {
-  ADMIN_SESSION_SECRET: string;
-  GITHUB_PAT: string;
-  GITHUB_OWNER: string;
-  GITHUB_REPO: string;
-}
+import { getFile, decodeBase64Json } from '../cf/lib/github';
+import { verifySessionToken, parseCookie, COOKIE_NAME } from '../cf/lib/session';
+import { jsonResponse } from '../cf/lib/response';
+import type { Env } from './env';
 
 const PENDING_PATH = 'data-private/pending-review.json';
 
-export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
+export async function handleReviewList(request: Request, env: Env): Promise<Response> {
+  if (request.method !== 'GET') return jsonResponse({ error: 'method_not_allowed' }, 405);
+
   const token = parseCookie(request.headers.get('Cookie'), COOKIE_NAME);
   const session = await verifySessionToken(token, env.ADMIN_SESSION_SECRET);
   if (!session) return jsonResponse({ error: 'unauthorized' }, 401);
@@ -28,4 +24,4 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
   } catch (err) {
     return jsonResponse({ error: 'fetch_failed', message: String(err) }, 502);
   }
-};
+}

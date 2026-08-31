@@ -1,17 +1,11 @@
 import { z } from 'zod';
-import { getFile, putFile, decodeBase64Json, encodeJsonBase64, GithubConflictError } from '../../cf/lib/github';
-import { verifySessionToken, parseCookie, COOKIE_NAME } from '../../cf/lib/session';
-import { jsonResponse } from '../../cf/lib/response';
+import { getFile, putFile, decodeBase64Json, encodeJsonBase64, GithubConflictError } from '../cf/lib/github';
+import { verifySessionToken, parseCookie, COOKIE_NAME } from '../cf/lib/session';
+import { jsonResponse } from '../cf/lib/response';
 import {
   ContractSchema, PaymentSchema, CorrespondenceSchema, QualityRowSchema, DrawingSchema,
-} from '../../src/lib/schema';
-
-interface Env {
-  ADMIN_SESSION_SECRET: string;
-  GITHUB_PAT: string;
-  GITHUB_OWNER: string;
-  GITHUB_REPO: string;
-}
+} from '../src/lib/schema';
+import type { Env } from './env';
 
 const PENDING_PATH = 'data-private/pending-review.json';
 const DATASET_PATH = 'src/data/heiwa.json';
@@ -40,7 +34,9 @@ interface PendingRecord {
   status: 'pending' | 'approved' | 'rejected' | 'extraction-error';
 }
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
+export async function handleReviewAction(request: Request, env: Env): Promise<Response> {
+  if (request.method !== 'POST') return jsonResponse({ error: 'method_not_allowed' }, 405);
+
   const token = parseCookie(request.headers.get('Cookie'), COOKIE_NAME);
   const session = await verifySessionToken(token, env.ADMIN_SESSION_SECRET);
   if (!session) return jsonResponse({ error: 'unauthorized' }, 401);
@@ -135,4 +131,4 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   }
 
   return jsonResponse({ ok: true });
-};
+}

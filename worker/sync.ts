@@ -1,15 +1,11 @@
-import { triggerWorkflowDispatch } from '../../cf/lib/github';
-import { timingSafeEqualString } from '../../cf/lib/session';
-import { jsonResponse } from '../../cf/lib/response';
+import { triggerWorkflowDispatch } from '../cf/lib/github';
+import { timingSafeEqualString } from '../cf/lib/session';
+import { jsonResponse } from '../cf/lib/response';
+import type { Env } from './env';
 
-interface Env {
-  SYNC_PASSWORD: string;
-  GITHUB_PAT: string;
-  GITHUB_OWNER: string;
-  GITHUB_REPO: string;
-}
+export async function handleSync(request: Request, env: Env): Promise<Response> {
+  if (request.method !== 'POST') return jsonResponse({ error: 'method_not_allowed' }, 405);
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let body: { password?: string };
   try {
     body = await request.json();
@@ -33,4 +29,4 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   }
 
   return jsonResponse({ ok: true });
-};
+}

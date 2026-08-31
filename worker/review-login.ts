@@ -1,13 +1,10 @@
-import { createSessionToken, sessionCookieHeader, timingSafeEqualString } from '../../cf/lib/session';
-import { jsonResponse } from '../../cf/lib/response';
+import { createSessionToken, sessionCookieHeader, timingSafeEqualString } from '../cf/lib/session';
+import { jsonResponse } from '../cf/lib/response';
+import type { Env } from './env';
 
-interface Env {
-  ADMIN_USERNAME: string;
-  ADMIN_PASSWORD: string;
-  ADMIN_SESSION_SECRET: string;
-}
+export async function handleReviewLogin(request: Request, env: Env): Promise<Response> {
+  if (request.method !== 'POST') return jsonResponse({ error: 'method_not_allowed' }, 405);
 
-export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
   let body: { username?: string; password?: string };
   try {
     body = await request.json();
@@ -29,4 +26,4 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
       'Set-Cookie': sessionCookieHeader(token),
     },
   });
-};
+}
