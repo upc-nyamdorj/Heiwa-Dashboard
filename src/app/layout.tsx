@@ -1,10 +1,21 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
-import { Geist } from "next/font/google";
+import { Golos_Text } from "next/font/google";
 import { cn } from "@/lib/utils";
 import { TooltipProvider } from "@/components/ui/tooltip";
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
+/**
+ * One family for everything — headings, body, and financial figures alike,
+ * differentiated only by weight/size. Cyrillic-native (not a Latin face with
+ * Cyrillic bolted on), which reads with more character than the previous
+ * system-ui stack. Self-hosted at build time via next/font, so this works
+ * under `output: 'export'` with no runtime Google Fonts request.
+ */
+const golosText = Golos_Text({
+  subsets: ["cyrillic", "latin"],
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-sans",
+});
 
 export const metadata: Metadata = {
   title: "Хэйва хотхон — Төслийн хяналтын самбар",
@@ -46,7 +57,7 @@ export default function RootLayout({
     <html
       lang="mn"
       suppressHydrationWarning
-      className={cn("font-sans", geist.variable)}
+      className={cn("font-sans", golosText.variable)}
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOT }} />

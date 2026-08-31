@@ -155,12 +155,6 @@ html,
 body {
   background: var(--plane);
   color: var(--text-primary);
-  font-family:
-    system-ui,
-    -apple-system,
-    "Segoe UI",
-    "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
