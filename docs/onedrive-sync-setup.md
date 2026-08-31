@@ -20,12 +20,12 @@ Settings → Secrets and variables → Actions → New repository secret:
 |---|---|
 | `ANTHROPIC_API_KEY` | An Anthropic API key with billing enabled — this is what pays for extraction |
 
-## 2. A GitHub PAT for the Cloudflare Functions
+## 2. A GitHub PAT for the Worker
 
-The two Functions that call GitHub *from outside Actions* (`sync.ts` to
-trigger `workflow_dispatch`, `review-action.ts` to commit an approved
-record) need their own token — Actions' own `GITHUB_TOKEN` only works
-inside an Actions run.
+The two handlers that call GitHub *from outside Actions* (`worker/sync.ts`
+to trigger `workflow_dispatch`, `worker/review-action.ts` to commit an
+approved record) need their own token — Actions' own `GITHUB_TOKEN` only
+works inside an Actions run.
 
 1. GitHub → Settings → Developer settings → Personal access tokens →
    Fine-grained tokens → Generate new token.
@@ -39,23 +39,34 @@ inside an Actions run.
 5. Copy the token now — you'll paste it into Cloudflare in the next step,
    not here.
 
-## 3. Create the Cloudflare Pages project
+## 3. The Cloudflare project — Workers, not Pages
 
-1. Cloudflare dashboard → Workers & Pages → Create → **Pages** → Connect
-   to Git → select `upc-nyamdorj/Heiwa-Dashboard`, production branch `main`.
-2. Build settings: **Build command** `npm run build`, **Build output
-   directory** `out`. (`npm run build` also runs `inline.mjs`, which writes
-   a single self-contained `heiwa-dashboard.html` at the repo root for
-   offline use — harmless here, since the output directory is pinned to
-   `out/` via `wrangler.jsonc`, that stray file is never deployed.)
-3. Deploy once with defaults to confirm the connection works — it'll be a
-   broken deploy until step 4, that's expected.
+This deploys as a **Cloudflare Worker with static assets**, not classic
+Pages. (An earlier attempt at a Pages project failed —
+`wrangler pages deploy` errored with "The Pages project ... does not
+exist" against an account where Cloudflare's dashboard had already created
+this as a Workers project when it auto-detected the Next.js repo. Rather
+than fight that, the app now targets Workers directly: `wrangler.jsonc`'s
+`assets.directory` serves `out/`, and `worker/index.ts` handles the 4
+`/api/*` routes — everything else falls through to the static files
+automatically, no extra routing config needed.)
 
-## 4. Cloudflare Pages environment variables
+1. Connect the GitHub repo to the existing Workers project (or create one
+   if it doesn't exist): Cloudflare dashboard → Workers & Pages → your
+   project → Settings → Build → connect to Git if not already connected,
+   production branch `main`.
+2. Build command: `npm run build`. Deploy command: `npx wrangler deploy`
+   (**not** `wrangler pages deploy` — this is a Workers project). Wrangler
+   reads the output directory and Worker entry point from `wrangler.jsonc`
+   itself, not from separate dashboard fields.
+3. Deploy once to confirm the connection works — it'll fail until the env
+   vars in the next step are set, that's expected.
 
-Settings → Environment variables (set these for the **Production**
-environment; add them for Preview too only if you want PR previews to hit
-the same backend — probably not, for the two secrets that grant real
+## 4. Cloudflare Worker environment variables
+
+Settings → Variables and Secrets (set these for the **Production**
+environment; add them for Preview too only if you want preview deploys to
+hit the same backend — probably not, for the secrets that grant real
 access):
 
 | Name | Value | Type |
