@@ -4,3 +4,6 @@ out
 *.tsbuildinfo
 next-env.d.ts
 .wrangler
+.dev.vars
+heiwa-dashboard.html
+.DS_Store
