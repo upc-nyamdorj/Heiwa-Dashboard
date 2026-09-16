@@ -6,7 +6,7 @@
 export const COOKIE_NAME = 'heiwa_admin_session';
 const SESSION_TTL_SECONDS = 60 * 60; // 1 hour, per spec — simple, no refresh flow
 
-async function hmacKey(secret: string): Promise<CryptoKey> {
+export async function hmacKey(secret: string): Promise<CryptoKey> {
   return crypto.subtle.importKey(
     'raw',
     new TextEncoder().encode(secret),
@@ -16,7 +16,7 @@ async function hmacKey(secret: string): Promise<CryptoKey> {
   );
 }
 
-function toHex(buffer: ArrayBuffer): string {
+export function toHex(buffer: ArrayBuffer): string {
   return Array.from(new Uint8Array(buffer)).map((b) => b.toString(16).padStart(2, '0')).join('');
 }
 

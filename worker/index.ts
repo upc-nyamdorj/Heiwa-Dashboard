@@ -2,6 +2,7 @@ import { handleSync } from './sync';
 import { handleReviewLogin } from './review-login';
 import { handleReviewList } from './review-list';
 import { handleReviewAction } from './review-action';
+import { handleAuthLogin, handleAuthCallback, handleAuthMe, handleAuthLogout } from './auth';
 import type { Env } from './env';
 
 /**
@@ -25,6 +26,14 @@ export default {
         return handleReviewList(request, env);
       case '/api/review-action':
         return handleReviewAction(request, env);
+      case '/api/auth/login':
+        return handleAuthLogin(request, env);
+      case '/api/auth/callback':
+        return handleAuthCallback(request, env);
+      case '/api/auth/me':
+        return handleAuthMe(request, env);
+      case '/api/auth/logout':
+        return handleAuthLogout(request);
       default:
         return env.ASSETS.fetch(request);
     }

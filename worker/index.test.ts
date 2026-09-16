@@ -18,6 +18,10 @@ function makeEnv(overrides: Partial<Env> = {}): Env {
     GITHUB_PAT: 'fake-pat',
     GITHUB_OWNER: 'owner',
     GITHUB_REPO: 'repo',
+    MS_OAUTH_CLIENT_ID: 'ms-client-id',
+    MS_OAUTH_TENANT_ID: 'ms-tenant-id',
+    MS_OAUTH_CLIENT_SECRET: 'ms-client-secret',
+    OAUTH_SESSION_SECRET: 'oauth-secret',
     ...overrides,
   };
 }

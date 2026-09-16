@@ -28,4 +28,10 @@ export interface Env {
   GITHUB_PAT: string;
   GITHUB_OWNER: string;
   GITHUB_REPO: string;
+  /** Delegated 'Sign in with Microsoft' app registration — separate from the
+   *  app-only one the OneDrive sync uses (AZURE_* in GitHub Actions). */
+  MS_OAUTH_CLIENT_ID: string;
+  MS_OAUTH_TENANT_ID: string;
+  MS_OAUTH_CLIENT_SECRET: string;
+  OAUTH_SESSION_SECRET: string;
 }
