@@ -360,3 +360,48 @@ describe('asset misses', () => {
     expect(res.headers.get('Cache-Control')).toBe('public, max-age=31536000');
   });
 });
+
+describe('no /api response is storable', () => {
+  /**
+   * The gap this guards: handlers that answer through jsonResponse set no
+   * Cache-Control at all, so Cloudflare applied its own default and the
+   * response became cacheable. This account has no zone, so a bad entry
+   * cannot be purged — the header is the only control there is.
+   */
+  it.each([
+    ['/api/auth/me', 'GET', 200],
+    ['/api/auth/login', 'GET', 302],
+    ['/api/auth/logout', 'POST', 200],
+    ['/api/auth/logout', 'GET', 405],
+    ['/api/sync', 'GET', 405],
+    ['/api/review-list', 'GET', 401],
+    ['/api/auth/callback', 'GET', 302],
+    ['/api/auth/unknown-route', 'GET', 404],
+    ['/api/auth/me/', 'GET', 200],
+  ])('%s (%s) answers %i with no-store', async (path, method, status) => {
+    const env = makeEnv({
+      ASSETS: {
+        fetch: async () => new Response('404 page', {
+          status: 404,
+          headers: { 'Cache-Control': 'public, max-age=0, must-revalidate' },
+        }),
+      } as unknown as Env['ASSETS'],
+    });
+    const res = await worker.fetch(new Request(`https://dash.example.com${path}`, { method }), env);
+    expect(res.status).toBe(status);
+    expect(res.headers.get('Cache-Control')).toBe('no-store');
+  });
+
+  it('leaves a non-api asset response caching exactly as it was', async () => {
+    const env = makeEnv({
+      ASSETS: {
+        fetch: async () => new Response('js', {
+          status: 200,
+          headers: { 'Cache-Control': 'public, max-age=31536000, immutable' },
+        }),
+      } as unknown as Env['ASSETS'],
+    });
+    const res = await worker.fetch(new Request('https://dash.example.com/_next/static/chunks/a.js'), env);
+    expect(res.headers.get('Cache-Control')).toBe('public, max-age=31536000, immutable');
+  });
+});

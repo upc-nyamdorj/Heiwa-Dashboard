@@ -23,28 +23,54 @@ export default {
     // request, so their own resolution is unchanged.
     const route = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
 
-    switch (route) {
-      case '/api/sync':
-        return handleSync(request, env);
-      case '/api/review-login':
-        return handleReviewLogin(request, env);
-      case '/api/review-list':
-        return handleReviewList(request, env);
-      case '/api/review-action':
-        return handleReviewAction(request, env);
-      case '/api/auth/login':
-        return handleAuthLogin(request, env);
-      case '/api/auth/callback':
-        return handleAuthCallback(request, env);
-      case '/api/auth/me':
-        return handleAuthMe(request, env);
-      case '/api/auth/logout':
-        return handleAuthLogout(request);
-      default:
-        return serveAsset(request, env);
-    }
+    const response = await dispatch(route, request, env);
+
+    // Nothing under /api/ is storable — not a success, not a 401, not a 404.
+    // Setting it per handler leaves gaps (jsonResponse sent no cache header at
+    // all, so /api/auth/me and the review routes went out cacheable), and a
+    // gap here is expensive: workers.dev is not a zone, so this account has no
+    // purge to undo a bad cache entry with. One rule at the boundary instead.
+    return isApiRoute(route) ? neverStore(response) : response;
   },
 };
+
+function isApiRoute(route: string): boolean {
+  return route === '/api' || route.startsWith('/api/');
+}
+
+function dispatch(route: string, request: Request, env: Env): Promise<Response> | Response {
+  switch (route) {
+    case '/api/sync':
+      return handleSync(request, env);
+    case '/api/review-login':
+      return handleReviewLogin(request, env);
+    case '/api/review-list':
+      return handleReviewList(request, env);
+    case '/api/review-action':
+      return handleReviewAction(request, env);
+    case '/api/auth/login':
+      return handleAuthLogin(request, env);
+    case '/api/auth/callback':
+      return handleAuthCallback(request, env);
+    case '/api/auth/me':
+      return handleAuthMe(request, env);
+    case '/api/auth/logout':
+      return handleAuthLogout(request);
+    default:
+      return serveAsset(request, env);
+  }
+}
+
+/** Rewrites Cache-Control on a copy; the original Response may already be sent. */
+function neverStore(response: Response): Response {
+  const headers = new Headers(response.headers);
+  headers.set('Cache-Control', 'no-store');
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  });
+}
 
 /**
  * The assets layer answers a miss with the 404 page under
