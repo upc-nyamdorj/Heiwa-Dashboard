@@ -302,3 +302,61 @@ describe('/api/auth/me and /api/auth/logout', () => {
     expect(get.status).toBe(405);
   });
 });
+
+describe('route matching', () => {
+  it.each([
+    '/api/auth/me/',
+    '/api/auth/me//',
+  ])('still reaches the handler when the path arrives as %s', async (path) => {
+    const res = await worker.fetch(new Request(`https://dash.example.com${path}`), makeEnv());
+    expect(res.status).toBe(200);
+    await expect(res.json()).resolves.toEqual({ authenticated: false });
+  });
+
+  it('leaves the root path alone', async () => {
+    const env = makeEnv();
+    const res = await worker.fetch(new Request('https://dash.example.com/'), env);
+    expect(res.status).toBe(200);
+    expect(await res.text()).toBe('asset');
+  });
+
+  it('still falls through to assets for a genuinely unknown path', async () => {
+    const res = await worker.fetch(new Request('https://dash.example.com/api/auth/nope'), makeEnv());
+    expect(await res.text()).toBe('asset');
+  });
+});
+
+describe('asset misses', () => {
+  /** ASSETS stand-in that answers like the real 404 page, caching header and all. */
+  function notFoundAssets(): Env['ASSETS'] {
+    return {
+      fetch: async () =>
+        new Response('<html>not found</html>', {
+          status: 404,
+          headers: {
+            'Content-Type': 'text/html',
+            'Cache-Control': 'public, max-age=0, must-revalidate',
+          },
+        }),
+    } as unknown as Env['ASSETS'];
+  }
+
+  it('never lets a 404 be stored, so a route shipped later is not shadowed by it', async () => {
+    const res = await worker.fetch(
+      new Request('https://dash.example.com/api/auth/not-a-route-yet'),
+      makeEnv({ ASSETS: notFoundAssets() }),
+    );
+    expect(res.status).toBe(404);
+    expect(res.headers.get('Cache-Control')).toBe('no-store');
+    expect(res.headers.get('Content-Type')).toBe('text/html');
+  });
+
+  it('leaves a successfully served asset untouched', async () => {
+    const assets = {
+      fetch: async () =>
+        new Response('body', { status: 200, headers: { 'Cache-Control': 'public, max-age=31536000' } }),
+    } as unknown as Env['ASSETS'];
+    const res = await worker.fetch(new Request('https://dash.example.com/logo.svg'), makeEnv({ ASSETS: assets }));
+    expect(res.headers.get('Cache-Control')).toBe('public, max-age=31536000');
+  });
+});

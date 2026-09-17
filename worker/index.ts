@@ -17,7 +17,13 @@ export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const { pathname } = new URL(request.url);
 
-    switch (pathname) {
+    // Match on the path without a trailing slash. Hand-typed URLs and some
+    // redirectors add one, and an exact-match switch would drop those into the
+    // static 404 page instead of the handler. Assets still see the original
+    // request, so their own resolution is unchanged.
+    const route = pathname.length > 1 ? pathname.replace(/\/+$/, '') : pathname;
+
+    switch (route) {
       case '/api/sync':
         return handleSync(request, env);
       case '/api/review-login':
@@ -35,7 +41,24 @@ export default {
       case '/api/auth/logout':
         return handleAuthLogout(request);
       default:
-        return env.ASSETS.fetch(request);
+        return serveAsset(request, env);
     }
   },
 };
+
+/**
+ * The assets layer answers a miss with the 404 page under
+ * `public, max-age=0, must-revalidate`, which lets edges and browsers hold a
+ * copy. That is the wrong lifetime for "this path is not a route yet": the
+ * moment a route ships, every held copy is a lie, and workers.dev is not a
+ * zone so there is no purge button to reach for. Routes are cheap to re-ask
+ * for, so misses are marked never-store. Real assets keep their own caching.
+ */
+async function serveAsset(request: Request, env: Env): Promise<Response> {
+  const res = await env.ASSETS.fetch(request);
+  if (res.status !== 404) return res;
+
+  const headers = new Headers(res.headers);
+  headers.set('Cache-Control', 'no-store');
+  return new Response(res.body, { status: res.status, statusText: res.statusText, headers });
+}
