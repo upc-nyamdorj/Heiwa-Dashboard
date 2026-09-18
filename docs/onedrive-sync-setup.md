@@ -47,9 +47,15 @@ Pages. (An earlier attempt at a Pages project failed —
 exist" against an account where Cloudflare's dashboard had already created
 this as a Workers project when it auto-detected the Next.js repo. Rather
 than fight that, the app now targets Workers directly: `wrangler.jsonc`'s
-`assets.directory` serves `out/`, and `worker/index.ts` handles the 4
-`/api/*` routes — everything else falls through to the static files
-automatically, no extra routing config needed.)
+`assets.directory` serves `out/`, and `worker/index.ts` handles the `/api/*`
+routes — everything else falls through to the static files automatically, no
+extra routing config needed.)
+
+Note the dataset itself lives at `worker/data/heiwa.json`, inside the Worker
+bundle rather than under `src/`. Anything `src/` imports is compiled into a
+public JS chunk by the static export, which would put every figure a plain
+fetch away; from the Worker it is only reachable through `GET /api/data`,
+which requires a session.
 
 1. Connect the GitHub repo to the existing Workers project (or create one
    if it doesn't exist): Cloudflare dashboard → Workers & Pages → your
@@ -72,6 +78,9 @@ access):
 | Name | Value | Type |
 |---|---|---|
 | `SYNC_PASSWORD` | your choice | Secret |
+| `VIEW_USERNAME` | your choice — the shared account everyone uses to open the dashboard | Secret |
+| `VIEW_PASSWORD` | your choice — hand this to whoever should see the figures | Secret |
+| `VIEW_SESSION_SECRET` | random — `openssl rand -hex 32`. Nobody needs to remember it. | Secret |
 | `ADMIN_USERNAME` | your choice | Secret |
 | `ADMIN_PASSWORD` | your choice | Secret |
 | `ADMIN_SESSION_SECRET` | random — run `openssl rand -hex 32` locally, paste the output. Not something you need to remember. | Secret |
@@ -115,7 +124,7 @@ Open the dashboard → "Баталгаажуулах" tab → log in with `ADMIN
 each with a link back to the source file in SharePoint. Try approving one:
 edit the JSON to fill in the fields Claude couldn't extract (id/key,
 category, system code, ...) using the source file as reference, submit, and
-confirm it lands in `src/data/heiwa.json` on `main` and the site redeploys.
+confirm it lands in `worker/data/heiwa.json` on `main` and the site redeploys.
 
 ## 9. Turn on the daily cron
 

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 /**
- * Runtime mirror of types.ts, validated once against src/data/heiwa.json at
+ * Runtime mirror of types.ts, validated once against worker/data/heiwa.json at
  * build/dev time. Keep this in lockstep with the interfaces there — a field
  * added to one and not the other will surface as either a type error or a
  * silent runtime gap.

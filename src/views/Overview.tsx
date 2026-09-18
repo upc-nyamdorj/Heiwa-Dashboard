@@ -9,28 +9,7 @@ import {
   Gantt,
   type GanttRow,
 } from "@/components/charts";
-import {
-  meta,
-  documents,
-  contracts,
-  payments,
-  countedPayments,
-  totalPaid,
-  totalContractValue,
-  byMonth,
-  byParty,
-  mntContracts,
-  foreignContracts,
-  supersededTotal,
-  drawings,
-  totalDrawingPages,
-  drawingsPending,
-  quality,
-  rfiThreads,
-  unpaidContracts,
-  correspondence,
-  partyRisk,
-} from "@/lib/data";
+import { useDataset } from "@/lib/DataProvider";
 import {
   compact,
   mnt,
@@ -51,6 +30,28 @@ import {
 } from "@/lib/palette";
 
 export default function Overview() {
+  const {
+    meta,
+    documents,
+    contracts,
+    payments,
+    countedPayments,
+    totalPaid,
+    totalContractValue,
+    byMonth,
+    byParty,
+    mntContracts,
+    foreignContracts,
+    supersededTotal,
+    drawings,
+    totalDrawingPages,
+    drawingsPending,
+    quality,
+    rfiThreads,
+    unpaidContracts,
+    correspondence,
+    partyRisk,
+  } = useDataset();
   const remaining = totalContractValue - totalPaid;
   const paidPct = (totalPaid / totalContractValue) * 100;
 

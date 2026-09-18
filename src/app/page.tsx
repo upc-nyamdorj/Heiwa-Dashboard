@@ -21,14 +21,7 @@ import CorrespondenceView from "@/views/Correspondence";
 import Drawings from "@/views/Drawings";
 import Audit from "@/views/Audit";
 import Review from "@/views/Review";
-import {
-  meta,
-  documents,
-  contracts,
-  payments,
-  correspondence,
-  drawings,
-} from "@/lib/data";
+import { useDataset } from "@/lib/DataProvider";
 import { date, num } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -38,6 +31,7 @@ import { AuthCheckingScreen } from "@/components/login-shell";
 import { ViewLogin } from "@/components/ViewLogin";
 import { SignOutButton } from "@/components/SignOutButton";
 import { useViewSession } from "@/hooks/use-view-session";
+import { DataProvider } from "@/lib/DataProvider";
 import {
   Sidebar,
   SidebarContent,
@@ -57,57 +51,67 @@ const TABS = [
   {
     id: "overview",
     label: "Тойм",
-    hint: "Төслийн ерөнхий байдал",
     icon: LayoutDashboard,
   },
   {
     id: "contracts",
     label: "Гэрээ",
-    hint: `${contracts.length} гэрээ`,
     icon: Handshake,
   },
   {
     id: "payments",
     label: "Санхүүжилт",
-    hint: `${payments.length} тайлан`,
     icon: WalletCards,
   },
   {
     id: "documents",
     label: "Баримт бичиг",
-    hint: `${documents.length} файл`,
     icon: FileText,
   },
   {
     id: "correspondence",
     label: "Захидал / RFI",
-    hint: `${correspondence.length} баримт`,
     icon: Mail,
   },
   {
     id: "drawings",
     label: "Зургийн бүртгэл",
-    hint: `${drawings.length} багц`,
     icon: DraftingCompass,
   },
   {
     id: "audit",
     label: "Шалгалт",
-    hint: "Өгөгдлийн үнэн зөв байдал",
     icon: ShieldCheck,
   },
   {
     id: "review",
     label: "Баталгаажуулах",
-    hint: "AI-аар задалсан шинэ баримт — админ",
     icon: ClipboardCheck,
   },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
 
+/**
+ * The gate. Holds no dashboard state and reads no data — everything below it
+ * mounts only once a session exists, and DataProvider then fetches the figures
+ * over /api/data, which the Worker refuses without that session.
+ */
 export default function Page() {
   const { session, signIn, signOut } = useViewSession();
+
+  if (session === "loading") return <AuthCheckingScreen />;
+  if (session === "anonymous") return <ViewLogin onSignedIn={signIn} />;
+
+  return (
+    <DataProvider>
+      <Dashboard onSignOut={signOut} />
+    </DataProvider>
+  );
+}
+
+function Dashboard({ onSignOut }: { onSignOut: () => void }) {
+  const { meta, documents, contracts, payments, correspondence, drawings } = useDataset();
   const [tab, setTab] = useState<TabId>("overview");
   const [dark, setDark] = useState(false);
 
@@ -116,6 +120,17 @@ export default function Page() {
     const fromHash = window.location.hash.replace("#", "");
     if (TABS.some((t) => t.id === fromHash)) setTab(fromHash as TabId);
   }, []);
+
+  const hints: Record<TabId, string> = {
+    overview: "Төслийн ерөнхий байдал",
+    contracts: `${contracts.length} гэрээ`,
+    payments: `${payments.length} тайлан`,
+    documents: `${documents.length} файл`,
+    correspondence: `${correspondence.length} баримт`,
+    drawings: `${drawings.length} багц`,
+    audit: "Өгөгдлийн үнэн зөв байдал",
+    review: "AI-аар задалсан шинэ баримт — админ",
+  };
 
   const toggleTheme = () => {
     const next = dark ? "light" : "dark";
@@ -133,12 +148,6 @@ export default function Page() {
     setTab(id);
     if (typeof window !== "undefined") window.location.hash = id;
   };
-
-  // Every hook above runs unconditionally; the gate is the last thing before
-  // the tree, so no dashboard view is mounted — and no figure rendered — until
-  // /api/view-auth/me has confirmed a session.
-  if (session === "loading") return <AuthCheckingScreen />;
-  if (session === "anonymous") return <ViewLogin onSignedIn={signIn} />;
 
   return (
     <SidebarProvider>
@@ -163,7 +172,7 @@ export default function Page() {
                       <Button
                         variant={tab === item.id ? "secondary" : "ghost"}
                         className="w-full justify-start gap-2 text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
-                        title={item.hint}
+                        title={hints[item.id]}
                         onClick={() => go(item.id)}
                       >
                         <Icon />
@@ -203,7 +212,7 @@ export default function Page() {
               {num(meta.fileCount)} баримт
             </Badge>
             <SyncButton />
-            <SignOutButton onSignOut={signOut} />
+            <SignOutButton onSignOut={onSignOut} />
             <Button
               variant="outline"
               size="icon"

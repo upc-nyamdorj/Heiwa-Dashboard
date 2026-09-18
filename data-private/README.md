@@ -4,7 +4,7 @@
 by a human yet — unverified financial figures from newly-synced documents.
 
 **Never import anything from this directory in `src/`.** Unlike
-`src/data/heiwa.json`, this directory is deliberately outside the Next.js
+`worker/data/heiwa.json`, this directory is deliberately outside the Next.js
 static export — anything imported into a component ships in the public JS
 bundle regardless of any login screen in front of it. The only intended
 reader is the `/api/review-list` route in the Cloudflare Worker

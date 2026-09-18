@@ -16,16 +16,7 @@ import {
 } from "@/components/DataTable";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import {
-  contracts,
-  meta,
-  mntContracts,
-  totalContractValue,
-  totalPaid,
-  foreignContracts,
-  paymentsFor,
-  unpaidContracts,
-} from "@/lib/data";
+import { useDataset } from "@/lib/DataProvider";
 import type { Contract } from "@/lib/types";
 import { compact, date, mnt, num, pct } from "@/lib/format";
 import { categoryColor, CATEGORY_SHORT, CATEGORY_ORDER } from "@/lib/palette";
@@ -40,6 +31,16 @@ function paidTone(c: Contract): string {
 }
 
 export default function Contracts() {
+  const {
+    contracts,
+    meta,
+    mntContracts,
+    totalContractValue,
+    totalPaid,
+    foreignContracts,
+    paymentsFor,
+    unpaidContracts,
+  } = useDataset();
   const [q, setQ] = useState("");
   const [cat, setCat] = useState(ALL);
   const [open, setOpen] = useState<string | null>(null);
@@ -396,6 +397,7 @@ export default function Contracts() {
 }
 
 function ContractDetail({ contract }: { contract: Contract }) {
+  const { paymentsFor } = useDataset();
   const pays = paymentsFor(contract);
   return (
     <div

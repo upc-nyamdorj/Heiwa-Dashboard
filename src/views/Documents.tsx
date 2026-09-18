@@ -10,7 +10,8 @@ import {
   type Column,
 } from "@/components/DataTable";
 import { Badge } from "@/components/ui/badge";
-import { documents, meta, byMonth, docMatrix } from "@/lib/data";
+import { docMatrix } from "@/lib/data";
+import { useDataset } from "@/lib/DataProvider";
 import type { DocumentRow } from "@/lib/types";
 import { bytes, date, monthLabel, monthShort, num } from "@/lib/format";
 import {
@@ -23,6 +24,7 @@ import {
 const ALL = "__all__";
 
 export default function Documents() {
+  const { documents, meta, byMonth } = useDataset();
   const [q, setQ] = useState("");
   const [cat, setCat] = useState(ALL);
   const [type, setType] = useState(ALL);

@@ -4,14 +4,7 @@ import React, { useMemo, useState } from "react";
 import { Card, StatTile, Legend } from "@/components/chart-kit";
 import { Toggles } from "@/components/DataTable";
 import { Badge } from "@/components/ui/badge";
-import {
-  audit,
-  coverage,
-  spotCheck,
-  meta,
-  contracts,
-  payments,
-} from "@/lib/data";
+import { useDataset } from "@/lib/DataProvider";
 import type { AuditIssue } from "@/lib/types";
 import { compact, mnt, num, pct } from "@/lib/format";
 
@@ -55,6 +48,7 @@ const CHECK_RULE: Record<string, string> = {
 };
 
 export default function Audit() {
+  const { audit, coverage, spotCheck, meta, contracts, payments } = useDataset();
   const [sev, setSev] = useState(ALL);
 
   const filtered = useMemo(
@@ -369,7 +363,7 @@ export default function Audit() {
               >
                 1. Гараар засах.
               </span>{" "}
-              Ганц нэг тоо буруу бол <code>src/data/heiwa.json</code> дотор шууд
+              Ганц нэг тоо буруу бол <code>worker/data/heiwa.json</code> дотор шууд
               засаад
               <code> npm run build</code> ажиллуулна. Бүх нийлбэр, хувь
               автоматаар дахин бодогдоно.

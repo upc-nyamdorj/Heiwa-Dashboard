@@ -4,7 +4,7 @@ import React, { useMemo, useState } from 'react';
 import { Card, StatTile, Legend } from '@/components/chart-kit';
 import { ColumnChart, RankBar } from '@/components/charts';
 import { DataTable, SearchBox, Toggles, type Column } from '@/components/DataTable';
-import { correspondence, rfiThreads, byMonth, quality, documents } from '@/lib/data';
+import { useDataset } from '@/lib/DataProvider';
 import type { Correspondence as CorrRow } from '@/lib/types';
 import { date, monthLabel, monthShort, num, mnt } from '@/lib/format';
 import { SERIES } from '@/lib/palette';
@@ -22,6 +22,7 @@ const TYPE_LABEL: Record<string, string> = {
 };
 
 export default function CorrespondenceView() {
+  const { correspondence, rfiThreads, byMonth, quality, documents } = useDataset();
   const [q, setQ] = useState('');
   const [dir, setDir] = useState(ALL);
 

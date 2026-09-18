@@ -8,7 +8,9 @@ import {
 import type { Env } from './env';
 
 const PENDING_PATH = 'data-private/pending-review.json';
-const DATASET_PATH = 'src/data/heiwa.json';
+// Lives in the Worker bundle, not src/: anything src/ imports is compiled
+// into a public chunk under `output: 'export'`. See worker/dataset.ts.
+const DATASET_PATH = 'worker/data/heiwa.json';
 
 /**
  * Claude's extraction (scripts/lib/claude-extract.mjs) only produces the

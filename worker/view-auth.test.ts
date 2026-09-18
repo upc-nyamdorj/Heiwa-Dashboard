@@ -53,10 +53,10 @@ describe('/api/view-auth/login', () => {
   });
 
   it.each([
-    [{ username: 'viewer', password: 'wrong' }, 'wrong password'],
-    [{ username: 'nobody', password: 'view-pw' }, 'wrong username'],
-    [{}, 'nothing at all'],
-  ])('refuses %o (%s)', async (body) => {
+    { label: 'the wrong password', body: { username: 'viewer', password: 'wrong' } },
+    { label: 'the wrong username', body: { username: 'nobody', password: 'view-pw' } },
+    { label: 'no credentials at all', body: {} },
+  ])('refuses $label', async ({ body }) => {
     const res = await worker.fetch(login(body), makeEnv());
     expect(res.status).toBe(401);
     expect(res.headers.get('Set-Cookie')).toBeNull();

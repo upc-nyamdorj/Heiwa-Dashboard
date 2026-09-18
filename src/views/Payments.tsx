@@ -10,16 +10,7 @@ import {
   type Column,
 } from "@/components/DataTable";
 import { Badge } from "@/components/ui/badge";
-import {
-  payments,
-  countedPayments,
-  totalPaid,
-  supersededTotal,
-  byMonth,
-  byParty,
-  meta,
-  contracts,
-} from "@/lib/data";
+import { useDataset } from "@/lib/DataProvider";
 import type { Payment } from "@/lib/types";
 import {
   compact,
@@ -54,6 +45,16 @@ const TYPE_NAME: Record<string, string> = {
 };
 
 export default function Payments() {
+  const {
+    payments,
+    countedPayments,
+    totalPaid,
+    supersededTotal,
+    byMonth,
+    byParty,
+    meta,
+    contracts,
+  } = useDataset();
   const [q, setQ] = useState("");
   const [party, setParty] = useState(ALL);
   const [type, setType] = useState(ALL);

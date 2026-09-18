@@ -11,17 +11,8 @@ import {
   type Column,
 } from "@/components/DataTable";
 import { Badge } from "@/components/ui/badge";
-import {
-  drawings,
-  drawingCompanies,
-  drawingDisciplines,
-  totalDrawingPages,
-  drawingsPending,
-  BLOCKS,
-  blocksOf,
-  documents,
-  quality,
-} from "@/lib/data";
+import { BLOCKS, blocksOf } from "@/lib/data";
+import { useDataset } from "@/lib/DataProvider";
 import type { Drawing } from "@/lib/types";
 import { num } from "@/lib/format";
 import { SERIES } from "@/lib/palette";
@@ -29,6 +20,15 @@ import { SERIES } from "@/lib/palette";
 const ALL = "__all__";
 
 export default function Drawings() {
+  const {
+    drawings,
+    drawingCompanies,
+    drawingDisciplines,
+    totalDrawingPages,
+    drawingsPending,
+    documents,
+    quality,
+  } = useDataset();
   const [q, setQ] = useState("");
   const [status, setStatus] = useState(ALL);
 

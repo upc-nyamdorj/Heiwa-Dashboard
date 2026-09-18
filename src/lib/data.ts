@@ -1,57 +1,34 @@
 import { z } from 'zod';
-import raw from '@/data/heiwa.json';
-import type { Dataset, Contract, Payment, DocumentRow, Correspondence } from './types';
+import type { Dataset, Contract, Payment, DocumentRow, Correspondence, QualityRow } from './types';
 import { DatasetSchema } from './schema';
 import { monthKey, monthRange } from './format';
 
-function loadDataset(): Dataset {
-  const result = DatasetSchema.safeParse(raw);
-  if (!result.success) {
-    throw new Error(
-      `src/data/heiwa.json does not match the expected schema (see src/lib/schema.ts):\n\n${z.prettifyError(result.error)}`,
-    );
-  }
-  return result.data;
-}
+/**
+ * The dataset is no longer imported here.
+ *
+ * Under `output: 'export'` an import of heiwa.json is compiled into a public
+ * JS chunk, which put every contract sum and payment figure a plain fetch of
+ * out/_next/static/chunks/*.js away — the login screen gated the UI, not the
+ * data. The file now lives in the Worker bundle (worker/data/heiwa.json) and
+ * reaches the browser only through GET /api/data, which requires a session.
+ *
+ * So this module exports a builder over raw JSON instead of constants, and
+ * DataProvider calls it once with what the endpoint returned. Everything
+ * below the builder is pure: derivations that take their inputs as arguments,
+ * unit-testable without a dataset, and shared with src/lib/data.test.ts.
+ */
 
-export const data: Dataset = loadDataset();
-
-export const {
-  meta, documents, contracts, payments, correspondence, quality, drawings,
-  audit, coverage, spotCheck,
-} = data;
-
-/* ------------------------------------------------------------------ totals */
-
-export const countedPayments = payments.filter((p) => p.counted);
+/* ------------------------------------------------------------ derivations */
 
 export function computeTotalPaid(counted: Payment[]): number {
   return counted.reduce((s, p) => s + (p.amount ?? 0), 0);
 }
 
-export const totalPaid = computeTotalPaid(countedPayments);
-
-export const supersededTotal = payments
-  .filter((p) => p.supersededBy)
-  .reduce((s, p) => s + (p.amount ?? 0), 0);
-
-export const mntContracts = contracts.filter((c) => c.currency === 'MNT' && c.value);
-
 export function computeTotalContractValue(mntOnly: Contract[]): number {
   return mntOnly.reduce((s, c) => s + (c.value ?? 0), 0);
 }
 
-export const totalContractValue = computeTotalContractValue(mntContracts);
-
-export const foreignContracts = contracts.filter((c) => c.currency !== 'MNT' && c.value);
-
-export const parties = Array.from(new Set(documents.map((d) => d.party)))
-  .filter((p) => p !== '—')
-  .sort((a, b) => a.localeCompare(b, 'mn'));
-
 /* ------------------------------------------------------------- time series */
-
-export const months = monthRange(meta.dateMin, meta.dateMax);
 
 export interface MonthPoint {
   key: string;
@@ -93,8 +70,6 @@ export function computeByMonth(
   for (const row of out) { run += row.paid; row.cumulative = run; }
   return out;
 }
-
-export const byMonth: MonthPoint[] = computeByMonth(months, countedPayments, documents, contracts);
 
 /* --------------------------------------------------------- party roll-ups */
 
@@ -149,8 +124,6 @@ export function computeByParty(
   return Array.from(m.values()).sort((a, b) => b.contractValue - a.contractValue);
 }
 
-export const byParty: PartyRoll[] = computeByParty(documents, contracts, countedPayments);
-
 /* ------------------------------------------------------------- doc matrix */
 
 export function docMatrix(rows: DocumentRow[]) {
@@ -164,25 +137,7 @@ export function docMatrix(rows: DocumentRow[]) {
   return { cats, types, get: (c: string, t: string) => cells.get(`${c}|${t}`) ?? 0 };
 }
 
-/* ------------------------------------------------------- contract helpers */
-
-export function paymentsFor(c: Contract): Payment[] {
-  return payments
-    .filter((p) => p.contractKey === c.key)
-    .sort((a, b) => (a.date ?? '').localeCompare(b.date ?? ''));
-}
-
-/** Contracts whose end date has passed but which are not fully paid. */
-export const overdueContracts = contracts.filter(
-  (c) => c.end && c.end < meta.dateMax && c.value && (c.paidPercent ?? 0) < 95,
-);
-
-/** Contracts with no payment report at all in the archive. */
-export const unpaidContracts = contracts.filter((c) => c.paymentCount === 0);
-
 /* -------------------------------------------------------- correspondence */
-
-export const rfi = correspondence.filter((c) => c.typeCode === 'RFI');
 
 export interface RfiPair {
   no: string;
@@ -215,17 +170,6 @@ export function computeRfiThreads(rfiIn: Correspondence[]): RfiPair[] {
   return Array.from(m.values()).sort((a, b) => a.no.localeCompare(b.no));
 }
 
-export const rfiThreads: RfiPair[] = computeRfiThreads(rfi);
-
-/* -------------------------------------------------------------- drawings */
-
-export const drawingCompanies = Array.from(new Set(drawings.map((d) => d.company)));
-export const drawingDisciplines = Array.from(
-  new Set(drawings.map((d) => d.drawing).filter(Boolean) as string[]),
-);
-export const totalDrawingPages = drawings.reduce((s, d) => s + (d.pages ?? 0), 0);
-export const drawingsPending = drawings.filter((d) => d.status !== 'Хүлээн авсан');
-
 /* --------------------------------------------------------- risk scorecard */
 
 export interface PartyRisk {
@@ -252,7 +196,14 @@ export interface PartyRisk {
 const RISK_WEIGHTS = { quality: 0.4, overdue: 0.3, rfi: 0.2, unpaid: 0.1 };
 
 /** Ranked risk score (0-100) per contracting party, highest risk first. */
-export const partyRisk: PartyRisk[] = (() => {
+export function computePartyRisk(
+  byParty: PartyRoll[],
+  quality: QualityRow[],
+  overdueContracts: Contract[],
+  rfiThreads: RfiPair[],
+  unpaidContracts: Contract[],
+): PartyRisk[] {
+
   const raw = byParty
     .filter((p) => p.contractCount > 0)
     .map((p) => {
@@ -286,7 +237,7 @@ export const partyRisk: PartyRisk[] = (() => {
       return { ...r, score, tier };
     })
     .sort((a, b) => b.score - a.score);
-})();
+}
 
 /** Blocks referenced anywhere in the register, in building order. */
 export const BLOCKS = ['A1', 'A2', 'A3', 'A4', 'A5', 'A6', 'G1', 'G2', 'G3', 'G4', 'C1'];
@@ -303,4 +254,103 @@ export function blocksOf(d: { block: string | null }): string[] {
     }
   }
   return found;
+}
+
+/* ------------------------------------------------------------- the bundle */
+
+/** Everything a view can read, derived once from one payload. */
+export interface DashboardData {
+  data: Dataset;
+  meta: Dataset['meta'];
+  documents: DocumentRow[];
+  contracts: Contract[];
+  payments: Payment[];
+  correspondence: Correspondence[];
+  quality: Dataset['quality'];
+  drawings: Dataset['drawings'];
+  audit: Dataset['audit'];
+  coverage: Dataset['coverage'];
+  spotCheck: Dataset['spotCheck'];
+  countedPayments: Payment[];
+  totalPaid: number;
+  supersededTotal: number;
+  mntContracts: Contract[];
+  totalContractValue: number;
+  foreignContracts: Contract[];
+  parties: string[];
+  months: string[];
+  byMonth: MonthPoint[];
+  byParty: PartyRoll[];
+  paymentsFor: (c: Contract) => Payment[];
+  overdueContracts: Contract[];
+  unpaidContracts: Contract[];
+  rfi: Correspondence[];
+  rfiThreads: RfiPair[];
+  drawingCompanies: string[];
+  drawingDisciplines: string[];
+  totalDrawingPages: number;
+  drawingsPending: Dataset['drawings'];
+  partyRisk: PartyRisk[];
+}
+
+/** Validates the payload, then derives every roll-up the dashboard renders. */
+export function buildDataset(raw: unknown): DashboardData {
+  const parsed = DatasetSchema.safeParse(raw);
+  if (!parsed.success) {
+    throw new Error(
+      `/api/data does not match the expected schema (see src/lib/schema.ts):\n\n${z.prettifyError(parsed.error)}`,
+    );
+  }
+  const data = parsed.data;
+  const {
+    meta, documents, contracts, payments, correspondence, quality, drawings,
+    audit, coverage, spotCheck,
+  } = data;
+
+  const countedPayments = payments.filter((p) => p.counted);
+  const mntContracts = contracts.filter((c) => c.currency === 'MNT' && c.value);
+  const months = monthRange(meta.dateMin, meta.dateMax);
+  const byParty = computeByParty(documents, contracts, countedPayments);
+
+  /** Contracts whose end date has passed but which are not fully paid. */
+  const overdueContracts = contracts.filter(
+    (c) => c.end && c.end < meta.dateMax && c.value && (c.paidPercent ?? 0) < 95,
+  );
+  /** Contracts with no payment report at all in the archive. */
+  const unpaidContracts = contracts.filter((c) => c.paymentCount === 0);
+  const rfi = correspondence.filter((c) => c.typeCode === 'RFI');
+  const rfiThreads = computeRfiThreads(rfi);
+
+  return {
+    data, meta, documents, contracts, payments, correspondence, quality, drawings,
+    audit, coverage, spotCheck,
+    countedPayments,
+    totalPaid: computeTotalPaid(countedPayments),
+    supersededTotal: payments
+      .filter((p) => p.supersededBy)
+      .reduce((s, p) => s + (p.amount ?? 0), 0),
+    mntContracts,
+    totalContractValue: computeTotalContractValue(mntContracts),
+    foreignContracts: contracts.filter((c) => c.currency !== 'MNT' && c.value),
+    parties: Array.from(new Set(documents.map((d) => d.party)))
+      .filter((p) => p !== '—')
+      .sort((a, b) => a.localeCompare(b, 'mn')),
+    months,
+    byMonth: computeByMonth(months, countedPayments, documents, contracts),
+    byParty,
+    paymentsFor: (c: Contract) => payments
+      .filter((p) => p.contractKey === c.key)
+      .sort((a, b) => (a.date ?? '').localeCompare(b.date ?? '')),
+    overdueContracts,
+    unpaidContracts,
+    rfi,
+    rfiThreads,
+    drawingCompanies: Array.from(new Set(drawings.map((d) => d.company))),
+    drawingDisciplines: Array.from(
+      new Set(drawings.map((d) => d.drawing).filter(Boolean) as string[]),
+    ),
+    totalDrawingPages: drawings.reduce((s, d) => s + (d.pages ?? 0), 0),
+    drawingsPending: drawings.filter((d) => d.status !== 'Хүлээн авсан'),
+    partyRisk: computePartyRisk(byParty, quality, overdueContracts, rfiThreads, unpaidContracts),
+  };
 }
