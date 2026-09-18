@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import {
   ClipboardCheck,
+  UsersRound,
   DraftingCompass,
   FileText,
   Handshake,
@@ -21,6 +22,7 @@ import CorrespondenceView from "@/views/Correspondence";
 import Drawings from "@/views/Drawings";
 import Audit from "@/views/Audit";
 import Review from "@/views/Review";
+import Users from "@/views/Users";
 import { useDataset } from "@/lib/DataProvider";
 import { date, num } from "@/lib/format";
 import { Badge } from "@/components/ui/badge";
@@ -28,9 +30,9 @@ import { Button } from "@/components/ui/button";
 import { SyncButton } from "@/components/SyncButton";
 import { SyncStatusBadge } from "@/components/SyncStatusBadge";
 import { AuthCheckingScreen } from "@/components/login-shell";
-import { ViewLogin } from "@/components/ViewLogin";
+import { AccountLogin } from "@/components/AccountLogin";
 import { SignOutButton } from "@/components/SignOutButton";
-import { useViewSession } from "@/hooks/use-view-session";
+import { atLeast, useAccount, type Account, type Role } from "@/hooks/use-account";
 import { DataProvider } from "@/lib/DataProvider";
 import {
   Sidebar,
@@ -87,10 +89,28 @@ const TABS = [
     id: "review",
     label: "Баталгаажуулах",
     icon: ClipboardCheck,
+    minRole: "admin",
+  },
+  {
+    id: "users",
+    label: "Хэрэглэгчид",
+    icon: UsersRound,
+    minRole: "admin",
   },
 ] as const;
 
 type TabId = (typeof TABS)[number]["id"];
+
+/** Tabs without a stated minimum are open to anyone who is signed in. */
+function tabsFor(user: Account) {
+  return TABS.filter((t) => atLeast(user, ("minRole" in t ? t.minRole : "viewer") as Role));
+}
+
+const ROLE_LABEL: Record<Role, string> = {
+  viewer: "Харагч",
+  editor: "Синхрончлогч",
+  admin: "Админ",
+};
 
 /**
  * The gate. Holds no dashboard state and reads no data — everything below it
@@ -98,28 +118,35 @@ type TabId = (typeof TABS)[number]["id"];
  * over /api/data, which the Worker refuses without that session.
  */
 export default function Page() {
-  const { session, signIn, signOut } = useViewSession();
+  const { session, signIn, signOut } = useAccount();
 
-  if (session === "loading") return <AuthCheckingScreen />;
-  if (session === "anonymous") return <ViewLogin onSignedIn={signIn} />;
+  if (session.status === "loading") return <AuthCheckingScreen />;
+  if (session.status === "anonymous") return <AccountLogin onSignedIn={signIn} />;
 
   return (
     <DataProvider>
-      <Dashboard onSignOut={signOut} />
+      <Dashboard user={session.user} onSignOut={signOut} />
     </DataProvider>
   );
 }
 
-function Dashboard({ onSignOut }: { onSignOut: () => void }) {
+function Dashboard({ user, onSignOut }: { user: Account; onSignOut: () => void }) {
   const { meta, documents, contracts, payments, correspondence, drawings } = useDataset();
   const [tab, setTab] = useState<TabId>("overview");
   const [dark, setDark] = useState(false);
 
+  const visibleTabs = tabsFor(user);
+
   useEffect(() => {
     setDark(document.documentElement.getAttribute("data-theme") === "dark");
     const fromHash = window.location.hash.replace("#", "");
-    if (TABS.some((t) => t.id === fromHash)) setTab(fromHash as TabId);
-  }, []);
+    if (tabsFor(user).some((t) => t.id === fromHash)) setTab(fromHash as TabId);
+  }, [user]);
+
+  // A role can change under a live session — the Users tab can demote its own
+  // owner — so the selected tab is re-checked on every render, not just at
+  // mount. Falling back to Тойм is always allowed.
+  const activeTab = visibleTabs.some((t) => t.id === tab) ? tab : "overview";
 
   const hints: Record<TabId, string> = {
     overview: "Төслийн ерөнхий байдал",
@@ -130,6 +157,7 @@ function Dashboard({ onSignOut }: { onSignOut: () => void }) {
     drawings: `${drawings.length} багц`,
     audit: "Өгөгдлийн үнэн зөв байдал",
     review: "AI-аар задалсан шинэ баримт — админ",
+    users: "Эрх, нууц үг удирдах",
   };
 
   const toggleTheme = () => {
@@ -165,12 +193,12 @@ function Dashboard({ onSignOut }: { onSignOut: () => void }) {
             <SidebarGroupLabel>Төслийн хяналт</SidebarGroupLabel>
             <SidebarGroupContent>
               <SidebarMenu>
-                {TABS.map((item) => {
+                {visibleTabs.map((item) => {
                   const Icon = item.icon;
                   return (
                     <SidebarMenuItem key={item.id}>
                       <Button
-                        variant={tab === item.id ? "secondary" : "ghost"}
+                        variant={activeTab === item.id ? "secondary" : "ghost"}
                         className="w-full justify-start gap-2 text-sidebar-foreground hover:bg-sidebar-accent hover:text-sidebar-accent-foreground"
                         title={hints[item.id]}
                         onClick={() => go(item.id)}
@@ -211,7 +239,14 @@ function Dashboard({ onSignOut }: { onSignOut: () => void }) {
             <Badge variant="secondary" className="hidden tnum sm:inline-flex">
               {num(meta.fileCount)} баримт
             </Badge>
-            <SyncButton />
+            {atLeast(user, "editor") && <SyncButton />}
+            <span
+              className="hidden max-w-[22ch] truncate text-xs md:inline"
+              style={{ color: "var(--text-muted)" }}
+              title={`${user.username} — ${ROLE_LABEL[user.role]}`}
+            >
+              {user.username} · {ROLE_LABEL[user.role]}
+            </span>
             <SignOutButton onSignOut={onSignOut} />
             <Button
               variant="outline"
@@ -226,14 +261,15 @@ function Dashboard({ onSignOut }: { onSignOut: () => void }) {
         </header>
 
         <main className="dashboard-content mx-auto w-full max-w-[1500px] px-3 py-3 sm:px-4 sm:py-4">
-          {tab === "overview" && <Overview />}
-          {tab === "contracts" && <Contracts />}
-          {tab === "payments" && <Payments />}
-          {tab === "documents" && <Documents />}
-          {tab === "correspondence" && <CorrespondenceView />}
-          {tab === "drawings" && <Drawings />}
-          {tab === "audit" && <Audit />}
-          {tab === "review" && <Review />}
+          {activeTab === "overview" && <Overview />}
+          {activeTab === "contracts" && <Contracts />}
+          {activeTab === "payments" && <Payments />}
+          {activeTab === "documents" && <Documents />}
+          {activeTab === "correspondence" && <CorrespondenceView />}
+          {activeTab === "drawings" && <Drawings />}
+          {activeTab === "audit" && <Audit />}
+          {activeTab === "review" && <Review />}
+          {activeTab === "users" && <Users me={user} />}
         </main>
 
         <footer className="mx-auto w-full max-w-[1500px] px-3 pb-6 text-xs text-muted-foreground sm:px-4">

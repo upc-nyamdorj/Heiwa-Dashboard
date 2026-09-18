@@ -16,9 +16,6 @@ interface PendingRecord {
 
 export default function Review() {
   const [authed, setAuthed] = useState<boolean | null>(null);
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [loginError, setLoginError] = useState(false);
   const [records, setRecords] = useState<PendingRecord[] | null>(null);
   const [loadError, setLoadError] = useState<string | null>(null);
 
@@ -46,49 +43,17 @@ export default function Review() {
 
   useEffect(() => { loadRecords(); }, [loadRecords]);
 
-  async function login() {
-    setLoginError(false);
-    try {
-      const res = await fetch('/api/review-login', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ username, password }),
-      });
-      if (res.ok) {
-        await loadRecords();
-      } else {
-        setLoginError(true);
-      }
-    } catch {
-      setLoginError(true);
-    }
-  }
 
   if (authed === null) {
     return <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Ачааллаж байна…</p>;
   }
 
   if (!authed) {
+    // The tab is only shown to an admin, so landing here means the session
+    // ended underneath us rather than that credentials are needed.
     return (
-      <Card title="Админ нэвтрэх" subtitle="Зөвхөн шинэ баримт баталгаажуулах эрхтэй хэрэглэгчид зориулав">
-        <div className="max-w-xs space-y-3">
-          <Input
-            placeholder="Хэрэглэгчийн нэр"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-          <Input
-            type="password"
-            placeholder="Нууц үг"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            onKeyDown={(e) => { if (e.key === 'Enter') login(); }}
-          />
-          {loginError && (
-            <p className="text-xs" style={{ color: 'var(--status-critical)' }}>Буруу байна.</p>
-          )}
-          <Button onClick={login} disabled={!username || !password}>Нэвтрэх</Button>
-        </div>
+      <Card title="Нэвтрэлт дууссан" subtitle="Хуудсыг дахин ачаалж нэвтэрнэ үү">
+        <Button onClick={() => window.location.reload()}>Дахин ачаалах</Button>
       </Card>
     );
   }

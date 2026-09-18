@@ -19,7 +19,7 @@ const NOT_CONFIGURED =
 const NETWORK_ERROR =
   "Сүлжээний алдаа гарлаа — холболтоо шалгаад дахин оролдоно уу.";
 
-export function ViewLogin({ onSignedIn }: { onSignedIn: () => void }) {
+export function AccountLogin({ onSignedIn }: { onSignedIn: () => void }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
@@ -32,7 +32,7 @@ export function ViewLogin({ onSignedIn }: { onSignedIn: () => void }) {
     setBusy(true);
     setError(null);
     try {
-      const res = await fetch("/api/view-auth/login", {
+      const res = await fetch("/api/session/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         credentials: "same-origin",
@@ -57,7 +57,7 @@ export function ViewLogin({ onSignedIn }: { onSignedIn: () => void }) {
         <CardHeader>
           <CardTitle>Нэвтрэх</CardTitle>
           <CardDescription>
-            Самбарын мэдээлэл харахын тулд нэвтэрнэ үү.
+            Самбарын мэдээлэл харахын тулд ажлын акаунтаараа нэвтэрнэ үү.
           </CardDescription>
         </CardHeader>
         <CardContent>
