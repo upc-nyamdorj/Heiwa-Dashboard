@@ -1,0 +1,54 @@
+name: Backfill source-file links
+
+# Manual only. This rewrites worker/data/heiwa.json, and the matching between a
+# stored filename and a file in SharePoint is heuristic — run it dry first and
+# read the report before letting it write.
+on:
+  workflow_dispatch:
+    inputs:
+      write:
+        description: 'Apply the changes and commit (unchecked = report only, nothing written)'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  backfill:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Backfill source-file links
+        env:
+          AZURE_TENANT_ID: ${{ secrets.AZURE_TENANT_ID }}
+          AZURE_CLIENT_ID: ${{ secrets.AZURE_CLIENT_ID }}
+          AZURE_CLIENT_SECRET: ${{ secrets.AZURE_CLIENT_SECRET }}
+          ONEDRIVE_DRIVE_ID: ${{ vars.ONEDRIVE_DRIVE_ID }}
+          ONEDRIVE_FOLDER_ID: ${{ vars.ONEDRIVE_FOLDER_ID }}
+        run: |
+          ARGS=""
+          if [ "${{ inputs.write }}" = "true" ]; then ARGS="--write"; fi
+          node scripts/backfill-source-files.mjs $ARGS
+
+      - name: Commit the links
+        if: ${{ inputs.write }}
+        run: |
+          if git diff --quiet -- worker/data/heiwa.json; then
+            echo "No change to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add worker/data/heiwa.json
+          git commit -m "chore: backfill sourceFile links from SharePoint"
+          git push

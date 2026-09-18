@@ -132,3 +132,27 @@ Nothing to do here — `.github/workflows/onedrive-sync.yml`'s `schedule`
 trigger is already active once this PR merges to `main`. It runs once a
 day regardless; the manual runs above were just for calibration before
 trusting it unattended.
+
+## 10. One-off: backfill source-file links
+
+Rows that were already in the dataset before `sourceFile` existed have no link
+back to their PDF, so the dashboard shows no "open in OneDrive" icon for them.
+`scripts/backfill-source-files.mjs` matches them to the files actually in
+SharePoint, by filename and then by folder.
+
+Run it from GitHub → Actions → "Backfill source-file links". Leave **write**
+unchecked the first time: it walks the folder, reports how many rows it would
+link, and names the ones it could not match or could not tell apart. Nothing is
+written on a dry run.
+
+Read that report before re-running with **write** checked. The matching is
+heuristic — a filename in the dataset against a filename in SharePoint — so a
+file that has been renamed since the original extraction will show up as
+unmatched rather than being linked to the wrong thing. Ambiguous names (the
+same filename in two folders) are reported, never guessed.
+
+It is safe to run more than once: rows that already carry a link are skipped,
+so a second pass only picks up whatever the first could not.
+
+Drawings, audit and spotCheck are not backfillable — they describe the archive
+rather than any one file in it, and carry no filename.

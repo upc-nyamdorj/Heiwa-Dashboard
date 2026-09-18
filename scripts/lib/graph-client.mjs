@@ -42,6 +42,39 @@ export async function listFolderChildren({ accessToken, driveId, folderId, fetch
   return items.filter((i) => i.file);
 }
 
+/**
+ * Every file under the sync folder, recursively, each tagged with the folder
+ * path it was found in (relative to the sync folder, "" at the top).
+ *
+ * listFolderChildren above is deliberately shallow — the daily sync only looks
+ * at the top level. The one-off backfill needs the whole tree, because the
+ * paths recorded in the dataset are nested.
+ */
+export async function listFolderTree({ accessToken, driveId, folderId, fetchImpl = fetch }) {
+  const out = [];
+  const queue = [{ id: folderId, path: '' }];
+
+  while (queue.length) {
+    const { id, path: folderPath } = queue.shift();
+    let url = `${GRAPH_BASE}/drives/${driveId}/items/${id}/children`
+      + '?$select=id,name,webUrl,file,folder';
+    while (url) {
+      const res = await fetchImpl(url, { headers: { Authorization: `Bearer ${accessToken}` } });
+      if (!res.ok) {
+        throw new Error(`Graph list children failed: ${res.status} ${await res.text()}`);
+      }
+      const data = await res.json();
+      for (const item of data.value ?? []) {
+        const childPath = folderPath ? `${folderPath}/${item.name}` : item.name;
+        if (item.folder) queue.push({ id: item.id, path: childPath });
+        else if (item.file) out.push({ id: item.id, name: item.name, webUrl: item.webUrl, folderPath });
+      }
+      url = data['@odata.nextLink'] ?? null;
+    }
+  }
+  return out;
+}
+
 export async function downloadFileContent({ accessToken, driveId, itemId, fetchImpl = fetch }) {
   const res = await fetchImpl(`${GRAPH_BASE}/drives/${driveId}/items/${itemId}/content`, {
     headers: { Authorization: `Bearer ${accessToken}` },
