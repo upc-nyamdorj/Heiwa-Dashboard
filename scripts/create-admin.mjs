@@ -21,21 +21,43 @@ import { hashPassword } from './lib/pbkdf2.mjs';
 const ROLES = ['viewer', 'editor', 'admin'];
 const MIN_PASSWORD = 10;
 
-function ask(prompt, { hidden = false } = {}) {
-  const rl = readline.createInterface({ input: process.stdin, output: process.stdout, terminal: true });
-  if (hidden) {
-    // Swallow the echo of everything but the prompt itself.
-    rl._writeToOutput = (chunk) => {
-      if (chunk.startsWith(prompt)) rl.output.write(prompt);
-    };
-  }
-  return new Promise((resolve) => {
-    rl.question(prompt, (answer) => {
-      if (hidden) rl.output.write('\n');
-      rl.close();
-      resolve(answer);
+/**
+ * Two ways of reading answers, because one does not cover both cases.
+ *
+ * At a terminal, readline asks question by question and suppresses the echo of
+ * the password. Over a pipe it cannot: readline drains the whole stream as soon
+ * as it is attached and emits every line at once, so only the first
+ * rl.question() ever sees input and the second hangs forever. For that case the
+ * script reads stdin in full up front and hands out the lines in order, which
+ * also makes it drivable from a heredoc.
+ */
+async function createPrompt() {
+  if (process.stdin.isTTY) {
+    const rl = readline.createInterface({
+      input: process.stdin, output: process.stdout, terminal: true,
     });
-  });
+    const ask = (prompt, { hidden = false } = {}) => new Promise((resolve) => {
+      rl._writeToOutput = hidden
+        ? (chunk) => { if (chunk.startsWith(prompt)) rl.output.write(prompt); }
+        : (chunk) => rl.output.write(chunk);
+      rl.question(prompt, (answer) => {
+        if (hidden) rl.output.write('\n');
+        resolve(answer.trim());
+      });
+    });
+    return { ask, close: () => rl.close() };
+  }
+
+  const chunks = [];
+  for await (const chunk of process.stdin) chunks.push(chunk);
+  const lines = Buffer.concat(chunks).toString('utf8').split('\n');
+  const ask = async (prompt) => {
+    process.stdout.write(prompt);
+    const answer = (lines.shift() ?? '').trim();
+    process.stdout.write('\n');
+    return answer;
+  };
+  return { ask, close: () => {} };
 }
 
 /** SQL string literal — the only user input that reaches the statement. */
@@ -44,10 +66,11 @@ function quote(value) {
 }
 
 async function main() {
+  const { ask, close } = await createPrompt();
   const local = process.argv.slice(2).includes('--local');
   console.log(`Creating an account in the ${local ? 'LOCAL (wrangler dev)' : 'PRODUCTION'} database.\n`);
 
-  const username = (await ask('Username: ')).trim();
+  const username = await ask('Username: ');
   if (!username) throw new Error('Username cannot be empty.');
 
   const password = await ask('Password (not echoed): ', { hidden: true });
@@ -57,8 +80,10 @@ async function main() {
   const again = await ask('Repeat password: ', { hidden: true });
   if (password !== again) throw new Error('The two passwords do not match.');
 
-  const roleInput = (await ask(`Role [${ROLES.join('/')}] (default admin): `)).trim() || 'admin';
+  const roleInput = (await ask(`Role [${ROLES.join('/')}] (default admin): `)) || 'admin';
   if (!ROLES.includes(roleInput)) throw new Error(`Role must be one of: ${ROLES.join(', ')}`);
+
+  close();
 
   const now = new Date().toISOString();
   const sql = 'INSERT INTO users (id, username, username_key, password_hash, role, created_at, updated_at)'
