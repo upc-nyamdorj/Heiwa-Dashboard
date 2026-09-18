@@ -3,7 +3,10 @@
  * Token shape: `${username}.${expiryUnixSeconds}.${hexSignature}`.
  */
 
+/** Gates the Review tab's write access to the repo. */
 export const COOKIE_NAME = 'heiwa_admin_session';
+/** Gates the dashboard itself — a separate, lesser grant on its own secret. */
+export const VIEW_COOKIE_NAME = 'heiwa_view_session';
 const SESSION_TTL_SECONDS = 60 * 60; // 1 hour, per spec — simple, no refresh flow
 
 export async function hmacKey(secret: string): Promise<CryptoKey> {
@@ -58,6 +61,10 @@ export function parseCookie(header: string | null, name: string): string | undef
   return match?.slice(name.length + 1);
 }
 
-export function sessionCookieHeader(token: string): string {
-  return `${COOKIE_NAME}=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${SESSION_TTL_SECONDS}`;
+export function sessionCookieHeader(token: string, name = COOKIE_NAME): string {
+  return `${name}=${token}; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=${SESSION_TTL_SECONDS}`;
+}
+
+export function clearSessionCookieHeader(name = COOKIE_NAME): string {
+  return `${name}=; HttpOnly; Secure; SameSite=Strict; Path=/; Max-Age=0`;
 }

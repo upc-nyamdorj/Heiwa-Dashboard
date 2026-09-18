@@ -34,9 +34,10 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { SyncButton } from "@/components/SyncButton";
 import { SyncStatusBadge } from "@/components/SyncStatusBadge";
-import { AuthCheckingScreen, LoginScreen } from "@/components/LoginScreen";
-import { UserMenu } from "@/components/UserMenu";
-import { useSession } from "@/hooks/use-session";
+import { AuthCheckingScreen } from "@/components/login-shell";
+import { ViewLogin } from "@/components/ViewLogin";
+import { SignOutButton } from "@/components/SignOutButton";
+import { useViewSession } from "@/hooks/use-view-session";
 import {
   Sidebar,
   SidebarContent,
@@ -106,7 +107,7 @@ const TABS = [
 type TabId = (typeof TABS)[number]["id"];
 
 export default function Page() {
-  const { session, signOut } = useSession();
+  const { session, signIn, signOut } = useViewSession();
   const [tab, setTab] = useState<TabId>("overview");
   const [dark, setDark] = useState(false);
 
@@ -135,9 +136,9 @@ export default function Page() {
 
   // Every hook above runs unconditionally; the gate is the last thing before
   // the tree, so no dashboard view is mounted — and no figure rendered — until
-  // /api/auth/me has confirmed a session.
-  if (session.status === "loading") return <AuthCheckingScreen />;
-  if (session.status === "anonymous") return <LoginScreen />;
+  // /api/view-auth/me has confirmed a session.
+  if (session === "loading") return <AuthCheckingScreen />;
+  if (session === "anonymous") return <ViewLogin onSignedIn={signIn} />;
 
   return (
     <SidebarProvider>
@@ -202,7 +203,7 @@ export default function Page() {
               {num(meta.fileCount)} баримт
             </Badge>
             <SyncButton />
-            <UserMenu user={session.user} onSignOut={signOut} />
+            <SignOutButton onSignOut={signOut} />
             <Button
               variant="outline"
               size="icon"

@@ -3,6 +3,7 @@
 import React, { useEffect, useState } from "react";
 import { AlertCircle } from "lucide-react";
 import { MicrosoftSignInButton } from "@/components/MicrosoftSignInButton";
+import { LoginLayout } from "@/components/login-shell";
 import {
   Card,
   CardContent,
@@ -33,45 +34,6 @@ function errorFromUrl(): string | null {
   if (typeof window === "undefined") return null;
   const code = new URLSearchParams(window.location.search).get("error");
   return code ? (ERROR_MESSAGES[code] ?? GENERIC_ERROR) : null;
-}
-
-function BrandMark() {
-  return (
-    <div className="flex items-center justify-center gap-2">
-      <div className="flex size-8 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground">
-        H
-      </div>
-      <span className="text-base font-semibold">Хэйва хотхон</span>
-    </div>
-  );
-}
-
-/** Shared shell so the checking and signed-out states do not jump on resolve. */
-function LoginLayout({ children }: { children: React.ReactNode }) {
-  return (
-    <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-background px-4 py-10">
-      <BrandMark />
-      <div className="w-full max-w-sm">{children}</div>
-      <p className="max-w-sm text-center text-xs text-muted-foreground">
-        UPH Heiwa Project — төслийн хяналтын самбар
-      </p>
-    </div>
-  );
-}
-
-/**
- * Shown while /api/auth/me is in flight. Deliberately not a spinner: the check
- * is one same-origin request, and a spinner that flashes for 80ms reads as a
- * glitch. Reduced-motion users get nothing moving either way.
- */
-export function AuthCheckingScreen() {
-  return (
-    <LoginLayout>
-      <p className="text-center text-sm text-muted-foreground">
-        Нэвтрэлт шалгаж байна…
-      </p>
-    </LoginLayout>
-  );
 }
 
 export function LoginScreen() {

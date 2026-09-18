@@ -3,6 +3,7 @@ import { handleReviewLogin } from './review-login';
 import { handleReviewList } from './review-list';
 import { handleReviewAction } from './review-action';
 import { handleAuthLogin, handleAuthCallback, handleAuthMe, handleAuthLogout } from './auth';
+import { handleViewLogin, handleViewLogout, handleViewMe } from './view-auth';
 import type { Env } from './env';
 
 /**
@@ -48,6 +49,12 @@ function dispatch(route: string, request: Request, env: Env): Promise<Response> 
       return handleReviewList(request, env);
     case '/api/review-action':
       return handleReviewAction(request, env);
+    case '/api/view-auth/login':
+      return handleViewLogin(request, env);
+    case '/api/view-auth/logout':
+      return handleViewLogout(request);
+    case '/api/view-auth/me':
+      return handleViewMe(request, env);
     case '/api/auth/login':
       return handleAuthLogin(request, env);
     case '/api/auth/callback':
