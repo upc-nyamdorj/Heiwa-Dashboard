@@ -19,8 +19,27 @@ interface AssetsBinding {
   fetch(request: Request): Promise<Response>;
 }
 
+/**
+ * Structural, not the ambient `D1Database`, for the same reason AssetsBinding
+ * above is hand-written: this file has been type-checked under the root
+ * tsconfig, where the Workers ambient types are not in scope. These four
+ * methods are all the user store uses.
+ */
+interface UsersStatement {
+  bind(...values: unknown[]): UsersStatement;
+  first<T = unknown>(): Promise<T | null>;
+  all<T = unknown>(): Promise<{ results: T[] }>;
+  run(): Promise<unknown>;
+}
+
+export interface UsersDatabase {
+  prepare(query: string): UsersStatement;
+}
+
 export interface Env {
   ASSETS: AssetsBinding;
+  /** Accounts and roles — see migrations/0001_users.sql. */
+  USERS_DB: UsersDatabase;
   SYNC_PASSWORD: string;
   ADMIN_USERNAME: string;
   ADMIN_PASSWORD: string;

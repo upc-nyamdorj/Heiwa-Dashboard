@@ -24,6 +24,9 @@ const FINAL_RECORD = {
 function makeEnv(overrides: Partial<Env> = {}): Env {
   return {
     ASSETS: { fetch: async () => new Response('asset') } as unknown as Env['ASSETS'],
+    USERS_DB: {
+      prepare: () => { throw new Error('USERS_DB not stubbed in this test'); },
+    } as unknown as Env['USERS_DB'],
     SYNC_PASSWORD: 'p', ADMIN_USERNAME: 'admin', ADMIN_PASSWORD: 'pw',
     ADMIN_SESSION_SECRET: 'admin-secret', GITHUB_PAT: 'pat',
     GITHUB_OWNER: 'owner', GITHUB_REPO: 'repo',

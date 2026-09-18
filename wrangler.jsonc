@@ -3,6 +3,13 @@
   "name": "heiwa-dashboard",
   "compatibility_date": "2026-08-25",
   "main": "worker/index.ts",
+  "d1_databases": [
+    {
+      "binding": "USERS_DB",
+      "database_name": "heiwa-dashboard-users",
+      "database_id": "4c14ba9d-351b-49b6-84fc-e6f9baf6524c"
+    }
+  ],
   "assets": {
     "directory": "out",
     "binding": "ASSETS",

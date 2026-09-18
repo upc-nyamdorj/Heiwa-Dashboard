@@ -11,6 +11,9 @@ function makeEnv(overrides: Partial<Env> = {}): Env {
         return new Response('asset', { status: 200 });
       },
     } as unknown as Env['ASSETS'],
+    USERS_DB: {
+      prepare: () => { throw new Error('USERS_DB not stubbed in this test'); },
+    } as unknown as Env['USERS_DB'],
     SYNC_PASSWORD: 'sync-pw',
     ADMIN_USERNAME: 'admin',
     ADMIN_PASSWORD: 'admin-pw',

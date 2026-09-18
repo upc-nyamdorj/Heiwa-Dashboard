@@ -11,6 +11,7 @@
  */
 
 import { hmacKey, toHex, timingSafeEqualString } from './session';
+import { b64urlEncode, b64urlDecode } from './encoding';
 
 /** Session minted after a successful Microsoft sign-in. */
 export const MS_SESSION_COOKIE = 'heiwa_ms_session';
@@ -39,20 +40,6 @@ export interface OAuthTx {
 
 export function nowSeconds(): number {
   return Math.floor(Date.now() / 1000);
-}
-
-function b64urlEncode(bytes: Uint8Array): string {
-  let binary = '';
-  for (const byte of bytes) binary += String.fromCharCode(byte);
-  return btoa(binary).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
-}
-
-function b64urlDecode(value: string): Uint8Array {
-  const padding = value.length % 4 === 0 ? '' : '='.repeat(4 - (value.length % 4));
-  const binary = atob(value.replace(/-/g, '+').replace(/_/g, '/') + padding);
-  const bytes = new Uint8Array(binary.length);
-  for (let i = 0; i < binary.length; i += 1) bytes[i] = binary.charCodeAt(i);
-  return bytes;
 }
 
 /** `${base64urlJsonPayload}.${hexSignature}` */
