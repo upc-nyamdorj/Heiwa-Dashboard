@@ -7,3 +7,6 @@ next-env.d.ts
 .dev.vars
 heiwa-dashboard.html
 .DS_Store
+
+# Bulk account input — real credentials, never committed
+scripts/.bulk-users.local.*
