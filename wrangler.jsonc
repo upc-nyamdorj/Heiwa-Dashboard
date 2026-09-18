@@ -3,6 +3,14 @@
   "name": "heiwa-dashboard",
   "compatibility_date": "2026-08-25",
   "main": "worker/index.ts",
+  // Not secrets — the repo this Worker commits to. Kept here rather than as
+  // dashboard variables: set only in the dashboard they are invisible to
+  // `wrangler deploy`, and when they went missing the Sync button and the
+  // Review tab both failed with a GitHub 404 on /repos/undefined/undefined/.
+  "vars": {
+    "GITHUB_OWNER": "upc-nyamdorj",
+    "GITHUB_REPO": "Heiwa-Dashboard"
+  },
   "d1_databases": [
     {
       "binding": "USERS_DB",
