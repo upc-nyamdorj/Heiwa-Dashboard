@@ -13,12 +13,12 @@
 
 import dataset from './data/heiwa.json';
 import { jsonResponse } from '../cf/lib/response';
-import { hasViewAccess } from './view-auth';
+import { canViewDashboard } from './auth-session';
 import type { Env } from './env';
 
 export async function handleData(request: Request, env: Env): Promise<Response> {
   if (request.method !== 'GET') return jsonResponse({ error: 'method_not_allowed' }, 405);
-  if (!(await hasViewAccess(request, env))) return jsonResponse({ error: 'unauthorized' }, 401);
+  if (!(await canViewDashboard(request, env))) return jsonResponse({ error: 'unauthorized' }, 401);
 
   // Serialised once per request rather than cached: the routing boundary marks
   // every /api response no-store, and a stale copy of the dataset in an edge

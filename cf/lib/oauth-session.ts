@@ -10,8 +10,10 @@
  * transaction and the resulting session live entirely in signed cookies.
  */
 
-import { hmacKey, toHex, timingSafeEqualString } from './session';
 import { b64urlEncode, b64urlDecode } from './encoding';
+import { nowSeconds, signToken, verifyToken } from './signed-token';
+
+export { nowSeconds, signToken, verifyToken };
 
 /** Session minted after a successful Microsoft sign-in. */
 export const MS_SESSION_COOKIE = 'heiwa_ms_session';
@@ -36,44 +38,6 @@ export interface OAuthTx {
   verifier: string;
   next: string;
   exp: number;
-}
-
-export function nowSeconds(): number {
-  return Math.floor(Date.now() / 1000);
-}
-
-/** `${base64urlJsonPayload}.${hexSignature}` */
-export async function signToken(payload: Record<string, unknown>, secret: string): Promise<string> {
-  const body = b64urlEncode(new TextEncoder().encode(JSON.stringify(payload)));
-  const key = await hmacKey(secret);
-  const sig = toHex(await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(body)));
-  return `${body}.${sig}`;
-}
-
-/** Verifies the signature before parsing, so malformed JSON never reaches JSON.parse unsigned. */
-export async function verifyToken<T extends { exp: number }>(
-  token: string | undefined,
-  secret: string,
-): Promise<T | null> {
-  if (!token) return null;
-  const separator = token.indexOf('.');
-  if (separator < 1) return null;
-  const body = token.slice(0, separator);
-  const sig = token.slice(separator + 1);
-  if (sig.includes('.')) return null;
-
-  const key = await hmacKey(secret);
-  const expected = toHex(await crypto.subtle.sign('HMAC', key, new TextEncoder().encode(body)));
-  if (!timingSafeEqualString(expected, sig)) return null;
-
-  let parsed: T;
-  try {
-    parsed = JSON.parse(new TextDecoder().decode(b64urlDecode(body)));
-  } catch {
-    return null;
-  }
-  if (!parsed || typeof parsed.exp !== 'number' || parsed.exp < nowSeconds()) return null;
-  return parsed;
 }
 
 /**

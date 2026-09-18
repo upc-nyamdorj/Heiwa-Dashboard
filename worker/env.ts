@@ -49,7 +49,9 @@ export interface Env {
   GITHUB_REPO: string;
   /** Delegated 'Sign in with Microsoft' app registration — separate from the
    *  app-only one the OneDrive sync uses (AZURE_* in GitHub Actions). */
-  /** The shared viewer account that gates the dashboard and /api/data. */
+  /** Signs the account session cookie (worker/auth-session.ts). */
+  SESSION_SECRET: string;
+  /** DEPRECATED: the shared logins the account system replaces. */
   VIEW_USERNAME: string;
   VIEW_PASSWORD: string;
   VIEW_SESSION_SECRET: string;

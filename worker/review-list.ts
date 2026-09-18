@@ -1,6 +1,7 @@
 import { getFile, decodeBase64Json } from '../cf/lib/github';
 import { verifySessionToken, parseCookie, COOKIE_NAME } from '../cf/lib/session';
 import { jsonResponse } from '../cf/lib/response';
+import { atLeast, currentUser } from './auth-session';
 import type { Env } from './env';
 
 const PENDING_PATH = 'data-private/pending-review.json';
@@ -8,9 +9,15 @@ const PENDING_PATH = 'data-private/pending-review.json';
 export async function handleReviewList(request: Request, env: Env): Promise<Response> {
   if (request.method !== 'GET') return jsonResponse({ error: 'method_not_allowed' }, 405);
 
-  const token = parseCookie(request.headers.get('Cookie'), COOKIE_NAME);
-  const session = await verifySessionToken(token, env.ADMIN_SESSION_SECRET);
-  if (!session) return jsonResponse({ error: 'unauthorized' }, 401);
+  // An admin account, or the legacy shared admin cookie while accounts roll out.
+  const account = await currentUser(request, env);
+  if (!atLeast(account, 'admin')) {
+    const token = parseCookie(request.headers.get('Cookie'), COOKIE_NAME);
+    const legacy = env.ADMIN_SESSION_SECRET
+      ? await verifySessionToken(token, env.ADMIN_SESSION_SECRET)
+      : null;
+    if (!legacy) return jsonResponse({ error: account ? 'forbidden' : 'unauthorized' }, account ? 403 : 401);
+  }
 
   try {
     const file = await getFile({

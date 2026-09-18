@@ -27,6 +27,7 @@ function makeEnv(overrides: Partial<Env> = {}): Env {
     USERS_DB: {
       prepare: () => { throw new Error('USERS_DB not stubbed in this test'); },
     } as unknown as Env['USERS_DB'],
+    SESSION_SECRET: 'session-secret',
     SYNC_PASSWORD: 'p', ADMIN_USERNAME: 'admin', ADMIN_PASSWORD: 'pw',
     ADMIN_SESSION_SECRET: 'admin-secret', GITHUB_PAT: 'pat',
     GITHUB_OWNER: 'owner', GITHUB_REPO: 'repo',

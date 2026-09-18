@@ -5,6 +5,7 @@ import { jsonResponse } from '../cf/lib/response';
 import {
   ContractSchema, PaymentSchema, CorrespondenceSchema, QualityRowSchema, DrawingSchema,
 } from '../src/lib/schema';
+import { atLeast, currentUser } from './auth-session';
 import type { Env } from './env';
 
 const PENDING_PATH = 'data-private/pending-review.json';
@@ -41,9 +42,15 @@ interface PendingRecord {
 export async function handleReviewAction(request: Request, env: Env): Promise<Response> {
   if (request.method !== 'POST') return jsonResponse({ error: 'method_not_allowed' }, 405);
 
-  const token = parseCookie(request.headers.get('Cookie'), COOKIE_NAME);
-  const session = await verifySessionToken(token, env.ADMIN_SESSION_SECRET);
-  if (!session) return jsonResponse({ error: 'unauthorized' }, 401);
+  // An admin account, or the legacy shared admin cookie while accounts roll out.
+  const account = await currentUser(request, env);
+  if (!atLeast(account, 'admin')) {
+    const token = parseCookie(request.headers.get('Cookie'), COOKIE_NAME);
+    const legacy = env.ADMIN_SESSION_SECRET
+      ? await verifySessionToken(token, env.ADMIN_SESSION_SECRET)
+      : null;
+    if (!legacy) return jsonResponse({ error: account ? 'forbidden' : 'unauthorized' }, account ? 403 : 401);
+  }
 
   let body: { recordId?: string; decision?: 'approve' | 'reject'; finalRecord?: unknown };
   try {

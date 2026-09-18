@@ -5,6 +5,10 @@ import { handleReviewAction } from './review-action';
 import { handleAuthLogin, handleAuthCallback, handleAuthMe, handleAuthLogout } from './auth';
 import { handleViewLogin, handleViewLogout, handleViewMe } from './view-auth';
 import { handleData } from './dataset';
+import { handleLogin, handleLogout, handleMe, handleChangeOwnPassword } from './session-routes';
+import {
+  handleUsers, handleSetRole, handleResetPassword, handleDeleteUser,
+} from './user-routes';
 import type { Env } from './env';
 
 /**
@@ -50,6 +54,22 @@ function dispatch(route: string, request: Request, env: Env): Promise<Response> 
       return handleReviewList(request, env);
     case '/api/review-action':
       return handleReviewAction(request, env);
+    case '/api/session/login':
+      return handleLogin(request, env);
+    case '/api/session/logout':
+      return handleLogout(request);
+    case '/api/session/me':
+      return handleMe(request, env);
+    case '/api/session/password':
+      return handleChangeOwnPassword(request, env);
+    case '/api/users':
+      return handleUsers(request, env);
+    case '/api/users/role':
+      return handleSetRole(request, env);
+    case '/api/users/password':
+      return handleResetPassword(request, env);
+    case '/api/users/delete':
+      return handleDeleteUser(request, env);
     case '/api/data':
       return handleData(request, env);
     case '/api/view-auth/login':
