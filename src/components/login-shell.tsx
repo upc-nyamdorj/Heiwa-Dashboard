@@ -14,7 +14,7 @@ export function BrandMark() {
       <div className="flex size-8 items-center justify-center rounded-md bg-primary text-sm font-bold text-primary-foreground">
         H
       </div>
-      <span className="text-base font-semibold">Хэйва хотхон</span>
+      <span className="text-base font-semibold">Heiwa Төслийн Dashboard</span>
     </div>
   );
 }

@@ -185,7 +185,7 @@ function Dashboard({ user, onSignOut }: { user: Account; onSignOut: () => void }
             <div className="flex size-7 items-center justify-center rounded-md bg-sidebar-primary text-xs font-bold text-sidebar-primary-foreground">
               H
             </div>
-            <span className="truncate text-sm font-semibold">Хэйва хотхон</span>
+            <span className="truncate text-sm font-semibold">Heiwa Төслийн Dashboard</span>
           </div>
         </SidebarHeader>
         <SidebarContent>
@@ -228,7 +228,7 @@ function Dashboard({ user, onSignOut }: { user: Account; onSignOut: () => void }
           <SidebarTrigger className="no-print" />
           <div className="min-w-0 flex-1">
             <h1 className="truncate text-sm font-semibold">
-              Хэйва хотхон — төслийн хяналтын самбар
+              Heiwa Төслийн Dashboard
             </h1>
             <p className="truncate text-xs text-muted-foreground">
               {date(meta.dateMin)} – {date(meta.dateMax)}

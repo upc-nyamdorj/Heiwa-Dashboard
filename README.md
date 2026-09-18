@@ -1,4 +1,4 @@
-# Хэйва хотхон — төслийн хяналтын самбар
+# Heiwa Төслийн Dashboard
 
 **HEIWA RESIDENCE & CARE HOME** төслийн «UPH Heiwa Project» хавтасны 170 баримт
 бичгээс гаргасан интерактив хяналтын самбар. Next.js 15 (App Router) +

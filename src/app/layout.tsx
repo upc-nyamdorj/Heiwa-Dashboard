@@ -18,7 +18,7 @@ const golosText = Golos_Text({
 });
 
 export const metadata: Metadata = {
-  title: "Хэйва хотхон — Төслийн хяналтын самбар",
+  title: "Heiwa Төслийн Dashboard",
   description:
     "UPH Heiwa Project: баримт бичиг, гэрээ, санхүүжилт, захидал харилцаа, зургийн бүртгэлийн нэгдсэн хяналт.",
 };
