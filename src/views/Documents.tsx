@@ -232,6 +232,7 @@ export default function Documents() {
           columns={columns}
           initialSort={{ key: "date", dir: "desc" }}
           pageSize={20}
+          sourceUrl={(d) => d.sourceFile?.webUrl}
         />
       </Card>
 

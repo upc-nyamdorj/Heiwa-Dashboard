@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useMemo, useState } from "react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import {
@@ -21,6 +22,26 @@ export interface Column<T> {
   strong?: boolean;
 }
 
+/**
+ * Link out to the row's own PDF in SharePoint. Opening it is a separate
+ * authorisation from the dashboard's: the viewer needs their own Microsoft
+ * login on the site, which is the point — the dashboard never proxies the file.
+ */
+function SourceLink({ href }: { href: string }) {
+  return (
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      title="Эх файлыг OneDrive-д нээх"
+      aria-label="Эх файлыг OneDrive-д нээх"
+      className="inline-flex size-11 items-center justify-center rounded-md text-muted-foreground transition-colors hover:bg-muted hover:text-foreground focus-visible:ring-3 focus-visible:ring-ring/50 sm:size-7"
+    >
+      <ExternalLink className="size-3.5" aria-hidden="true" />
+    </a>
+  );
+}
+
 export function DataTable<T>({
   rows,
   columns,
@@ -28,6 +49,7 @@ export function DataTable<T>({
   pageSize = 25,
   dense = false,
   emptyText = "Мөр алга",
+  sourceUrl,
 }: {
   rows: T[];
   columns: Column<T>[];
@@ -35,6 +57,13 @@ export function DataTable<T>({
   pageSize?: number;
   dense?: boolean;
   emptyText?: string;
+  /**
+   * Where this row's source document lives, when it is known. Rows that
+   * return nothing simply get no icon — a disabled control would invite a
+   * click and explain nothing — and if no row in the whole set has one, the
+   * column is not rendered at all rather than sitting there empty.
+   */
+  sourceUrl?: (row: T) => string | null | undefined;
 }) {
   const [sort, setSort] = useState(
     initialSort ?? { key: columns[0].key, dir: "asc" as const },
@@ -55,6 +84,13 @@ export function DataTable<T>({
       return String(va).localeCompare(String(vb), "mn") * dir;
     });
   }, [rows, columns, sort]);
+
+  // Decided over every row, not the current page, so the column does not
+  // appear and vanish as you page through.
+  const hasSourceLinks = useMemo(
+    () => (sourceUrl ? rows.some((r) => sourceUrl(r)) : false),
+    [rows, sourceUrl],
+  );
 
   const pages = Math.max(1, Math.ceil(sorted.length / pageSize));
   const current = Math.min(page, pages - 1);
@@ -104,6 +140,11 @@ export function DataTable<T>({
                   </span>
                 </th>
               ))}
+              {hasSourceLinks && (
+                <th style={{ width: 1 }} className="no-print">
+                  <span className="sr-only">Эх файл</span>
+                </th>
+              )}
             </tr>
           </thead>
           <tbody>
@@ -122,12 +163,20 @@ export function DataTable<T>({
                     {c.render ? c.render(r) : (c.value(r) ?? "—")}
                   </td>
                 ))}
+                {hasSourceLinks && (
+                  <td className="no-print" style={{ width: 1 }}>
+                    {(() => {
+                      const href = sourceUrl?.(r);
+                      return href ? <SourceLink href={href} /> : null;
+                    })()}
+                  </td>
+                )}
               </tr>
             ))}
             {slice.length === 0 && (
               <tr>
                 <td
-                  colSpan={columns.length}
+                  colSpan={columns.length + (hasSourceLinks ? 1 : 0)}
                   className="py-6 text-center"
                   style={{ color: "var(--text-muted)" }}
                 >

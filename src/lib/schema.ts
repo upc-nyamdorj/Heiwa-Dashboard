@@ -30,6 +30,13 @@ export const MetaSchema = z.object({
   })),
 });
 
+/** Mirrors SourceFile in types.ts — see the note there on why it is optional. */
+export const SourceFileSchema = z.object({
+  name: z.string(),
+  webUrl: z.string(),
+  itemId: z.string(),
+});
+
 export const DocumentRowSchema = z.object({
   id: z.string(),
   path: z.string(),
@@ -52,6 +59,7 @@ export const DocumentRowSchema = z.object({
   isDuplicateFile: z.boolean(),
   supersededBy: z.string().nullable(),
   contractKey: z.string().nullable(),
+  sourceFile: SourceFileSchema.nullish(),
 });
 
 export const AmendmentSchema = z.object({
@@ -97,6 +105,7 @@ export const ContractSchema = z.object({
   paymentCount: z.number(),
   paidPercent: z.number().nullable(),
   rateBased: z.boolean(),
+  sourceFile: SourceFileSchema.nullish(),
 });
 
 export const PaymentSchema = z.object({
@@ -125,6 +134,7 @@ export const PaymentSchema = z.object({
   supersededBy: z.string().nullable(),
   counted: z.boolean(),
   notes: z.string().nullable(),
+  sourceFile: SourceFileSchema.nullish(),
 });
 
 export const CorrespondenceSchema = z.object({
@@ -139,6 +149,7 @@ export const CorrespondenceSchema = z.object({
   system: z.string().nullable(),
   direction: DirectionSchema,
   date: z.string().nullable(),
+  sourceFile: SourceFileSchema.nullish(),
 });
 
 export const QualityRowSchema = z.object({
@@ -151,6 +162,7 @@ export const QualityRowSchema = z.object({
   block: z.string().nullable(),
   amount: z.number().nullable(),
   notes: z.string().nullable(),
+  sourceFile: SourceFileSchema.nullish(),
 });
 
 export const DrawingSchema = z.object({
@@ -165,6 +177,7 @@ export const DrawingSchema = z.object({
   hasDigital: z.boolean(),
   status: z.string(),
   note: z.string().nullable(),
+  sourceFile: SourceFileSchema.nullish(),
 });
 
 export const AuditIssueSchema = z.object({

@@ -33,6 +33,8 @@ const COLLECTION_SCHEMAS: Record<string, z.ZodTypeAny> = {
 interface PendingRecord {
   id: string;
   extracted: { targetCollection: string };
+  /** Captured from Microsoft Graph at sync time — see the note on the push below. */
+  sourceFile?: { name: string; webUrl: string; itemId: string };
   status: 'pending' | 'approved' | 'rejected' | 'extraction-error';
 }
 
@@ -96,7 +98,17 @@ export async function handleReviewAction(request: Request, env: Env): Promise<Re
   if (!Array.isArray(dataset[collection])) {
     return jsonResponse({ error: 'unknown_collection', collection }, 500);
   }
-  dataset[collection].push(validation.data);
+  // The link back to SharePoint comes from the pending record, not from the
+  // form: the sync read it off Graph, so it is authoritative and there is
+  // nothing for an admin to retype or get wrong. Without this the field was
+  // dropped here — zod strips unknown keys, so even a hand-entered one would
+  // not have survived — and every approved row landed with no way back to its
+  // own PDF.
+  dataset[collection].push(
+    record.sourceFile
+      ? { ...(validation.data as Record<string, unknown>), sourceFile: record.sourceFile }
+      : validation.data,
+  );
 
   try {
     await putFile({

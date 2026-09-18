@@ -363,6 +363,7 @@ export default function Payments() {
           columns={columns}
           initialSort={{ key: "date", dir: "desc" }}
           pageSize={25}
+          sourceUrl={(p) => p.sourceFile?.webUrl}
         />
       </Card>
 

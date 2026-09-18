@@ -302,6 +302,7 @@ export default function Contracts() {
           columns={columns}
           initialSort={{ key: "value", dir: "desc" }}
           pageSize={20}
+          sourceUrl={(c) => c.sourceFile?.webUrl}
         />
         {openContract && <ContractDetail contract={openContract} />}
       </Card>

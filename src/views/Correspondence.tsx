@@ -188,7 +188,8 @@ export default function CorrespondenceView() {
           </div>
         }>
         <DataTable rows={filtered} columns={columns}
-          initialSort={{ key: 'date', dir: 'desc' }} pageSize={20} />
+          initialSort={{ key: 'date', dir: 'desc' }} pageSize={20}
+          sourceUrl={(c) => c.sourceFile?.webUrl} />
       </Card>
 
       <Card title="Чанарын баримт"

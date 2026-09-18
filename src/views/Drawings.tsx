@@ -307,6 +307,7 @@ export default function Drawings() {
           initialSort={{ key: "no", dir: "asc" }}
           pageSize={30}
           dense
+          sourceUrl={(d) => d.sourceFile?.webUrl}
         />
       </Card>
 

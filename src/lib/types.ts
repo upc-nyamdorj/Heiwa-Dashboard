@@ -1,5 +1,22 @@
 export type Direction = 'in' | 'out' | null;
 
+/**
+ * Where the row came from in SharePoint. Captured by the sync from Microsoft
+ * Graph (scripts/sync-onedrive.mjs) and carried into the dataset when an admin
+ * approves the record.
+ *
+ * Optional, and absent on everything backfilled before this existed — the UI
+ * treats "no sourceFile" as "no link to offer", never as an error.
+ */
+export interface SourceFile {
+  /** File name as it stands in the folder. */
+  name: string;
+  /** SharePoint URL — opening it requires the viewer's own Microsoft login. */
+  webUrl: string;
+  /** Graph drive-item id, stable across renames. */
+  itemId: string;
+}
+
 export interface Meta {
   project: string;
   client: string;
@@ -39,6 +56,7 @@ export interface DocumentRow {
   isDuplicateFile: boolean;
   supersededBy: string | null;
   contractKey: string | null;
+  sourceFile?: SourceFile | null;
 }
 
 export interface Amendment {
@@ -86,6 +104,7 @@ export interface Contract {
   paymentCount: number;
   paidPercent: number | null;
   rateBased: boolean;
+  sourceFile?: SourceFile | null;
 }
 
 export interface Payment {
@@ -114,6 +133,7 @@ export interface Payment {
   supersededBy: string | null;
   counted: boolean;
   notes: string | null;
+  sourceFile?: SourceFile | null;
 }
 
 export interface Correspondence {
@@ -128,6 +148,7 @@ export interface Correspondence {
   system: string | null;
   direction: Direction;
   date: string | null;
+  sourceFile?: SourceFile | null;
 }
 
 export interface QualityRow {
@@ -140,6 +161,7 @@ export interface QualityRow {
   block: string | null;
   amount: number | null;
   notes: string | null;
+  sourceFile?: SourceFile | null;
 }
 
 export interface Drawing {
@@ -154,6 +176,7 @@ export interface Drawing {
   hasDigital: boolean;
   status: string;
   note: string | null;
+  sourceFile?: SourceFile | null;
 }
 
 export interface AuditIssue {
