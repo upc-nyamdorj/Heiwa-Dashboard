@@ -18,14 +18,20 @@
  * Flags: --dry-run (list + diff only, no download/extraction/writes) ·
  * --limit=N (cap how many changed files this run processes — the lever for
  * calibrating real extraction cost on a small batch before an unlimited run) ·
- * --max-depth=N (how many subfolder levels to descend; default 8).
+ * --max-depth=N (how many subfolder levels to descend; default 8) ·
+ * --seed-state=all|linked (record files as already synced WITHOUT extracting
+ * them: every PDF, or only those worker/data/heiwa.json already links to;
+ * combine with --dry-run to see the counts without writing).
  */
+import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
   getAppOnlyToken, listFolderChildren, downloadFileContent, isPdf, DEFAULT_MAX_DEPTH,
 } from './lib/graph-client.mjs';
-import { loadSyncState, saveSyncState, diffAgainstState } from './lib/sync-state.mjs';
+import {
+  loadSyncState, saveSyncState, diffAgainstState, stateEntry, seedState, linkedItemIds,
+} from './lib/sync-state.mjs';
 import { loadPendingReview, savePendingReview } from './lib/pending-review-store.mjs';
 import { extractFromPdf, estimateCostUsd } from './lib/claude-extract.mjs';
 import { ExtractionResultSchema } from './lib/pending-review-schema.mjs';
@@ -36,13 +42,15 @@ const here = path.dirname(fileURLToPath(import.meta.url));
 const STATE_PATH = path.join(here, '.sync-state.json');
 const PENDING_REVIEW_PATH = path.join(here, '..', 'data-private', 'pending-review.json');
 const SYNC_STATUS_PATH = path.join(here, '..', 'src', 'data', 'sync-status.json');
+const DATASET_PATH = path.join(here, '..', 'worker', 'data', 'heiwa.json');
 
 function parseArgs(argv) {
-  const args = { dryRun: false, limit: null, maxDepth: DEFAULT_MAX_DEPTH };
+  const args = { dryRun: false, limit: null, maxDepth: DEFAULT_MAX_DEPTH, seedState: null };
   for (const a of argv) {
     if (a === '--dry-run') args.dryRun = true;
     else if (a.startsWith('--limit=')) args.limit = Number(a.slice('--limit='.length));
     else if (a.startsWith('--max-depth=')) args.maxDepth = Number(a.slice('--max-depth='.length));
+    else if (a.startsWith('--seed-state=')) args.seedState = a.slice('--seed-state='.length);
   }
   return args;
 }
@@ -74,6 +82,25 @@ async function main() {
   }
 
   const state = loadSyncState(STATE_PATH);
+
+  if (args.seedState) {
+    if (!['all', 'linked'].includes(args.seedState)) {
+      throw new Error(`--seed-state must be "all" or "linked", got "${args.seedState}"`);
+    }
+    const linkedIds = linkedItemIds(JSON.parse(readFileSync(DATASET_PATH, 'utf8')));
+    const { state: seeded, seeded: marked } = seedState(state, files, { mode: args.seedState, linkedIds });
+    const linkedCount = files.filter((f) => linkedIds.has(f.id)).length;
+    console.log(`--seed-state=${args.seedState}: ${linkedCount} of ${files.length} PDF(s) are linked from the dataset.`);
+    console.log(`Marking ${marked.length} file(s) as already synced; ${diffAgainstState(files, seeded).length} will still be extracted by the next sync.`);
+    if (args.dryRun) {
+      console.log('--dry-run: state not written.');
+    } else {
+      saveSyncState(STATE_PATH, seeded);
+      console.log(`Wrote ${STATE_PATH}.`);
+    }
+    return;
+  }
+
   let changed = diffAgainstState(files, state);
   console.log(`${changed.length} file(s) are new or changed since the last recorded sync.`);
 
@@ -130,7 +157,7 @@ async function main() {
   }
 
   for (const f of changed) {
-    state[f.id] = { eTag: f.eTag, lastModifiedDateTime: f.lastModifiedDateTime, name: f.name, path: f.path };
+    state[f.id] = stateEntry(f);
   }
   savePendingReview(PENDING_REVIEW_PATH, [...pending, ...newRecords]);
   saveSyncState(STATE_PATH, state);
