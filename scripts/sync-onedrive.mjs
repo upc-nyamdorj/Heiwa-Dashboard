@@ -33,7 +33,7 @@ import {
   loadSyncState, saveSyncState, diffAgainstState, stateEntry, seedState, linkedItemIds,
 } from './lib/sync-state.mjs';
 import { loadPendingReview, savePendingReview } from './lib/pending-review-store.mjs';
-import { extractFromPdf, estimateCostUsd } from './lib/claude-extract.mjs';
+import { extractFromPdf, estimateCostUsd, fitsInRequest } from './lib/claude-extract.mjs';
 import { ExtractionResultSchema } from './lib/pending-review-schema.mjs';
 import { writeSyncStatus } from './lib/sync-status.mjs';
 import { z } from 'zod';
@@ -102,6 +102,15 @@ async function main() {
   }
 
   let changed = diffAgainstState(files, state);
+
+  // Skipped before --limit so one oversized scan can't sink every batch. Not
+  // recorded in the state, so it stays visible here on every run.
+  const oversized = changed.filter((f) => !fitsInRequest(f));
+  if (oversized.length) {
+    changed = changed.filter(fitsInRequest);
+    console.warn(`Warning: skipping ${oversized.length} PDF(s) too large for one Claude request:`);
+    for (const f of oversized) console.warn(`  ${(f.size / 1024 / 1024).toFixed(1)} MB  ${f.path}`);
+  }
   console.log(`${changed.length} file(s) are new or changed since the last recorded sync.`);
 
   if (args.limit != null) {

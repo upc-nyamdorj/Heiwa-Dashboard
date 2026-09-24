@@ -83,6 +83,17 @@ export async function extractFromPdf({ apiKey, filename, pdfBase64, client }) {
   };
 }
 
+/**
+ * Largest PDF that fits one Messages request: the API caps a request at 32 MB
+ * and base64 inflates the file by 4/3, so ~24 MB raw is the ceiling. 23 MiB
+ * leaves room for the prompt and tool schemas.
+ */
+export const MAX_PDF_BYTES = 23 * 1024 * 1024;
+
+export function fitsInRequest(file) {
+  return (file.size ?? 0) <= MAX_PDF_BYTES;
+}
+
 /** $/1M tokens, Claude Opus 5. */
 const OPUS_5_PRICE = { input: 5, output: 25 };
 
