@@ -11,22 +11,19 @@ import { z } from 'zod';
  * under plain `node`, which can't load a .ts module without a build step.
  */
 
-// Factories, not shared instances: a zod schema reused across fields is
-// emitted into JSON Schema `$defs`, which the structured-outputs API rejects
-// alongside the union's `anyOf`.
-const isoDate = () => z.string().nullable()
+const isoDate = z.string().nullable()
   .describe('ISO date YYYY-MM-DD as printed in the document, or null if not present/legible');
-const money = () => z.number().nullable()
+const money = z.number().nullable()
   .describe('Plain number, no currency symbol or thousands separator, or null if not printed');
 
 export const ContractExtractionSchema = z.object({
   targetCollection: z.literal('contracts'),
   party: z.string().describe('The counterparty company name as printed'),
   contractNo: z.string().nullable(),
-  signedDate: isoDate(),
-  start: isoDate(),
-  end: isoDate(),
-  value: money(),
+  signedDate: isoDate,
+  start: isoDate,
+  end: isoDate,
+  value: money,
   currency: z.string().describe('e.g. MNT, USD'),
   vatIncluded: z.boolean().nullable(),
   advancePercent: z.number().nullable(),
@@ -40,10 +37,10 @@ export const PaymentExtractionSchema = z.object({
   party: z.string(),
   contractNo: z.string().nullable(),
   workName: z.string().nullable(),
-  date: isoDate(),
-  workPeriodStart: isoDate(),
-  workPeriodEnd: isoDate(),
-  amount: money(),
+  date: isoDate,
+  workPeriodStart: isoDate,
+  workPeriodEnd: isoDate,
+  amount: money,
   notes: z.string().nullable(),
 });
 
@@ -51,16 +48,16 @@ export const CorrespondenceExtractionSchema = z.object({
   targetCollection: z.literal('correspondence'),
   party: z.string(),
   direction: z.enum(['in', 'out']).nullable(),
-  date: isoDate(),
+  date: isoDate,
   docNo: z.string().nullable(),
 });
 
 export const QualityExtractionSchema = z.object({
   targetCollection: z.literal('quality'),
   party: z.string(),
-  date: isoDate(),
+  date: isoDate,
   block: z.string().nullable().describe('Building block(s) referenced, e.g. "A1" or "A1-A6"'),
-  amount: money(),
+  amount: money,
   notes: z.string().nullable(),
 });
 
