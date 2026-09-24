@@ -333,5 +333,339 @@
     },
     "status": "pending",
     "extractedAt": "2026-09-24T08:00:21.504Z"
+  },
+  {
+    "id": "pr-01NARTQN77MISWGNT6NBHKN6MPHLNTIHDM",
+    "sourceFile": {
+      "name": "003 UPH Талбайн даалгавар to Олл инженеринг ХХК 20260901.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/12.%20%D0%9E%D0%BB%D0%BB%20%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D0%BD%D0%B3%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80/003%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80%20to%20%D0%9E%D0%BB%D0%BB%20%D0%B8%D0%BD%D0%B6%D0%B5%D0%BD%D0%B5%D1%80%D0%B8%D0%BD%D0%B3%20%D0%A5%D0%A5%D0%9A%2020260901.pdf",
+      "itemId": "01NARTQN77MISWGNT6NBHKN6MPHLNTIHDM"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/12. Олл инженеринг сервис ХХК/Талбайн даалгавар/003 UPH Талбайн даалгавар to Олл инженеринг ХХК 20260901.pdf",
+    "extracted": {
+      "targetCollection": "correspondence",
+      "party": "\"Олл инженеринг\" ХХК",
+      "direction": "out",
+      "date": "2026-09-01",
+      "docNo": "003"
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:01:54.968Z"
+  },
+  {
+    "id": "pr-01NARTQNYHJ5BWEYX5UFGK6WBIJTFBJSGG",
+    "sourceFile": {
+      "name": "059 BI CWA  Эй фреш девелопмент ХХК 20260811.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/13.%20%D0%AD%D0%B9%20%D1%84%D1%80%D1%8D%D1%88%20%D0%B4%D0%B5%D0%B2%D0%B5%D0%BB%D0%BE%D0%BF%D0%BC%D0%B5%D0%BD%D1%82%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/059%20BI%20CWA%20%20%D0%AD%D0%B9%20%D1%84%D1%80%D0%B5%D1%88%20%D0%B4%D0%B5%D0%B2%D0%B5%D0%BB%D0%BE%D0%BF%D0%BC%D0%B5%D0%BD%D1%82%20%D0%A5%D0%A5%D0%9A%2020260811.pdf",
+      "itemId": "01NARTQNYHJ5BWEYX5UFGK6WBIJTFBJSGG"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/13. Эй фрэш девелопмент ХХК/Гэрээ/059 BI CWA  Эй фреш девелопмент ХХК 20260811.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Эй фреш девелопмент\" ХХК",
+      "contractNo": "26/059",
+      "signedDate": "2026-08-11",
+      "start": null,
+      "end": "2026-12-20",
+      "value": 427356451.81,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 30,
+      "retentionPercent": 5,
+      "scope": "A1-A6 барилгуудын салхивч, агаар сэлгэлтийн хоолойн үйлдвэрлэл, угсралт, суурилуулалтын ажил (HEIWA RESIDENCE & CARE HOME) — ventilation/air-conditioning ductwork fabrication and installation for blocks A1-A6",
+      "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract no. is handwritten, read as 26/059 (filename 059). Start date not a fixed date — counted from contract approval date. Price breakdown: A1-A4 59,956,054.00 each, A5 78,397,998.00, A6 90,731,328.40; subtotal 408,953,542.40; VAT 10% 40,895,354.24; total 449,848,896.64; discount 5% 22,492,444.83; final 427,356,451.81. Payment schedule: advance 30% = 128,206,935.54; financing 65% = 277,781,693.68; retention 5% released in 3 instalments (1.5% 6,410,346.78; 1.5% 6,410,346.78; 2% 8,547,129.04). Approval sheet lists budget line \"6. Ventilation\" 2,699,347,416 and special permit ЗТ19-846/22. Attached work-order sheet (Юнайтэд пропертийз холдинг ХХК) dated 2026-07-23 shows work start 2026-08-03. BOQ annex table headed \"Про эм эс ХХК\" — possible template/name inconsistency worth checking."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:02:31.975Z"
+  },
+  {
+    "id": "pr-01NARTQNZETRSNYSW5AJELSNRV2GCKMQ53",
+    "sourceFile": {
+      "name": "068 BI CWA Гурван булаг сод ХХК 20260828.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/15.%20%D0%93%D1%83%D1%80%D0%B2%D0%B0%D0%BD%20%D0%B1%D1%83%D0%BB%D0%B0%D0%B3%20%D1%81%D0%BE%D0%B4%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/068%20BI%20CWA%20%D0%93%D1%83%D1%80%D0%B2%D0%B0%D0%BD%20%D0%B1%D1%83%D0%BB%D0%B0%D0%B3%20%D1%81%D0%BE%D0%B4%20%D0%A5%D0%A5%D0%9A%2020260828.pdf",
+      "itemId": "01NARTQNZETRSNYSW5AJELSNRV2GCKMQ53"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/15. Гурван булаг сод ХХК/Гэрээ/068 BI CWA Гурван булаг сод ХХК 20260828.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Гурванбулаг сод\" ХХК",
+      "contractNo": "26/068",
+      "signedDate": "2026-08-28",
+      "start": "2026-08-28",
+      "end": "2026-10-09",
+      "value": 1035201622.7,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 30,
+      "retentionPercent": 5,
+      "scope": "Хороолол доторх гадна ИШС угсралтын ажил - гадна дулаан, ус хангамж, ариутгах татуургын материалтай ажил гүйцэтгэх (дулааны худаг ДХ-1, ДХ-2, ДХ-3, шинээр хийх шугамын дулаан хангамж, барилга дотор явах шугамын дулаан, халуун/хүйтэн ус хангамж, ариутгах татуурга/гадна бохир)",
+      "notes": "Захиалагч: \"Баясах ирээдүй\" ХХК. Гэрээний дугаар гараар бичсэн, \"26/068\" (эсвэл \"261/068\") гэж уншигдаж байгаа тул шалгах шаардлагатай; файлын нэрэнд 068. Хугацаа: гадна дулаан, ус хангамж 2026.08.28-2026.10.09; гадна бохир 2026.08.28-2026.09.12. Төлбөрийн график: урьдчилгаа 30% (310,560,486.81), дундын санхүүжилт 60% (621,120,973.62), үлдэгдэл/сүүлийн санхүүжилт 5% (51,760,081.14), баталгаат хугацааны барьцаа 5% (1.5%-15,528,024.34; 1.5%-15,528,024.34; 2%-20,704,032.45). НӨАТ болон бусад татвар нийт үнэд багтсан. Тусгай зөвшөөрөл БУ19-334/22."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:03:01.996Z"
+  },
+  {
+    "id": "pr-01NARTQNZ7LIJ5PYYNSRGYPHT2RCDZV3LS",
+    "sourceFile": {
+      "name": "058 Дрийм санитари ХХК гэрээ 20260806-эх хувь байхгүй.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/16.%20%D0%94%D1%80%D0%B8%D0%B9%D0%BC%20%D1%81%D0%B0%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/058%20%D0%94%D1%80%D0%B8%D0%B9%D0%BC%20%D1%81%D0%B0%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%B8%20%D0%A5%D0%A5%D0%9A%20%D0%B3%D1%8D%D1%80%D1%8D%D1%8D%2020260806-%D1%8D%D1%85%20%D1%85%D1%83%D0%B2%D1%8C%20%D0%B1%D0%B0%D0%B9%D1%85%D0%B3%D2%AF%D0%B9.pdf",
+      "itemId": "01NARTQNZ7LIJ5PYYNSRGYPHT2RCDZV3LS"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/16. Дрийм санитари ХХК/Гэрээ/058 Дрийм санитари ХХК гэрээ 20260806-эх хувь байхгүй.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Дриймсанитари\" ХХК (Dream Sanitary Co., Ltd)",
+      "contractNo": "26/058",
+      "signedDate": "2026-08-06",
+      "start": null,
+      "end": "2026-12-20",
+      "value": 732429306,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": null,
+      "retentionPercent": 5,
+      "scope": "Interior sanitary/plumbing installation works (heating, cold & hot water, sewerage) for buildings A1-A4 and G1-G3 — A1-A4 at 3,675.00 m2 each @ 46,044 MNT = 169,211,700 each; G1-G3 at 1,006.00 m2 each @ 18,417 MNT = 18,527,502 each. Client: \"Баясах ирээдүй\" ХХК.",
+      "notes": "Contract number printed handwritten as \"26/058\"; signature date handwritten, read as 2026-08-06 (matches filename 20260806). Start date not fixed — contract states work period counted from date contract is approved. Payment schedule: 95% financing (695,807,840.70) paid per approved acts; 5% guarantee/retention released after warranty period, split 1.5% (10,986,439.59) year 1, 1.5% (10,986,439.59) year 2, 2% (14,648,586.12) year 3. Attached A1-block breakdown sheet shows \"Урьдчилгаа\" 16,921,170 and \"Барьцаа\" 8,460,585 (10% and 5% of the A1 block sum) — advance percent not stated in the contract body, worth human check. G1-G3 attachment shows 3,018.00 m2 total and 55,582,506, consistent with the three G blocks. Filename notes original copy is missing (\"эх хувь байхгүй\"). Bank: Худалдаа хөгжлийн банк, acct 27 000 4000 499212883. Penalty 0.3%/day both ways."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:03:31.004Z"
+  },
+  {
+    "id": "pr-01NARTQN2M4JR3RZRTMNG24S4HDB6PPP5V",
+    "sourceFile": {
+      "name": "002 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260828.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/16.%20%D0%94%D1%80%D0%B8%D0%B9%D0%BC%20%D1%81%D0%B0%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80/002%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80%20to%20%D0%93%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87%20%D0%BD%D0%B0%D1%80%D1%82%2020260828.pdf",
+      "itemId": "01NARTQN2M4JR3RZRTMNG24S4HDB6PPP5V"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/16. Дрийм санитари ХХК/Талбайн даалгавар/002 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260828.pdf",
+    "extracted": {
+      "targetCollection": "correspondence",
+      "party": "\"Баясах Ирээдүй\" ХХК (захиалагч) — issued to multiple гүйцэтгэгч companies (incl. \"Тунгалаг гэрэлт мандал\" ХХК, \"Оршил санитари\" ХХК, \"БТТК\" ХХК, \"Дельта констракшн\" ХХК, \"Бат ану нарак\" ХХК)",
+      "direction": "out",
+      "date": "2026-08-28",
+      "docNo": "002"
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:03:45.103Z"
+  },
+  {
+    "id": "pr-01NARTQN3WDONOMQNQFFHIGWCQD4PSPOOG",
+    "sourceFile": {
+      "name": "004 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260902.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/16.%20%D0%94%D1%80%D0%B8%D0%B9%D0%BC%20%D1%81%D0%B0%D0%BD%D0%B8%D1%82%D0%B0%D1%80%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80/004%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80%20to%20%D0%93%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87%20%D0%BD%D0%B0%D1%80%D1%82%2020260902.pdf",
+      "itemId": "01NARTQN3WDONOMQNQFFHIGWCQD4PSPOOG"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/16. Дрийм санитари ХХК/Талбайн даалгавар/004 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260902.pdf",
+    "extracted": {
+      "targetCollection": "quality",
+      "party": "Төслийн гүйцэтгэгч нар (addressed to all project contractors); issued by \"Юнайтэд Проперттийз Холдинг\" ХХК (Төслийн менежментийн газар), П.Тэмүүжин",
+      "date": "2026-09-02",
+      "block": "A1-A6",
+      "amount": null,
+      "notes": "\"Барилгын талбайн даалгавар\" (site instruction) No. 004, version/№ 004, project \"Хэйва хотхон, асаргаа, сувилын үйлчилгээтэй орон сууц\", client \"Баясах Ирээдүй\" ХХК. Non-conformance: walking on freshly poured/not fully cured black floor slab and transporting materials over it; failure to clear waste from the work area before slab pouring — repeated occurrences. Corrective measures required: (1) improve coordination and avoid damaging other contractors' completed work; (2) no traffic/material transport over uncured slab after pouring; (3) fully clean the work area (waste, materials, obstructions) before pouring; (4) on repeat occurrence the offending company will be registered, per-m2 rework cost calculated and deducted from that company's payment. Compliance date (\"Хэрэгжилт хангах огноо\"): 2026-09-03. Approval date field blank; no \"Шифр\" printed; recipient acknowledgement section (position, name, signature, date) left blank. Stamp/signature of Төслийн менежер dated 2026.09.02. No monetary amount stated."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:04:02.040Z"
+  },
+  {
+    "id": "pr-01NARTQNZXAUCSUJFSQZEK2D36WO6MGWAI",
+    "sourceFile": {
+      "name": "071 BI CWA Ти Энд Жи ХХК 20260903.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/17.%20%D0%A2%D0%B8%20%D0%AD%D0%BD%D0%B4%20%D0%96%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/071%20BI%20CWA%20%D0%A2%D0%B8%20%D0%AD%D0%BD%D0%B4%20%D0%96%D0%B8%20%D0%A5%D0%A5%D0%9A%2020260903.pdf",
+      "itemId": "01NARTQNZXAUCSUJFSQZEK2D36WO6MGWAI"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/17. Ти Энд Жи ХХК/Гэрээ/071 BI CWA Ти Энд Жи ХХК 20260903.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Ти энд жи\" ХХК (T&G Co., Ltd)",
+      "contractNo": "26/071",
+      "signedDate": "2026-09-03",
+      "start": "2026-08-28",
+      "end": "2026-10-01",
+      "value": 492015173.1,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 50,
+      "retentionPercent": 2.32,
+      "scope": "A1-A6 блокын ашиглалтгүй дээвэр болон C1 блок ашиглалттай дээврийн ажил (roofing works – non-trafficable roofs of blocks A1-A6 and trafficable roof of block C1)",
+      "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract no. and signing date are handwritten: № 26/071, 2026.09.0? (filename indicates 2026-09-03; approval sheet signatures dated 2026.09.01 and 2026.09.03). Contract clause 2.2 states work end date 2026.10.01, but the attached approval sheet (page 7) states 10/15/2026 and the order sheet/schedule also show 2026.10.15 — discrepancy to verify. Net before VAT 447,286,521.00; VAT 10% = 44,728,652.10. Retention: 2.32% of total (= 5% of labour value) released in 3 annual instalments (0.7%/3,423,120; 0.7%/3,423,120; 0.93%/4,564,160). Advance 50% = 246,007,586.55; interim financing 30% = 147,604,551.93; final payment 17.68% = 86,992,634.63. Bank: Голомт банк, acct 76001500-1102027263. Special permit БУ19-171/22. Attachments include order sheet dated 2026-07-23 (work start 2026.08.09), schedules, price offers (C1 block 96,044,168; total 492,015,176 — slightly differs from contract total)."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:04:34.599Z"
+  },
+  {
+    "id": "pr-01NARTQNZEPZQERYOD75HLAMKNC2WYSSSG",
+    "sourceFile": {
+      "name": "082 BI CWA Безү технологи ХХК 20260915.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/18.%20%D0%91%D1%8D%D0%B7%D2%AF%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/082%20BI%20CWA%20%D0%91%D0%B5%D0%B7%D2%AF%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%20%D0%A5%D0%A5%D0%9A%2020260915.pdf",
+      "itemId": "01NARTQNZEPZQERYOD75HLAMKNC2WYSSSG"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/18. Бэзү технологи ХХК/Гэрээ/082 BI CWA Безү технологи ХХК 20260915.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Бэзү технологи\" ХХК",
+      "contractNo": "26/032",
+      "signedDate": "2026-09-15",
+      "start": "2026-09-21",
+      "end": "2026-10-12",
+      "value": 210000000,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 47.62,
+      "retentionPercent": 5,
+      "scope": "А3 цэвэр усны узель материал нийлүүлэлт, угсралт, суурилуулалт (HEIWA RESIDENCE &amp; CARE HOME)",
+      "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract number and date handwritten on cover page (26/032, 2026.09.15). Price build-up: materials 200,168,793 + labour 49,335,000 = 249,503,793, less 15.83% discount (39,503,793) = 210,000,000 total incl. VAT. Payment schedule: 5% guarantee/retention 10,500,000 (released 1 year after warranty period per Construction Law 14.3), advance 47.62% = 100,000,000, interim 23.81% = 50,000,000, final 23.57% = 49,500,000. Approval sheet lists budget residual (Төсвийн үлдэгдэл) 288,002,400. Attached price quotation No. 260813T7 dated 2026-08-13 (total 249,503,793 incl. VAT 22,682,163). Contractor special permit БУ12-482/24."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:04:56.287Z"
+  },
+  {
+    "id": "pr-01NARTQN4YEU4HEY4UKNDLU3CPKNQRB4JW",
+    "sourceFile": {
+      "name": "БЭЗҮ - Гэрчилгээ шинэ.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/18.%20%D0%91%D1%8D%D0%B7%D2%AF%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/%D0%91%D0%AD%D0%97%D2%AE%20-%20%D0%93%D1%8D%D1%80%D1%87%D0%B8%D0%BB%D0%B3%D1%8D%D1%8D%20%D1%88%D0%B8%D0%BD%D1%8D.pdf",
+      "itemId": "01NARTQN4YEU4HEY4UKNDLU3CPKNQRB4JW"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/18. Бэзү технологи ХХК/Гэрээ/БЭЗҮ - Гэрчилгээ шинэ.pdf",
+    "extracted": {
+      "targetCollection": "unclassifiable",
+      "reason": "This is a Mongolian State Registration Certificate of a Legal Entity (Хуулийн этгээдийн улсын бүртгэлийн гэрчилгээ, No. 0001169073) for \"Бэзү технологи\" LLC (registration no. 6168671, entity no. 9011669011, registered 2017-04-05, re-issued 2018-07-30), plus page 2 listing registered amendments to the founding documents (director appointments, shareholder/charter changes dated 2024-08-01). It is a corporate registration/company credential document, not a contract, payment or invoice, correspondence/RFI, quality or defect record, or drawing-register entry."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:05:03.530Z"
+  },
+  {
+    "id": "pr-01NARTQNYIXSU5XDTCLNGIJKPYJR55II2C",
+    "sourceFile": {
+      "name": "Тусгай зөвшөөрлийн гэрчилгээ.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/18.%20%D0%91%D1%8D%D0%B7%D2%AF%20%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/%D0%A2%D1%83%D1%81%D0%B3%D0%B0%D0%B8%CC%86%20%D0%B7%D3%A9%D0%B2%D1%88%D3%A9%D3%A9%D1%80%D0%BB%D0%B8%D0%B8%CC%86%D0%BD%20%D0%B3%D1%8D%D1%80%D1%87%D0%B8%D0%BB%D0%B3%D1%8D%D1%8D.pdf",
+      "itemId": "01NARTQNYIXSU5XDTCLNGIJKPYJR55II2C"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/18. Бэзү технологи ХХК/Гэрээ/Тусгай зөвшөөрлийн гэрчилгээ.pdf",
+    "extracted": {
+      "targetCollection": "unclassifiable",
+      "reason": "Document is a government-issued special license/permit certificate (Тусгай зөвшөөрөл No. БУ12-482/24) from the Ministry of Urban Development, Construction and Housing to \"Бззу технологи\" ХХК (state reg. 9011669011, registry 6168671), covering activity classes БА-6.1 (internal water supply/sewerage networks and equipment, external branch lines) and, by amendment БА-6.2 (internal heating/ventilation networks, refrigeration installations and equipment, external branch lines). Valid five years from 2024-05-09; signed by Minister Ж.Батсуурь on 2024-10-02, with an annexed certificate supplement and a blank contract-completion log page. It is a licensing/permit record, not a contract, payment/invoice, correspondence, quality record or drawing-register entry, so none of the available collections apply."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:05:15.858Z"
+  },
+  {
+    "id": "pr-01NARTQN2S5RQGSOUNM5BZQV3VQEXHKJWP",
+    "sourceFile": {
+      "name": "085 BI CWA Одкон сервис энд ко ХХК 20260916.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/19.%20%D0%9E%D0%B4%D0%BA%D0%BE%D0%BD%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%AD%D0%BD%D0%B4%20%D0%9A%D0%BE%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/085%20BI%20CWA%20%D0%9E%D0%B4%D0%BA%D0%BE%D0%BD%20%D1%81%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D1%8D%D0%BD%D0%B4%20%D0%BA%D0%BE%20%D0%A5%D0%A5%D0%9A%2020260916.pdf",
+      "itemId": "01NARTQN2S5RQGSOUNM5BZQV3VQEXHKJWP"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/19. Одкон Сервис Энд Ко ХХК/Гэрээ/085 BI CWA Одкон сервис энд ко ХХК 20260916.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Одкон Сервис Энд КО\" ХХК",
+      "contractNo": "26-085",
+      "signedDate": "2026-09-16",
+      "start": "2026-09-21",
+      "end": "2026-11-05",
+      "value": 469019046.5,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 50,
+      "retentionPercent": 4.47,
+      "scope": "Ус дулаан дамжуулах төв узель болон блокуудын холих насосны узелийн материал нийлүүлэлт, угсралт суурилуулалтын ажил (HEIWA RESIDENCE & CARE HOME) - blocks A1, A2, G1 / C1 / A3, A4, G2, G3 / A5, A6, G4",
+      "notes": "Client: \"Баясах ирээдүй\" ХХК (order sheet issued by \"Юнайтэд пропертийз холдинг\" ХХК dated 2026-07-23 with work period 2026.09.14–2026.10.12, which differs from contract dates). Contract no. and date are handwritten: № 26-085, 2026 оны 09 сарын 16. Price breakdown: material 419,611,046.50 + labour 49,408,000 = 469,019,046.50 after 3.5% discount (17,011,053.50) from 486,030,100. Payment schedule: guarantee/retention 4.47% (20,980,552.33, 5% of material total, held 1 year after completion per Construction Law 14.3), advance 50% (234,509,523.25/234,509,523.5), interim 10% (46,901,904.65) at 60% progress, interim 15% (70,352,856.98) at 90% progress, final 20.53% (96,274,209.30). Attachments include price proposal dated 2026-08-15, company registration certificate, special permits БУ16-115/24 and ТЗ 040/22 (issued to \"Одконхолдинг\" ХХК)."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:05:56.009Z"
+  },
+  {
+    "id": "pr-01NARTQN3BFKATJEJGJ5AK3RQ3RYNQAIY7",
+    "sourceFile": {
+      "name": "gerchilgee.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/19.%20%D0%9E%D0%B4%D0%BA%D0%BE%D0%BD%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%AD%D0%BD%D0%B4%20%D0%9A%D0%BE%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/gerchilgee.pdf",
+      "itemId": "01NARTQN3BFKATJEJGJ5AK3RQ3RYNQAIY7"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/19. Одкон Сервис Энд Ко ХХК/Гэрээ/gerchilgee.pdf",
+    "extracted": {
+      "targetCollection": "unclassifiable",
+      "reason": "This is a Mongolian State Registration Certificate of a Legal Entity (Хуулийн этгээдийн улсын бүртгэлийн гэрчилгээ, No. 000244606) for \"Одкон сервис энд КО\" LLC (registry no. 6829481, entity no. 9011836768, registered 2022-03-01), plus a page recording an amendment registering the executive director. It is a company registration/corporate document, not a contract, payment/invoice, correspondence, quality record, or drawing-register entry."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:06:03.865Z"
+  },
+  {
+    "id": "pr-01NARTQN72L4RFABOP5VA2QRX6QMZVQOR4",
+    "sourceFile": {
+      "name": "Барилгын тусгай зөвшөөрөл.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/19.%20%D0%9E%D0%B4%D0%BA%D0%BE%D0%BD%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%AD%D0%BD%D0%B4%20%D0%9A%D0%BE%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/%D0%91%D0%B0%D1%80%D0%B8%D0%BB%D0%B3%D1%8B%D0%BD%20%D1%82%D1%83%D1%81%D0%B3%D0%B0%D0%B9%20%D0%B7%D3%A9%D0%B2%D1%88%D3%A9%D3%A9%D1%80%D3%A9%D0%BB.pdf",
+      "itemId": "01NARTQN72L4RFABOP5VA2QRX6QMZVQOR4"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/19. Одкон Сервис Энд Ко ХХК/Гэрээ/Барилгын тусгай зөвшөөрөл.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"ОДКОНХОЛДИНГ\" ХХК",
+      "contractNo": "БУ16-115/24",
+      "signedDate": "2024-02-14",
+      "start": "2024-02-07",
+      "end": null,
+      "value": null,
+      "currency": "MNT",
+      "vatIncluded": null,
+      "advancePercent": null,
+      "retentionPercent": null,
+      "scope": "Барилгын үйл ажиллагааны тусгай зөвшөөрөл (БУАТЗ) олгох, түүний үндсэн дээр хариуцагч (Монголын барилгын үндэсний ассоциаци ТББ) болон тусгай зөвшөөрөл эзэмшигч хоорондын гэрээ. Зөвшөөрөгдсөн ажлын төрөл: БА-2.2 (усны барилга байгууламжийн угсралт, өргөтгөл, шинэчлэл), БА-3.3 (ус хангамж, ариутгах татуургын магистраль шугам сүлжээ), БА-3.5 (цахилгаан дамжуулах шугам сүлжээ, дэд станц), БА-5.4 (дулааны магистраль шугам сүлжээ), БА-6.1, БА-6.2, БА-6.3, БА-6.4 (барилгын доторх ус хангамж/ариутгал, халаалт-салхивч, гэрэлтүүлэг-цахилгаан, холбоо дохиолол-галын аюулгүй байдлын системийн угсралт).",
+      "notes": "Энэ бол барилгын тусгай зөвшөөрлийн гэрчилгээ (Барилга, хот байгуулалтын яам, гэрчилгээний дугаар 0012380, зөвшөөрлийн дугаар БУ16-115/24) болон түүнд хавсаргасан МБҮА ТББ-тай байгуулсан гэрээ. Зөвшөөрлийг 2024-02-07-ны өдрөөс таван жилийн хугацаатай олгосон боловч дуусах огноо тодорхой хэвлэгдээгүй тул end=null (тооцвол ойролцоогоор 2029-02-07). Гэрээний үнийн дүн байхгүй; зөвхөн Улсын тэмдэгтийн хураамж 1,750,000 төгрөг (Чингэлтэй дүүргийн Татварын хэлтэст төлсөн) гэж заасан — энэ нь гэрээний үнэ биш тул value=null. Тусгай зөвшөөрөл эзэмшигчийг төлөөлж захирал М.Наранбат, олгогчийг төлөөлж МБҮА ТББ-ын БУАТЗХ-ийн дарга Х.Гүлбарша гарын үсэг зурсан. Гэрчилгээг Барилга, хот байгуулалтын сайд Ц.Даваасүрэн 2024-02-07-нд гарын үсэг зурсан (сайдын 29 дүгээр тушаал). Улсын бүртгэлийн дугаар 9011085080, регистрийн дугаар 2020289. Хаяг: УБ, СБД, 7 хороо, 11 хороолол, 17 байр."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:06:48.181Z"
+  },
+  {
+    "id": "pr-01NARTQNYYVFME53UX5ZHKNOA7SLVX46O3",
+    "sourceFile": {
+      "name": "Эрчим хүчний тусгай зөвшөөрөл.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/19.%20%D0%9E%D0%B4%D0%BA%D0%BE%D0%BD%20%D0%A1%D0%B5%D1%80%D0%B2%D0%B8%D1%81%20%D0%AD%D0%BD%D0%B4%20%D0%9A%D0%BE%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/%D0%AD%D1%80%D1%87%D0%B8%D0%BC%20%D1%85%D2%AF%D1%87%D0%BD%D0%B8%D0%B9%20%D1%82%D1%83%D1%81%D0%B3%D0%B0%D0%B9%20%D0%B7%D3%A9%D0%B2%D1%88%D3%A9%D3%A9%D1%80%D3%A9%D0%BB.pdf",
+      "itemId": "01NARTQNYYVFME53UX5ZHKNOA7SLVX46O3"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/19. Одкон Сервис Энд Ко ХХК/Гэрээ/Эрчим хүчний тусгай зөвшөөрөл.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Эрчим хүчний эдийн засгийн хүрээлэн\" ТӨААТҮГ",
+      "contractNo": "ТЗ/Г-22/-41",
+      "signedDate": null,
+      "start": null,
+      "end": "2027-03-11",
+      "value": 13000000,
+      "currency": "MNT",
+      "vatIncluded": null,
+      "advancePercent": null,
+      "retentionPercent": null,
+      "scope": "Тусгай зөвшөөрөл эзэмших, эзэмшүүлэх гэрээ (Energy Ministry special licence No. 040/22 for \"Одконхолдинг\" ХХК): ТЗ-2.2 0.4-35 kV power transmission lines and substation installation/repair and testing; ТЗ-3.3 0.07-8.0 MPa boiler installation/repair and testing; ТЗ-5.3 0.07-8.0 MPa heating pipelines and heat distribution centre installation/repair and testing; ТЗ-7.1 equipment operating up to 4.0 MPa installation/repair and testing",
+      "notes": "Document bundle: Energy Ministry special permit certificate No. 040/22 (issued 2022-03-11, valid 5 years, serial 01411, signed by Minister Н.Тавинбэх) plus the licence-holding contract No. ТЗ/Г-22/-41, Ulaanbaatar. Contract signing day is handwritten and not clearly legible (\"2022 оны 3 дугаар сарын 2?-ны өдөр\") — left null; the year/month is 2022-03. Contract is valid from signature until 2027-03-11. Clause 3.1: fee of 13,000,000 MNT to be transferred to KHAAN Bank account 5173077945 by a handwritten date in March 2022 (appears to be the 25th, not fully legible). Licensee: \"Одкон Холдинг\" ХХК (registration 2020289); signed for licensee by М.Ариунтуяа (chief finance) and Б.Золбаяр (chief engineer), approved by CEO М.Наранбат; for licensor by director М.Түмэнжаргал, Х.Самбалхүндэв, Л.Энхцэцэг, Ж.Бадамлянхуа. VAT treatment not stated."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:07:14.828Z"
+  },
+  {
+    "id": "pr-01NARTQN4KISURQ4GHFNFL6LMWENMDN42S",
+    "sourceFile": {
+      "name": "075 BI CWA Прожект девелопмент тотал солюшн ХХК 20260908.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/20.%20%D0%9F%D1%80%D0%BE%D0%B6%D0%B5%D0%BA%D1%82%20%D0%B4%D0%B5%D0%B2%D0%B5%D0%BB%D0%BE%D0%BF%D0%BC%D0%B5%D0%BD%D1%82%20%D1%82%D0%BE%D1%82%D0%B0%D0%BB%20%D1%81%D0%BE%D0%BB%D1%8E%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/075%20BI%20CWA%20%D0%9F%D1%80%D0%BE%D0%B6%D0%B5%D0%BA%D1%82%20%D0%B4%D0%B5%D0%B2%D0%B5%D0%BB%D0%BE%D0%BF%D0%BC%D0%B5%D0%BD%D1%82%20%D1%82%D0%BE%D1%82%D0%B0%D0%BB%20%D1%81%D0%BE%D0%BB%D1%8E%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A%2020260908.pdf",
+      "itemId": "01NARTQN4KISURQ4GHFNFL6LMWENMDN42S"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/20. Прожект девелопмент тотал солюшн ХХК/Гэрээ/075 BI CWA Прожект девелопмент тотал солюшн ХХК 20260908.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Прожект девелопмент тотал солюшн\" ХХК",
+      "contractNo": "26/075",
+      "signedDate": "2026-09-08",
+      "start": "2026-09-08",
+      "end": "2026-12-01",
+      "value": 716861750,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 15,
+      "retentionPercent": 5,
+      "scope": "Supply and installation of fire alarm, public address/notification, interior and exterior CCTV, outdoor vehicle barrier and garage licence-plate recognition systems for blocks A1-A6 and G1-G4 (Heiwa Residence & Care Home). Client: \"Баясах ирээдүй\" ХХК.",
+      "notes": "Contract no. handwritten as \"26/075\"; contract date handwritten 2026.09.08. Start stated as \"from the date the contract is approved\". Multiple completion milestones: fire alarm/notification/indoor CCTV/smart systems/garage plate recognition equipment 2026-12-01; exterior CCTV 2026-10-01; exterior vehicle barrier 2026-10-30; conduit/cable-pull related material delivery 2026-09-25. Payment schedule: 5% retention guarantee paid over 3 years (1.5% / 1.5% / 2.0% = 10,752,926.25 / 10,752,926.25 / 14,337,235.00), barter 55.59% = 398,520,000 (United Project Corporation C2 block, bldg 731, apt 5, 49.2 m2 at 8,100,000/m2), advance 15% = 107,529,262.5, interim financing 10% = 71,686,175.00, final payment 14.41% = 103,283,225.00. Approval sheet (p.30) shows budget line 9. Telecommunication estimate value 1,530,785,073.17 and completion date 10/15/2026, which differs from contract clause 2.3 — worth checking. Attached quotations ref AEZ-21-01 dated 31-Aug-26, effective to 21-Sep-26."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:07:50.229Z"
   }
 ]
