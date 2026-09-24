@@ -1,5 +1,7 @@
 import { describe, it, expect } from 'vitest';
-import { extractFromPdf, estimateCostUsd, EXTRACTION_TOOLS } from './claude-extract.mjs';
+import {
+  extractFromPdf, estimateCostUsd, EXTRACTION_TOOLS, fitsInRequest, MAX_PDF_BYTES,
+} from './claude-extract.mjs';
 import { ExtractionResultSchema } from './pending-review-schema.mjs';
 
 const CONTRACT_INPUT = {
@@ -64,6 +66,15 @@ describe('extraction tools', () => {
     const contracts = EXTRACTION_TOOLS[0].input_schema;
     expect(contracts.properties.signedDate.description).toMatch(/ISO date/);
     expect(contracts.required).toContain('party');
+  });
+});
+
+describe('fitsInRequest', () => {
+  it('keeps the base64-encoded PDF under the 32 MB request limit', () => {
+    expect(Math.ceil(MAX_PDF_BYTES / 3) * 4).toBeLessThan(32 * 1024 * 1024);
+    expect(fitsInRequest({ size: MAX_PDF_BYTES })).toBe(true);
+    expect(fitsInRequest({ size: MAX_PDF_BYTES + 1 })).toBe(false);
+    expect(fitsInRequest({ size: 40 * 1024 * 1024 })).toBe(false);
   });
 });
 
