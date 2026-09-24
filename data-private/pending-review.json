@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "id": "pr-01NARTQN7UXDNL4433KBFJBRSBZTQOJEBY",
+    "sourceFile": {
+      "name": "060 BI CWA  Про эм эс ХХК 20260817.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/14.%20%D0%9F%D1%80%D0%BE%20%D0%AD%D0%BC%20%D0%AD%D1%81%20%D0%A5%D0%A5%D0%9A/060%20BI%20CWA%20%20%D0%9F%D1%80%D0%BE%20%D1%8D%D0%BC%20%D1%8D%D1%81%20%D0%A5%D0%A5%D0%9A%2020260817.pdf",
+      "itemId": "01NARTQN7UXDNL4433KBFJBRSBZTQOJEBY"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/14. Про Эм Эс ХХК/060 BI CWA  Про эм эс ХХК 20260817.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Про эм эс\" ХХК",
+      "contractNo": "26/060",
+      "signedDate": "2026-08-17",
+      "start": null,
+      "end": "2026-12-20",
+      "value": 580761268.5,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 30,
+      "retentionPercent": 5,
+      "scope": "C1, G1-G4 барилгуудын салхивч, агаар сэлгэлтийн хоолойн үйлдвэрлэл, угсралт, суурилуулалтын ажил (ventilation/air-conditioning duct fabrication and installation), Heiwa Residence & Care Home",
+      "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract number and signing date are handwritten (26/060; 2026.08.17) — worth verifying. Start date not a fixed date: work starts from the date the contract is approved. Price breakdown: C1 block 206,662,100.70 + G1-G4 blocks 338,756,070.32 = 545,418,171.02; VAT 10% = 54,541,817.10; subtotal 599,959,988.12; discount 3.20% = 19,198,719.62; total incl. VAT 580,761,268.50. Payment schedule: advance 30% = 174,228,380.55; financing 65% = 377,494,824.53; 5% guarantee retained over 3 years (1.5% = 8,711,419.03; 1.5% = 8,711,419.03; 2.0% = 11,615,225.37). Attached approval sheet lists budget 785,882,829 and special licence БУ18-105/23; work order sheet (Юнайтэд пропертниз холдинг ХХК, 2026.07.23) gives work start 2026.08.03."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:37:39.473Z"
+  }
+]
