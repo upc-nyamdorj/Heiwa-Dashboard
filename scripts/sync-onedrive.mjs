@@ -17,11 +17,14 @@
  *
  * Flags: --dry-run (list + diff only, no download/extraction/writes) ·
  * --limit=N (cap how many changed files this run processes — the lever for
- * calibrating real extraction cost on a small batch before an unlimited run).
+ * calibrating real extraction cost on a small batch before an unlimited run) ·
+ * --max-depth=N (how many subfolder levels to descend; default 8).
  */
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { getAppOnlyToken, listFolderChildren, downloadFileContent } from './lib/graph-client.mjs';
+import {
+  getAppOnlyToken, listFolderChildren, downloadFileContent, DEFAULT_MAX_DEPTH,
+} from './lib/graph-client.mjs';
 import { loadSyncState, saveSyncState, diffAgainstState } from './lib/sync-state.mjs';
 import { loadPendingReview, savePendingReview } from './lib/pending-review-store.mjs';
 import { extractFromPdf, estimateCostUsd } from './lib/claude-extract.mjs';
@@ -35,10 +38,11 @@ const PENDING_REVIEW_PATH = path.join(here, '..', 'data-private', 'pending-revie
 const SYNC_STATUS_PATH = path.join(here, '..', 'src', 'data', 'sync-status.json');
 
 function parseArgs(argv) {
-  const args = { dryRun: false, limit: null };
+  const args = { dryRun: false, limit: null, maxDepth: DEFAULT_MAX_DEPTH };
   for (const a of argv) {
     if (a === '--dry-run') args.dryRun = true;
     else if (a.startsWith('--limit=')) args.limit = Number(a.slice('--limit='.length));
+    else if (a.startsWith('--max-depth=')) args.maxDepth = Number(a.slice('--max-depth='.length));
   }
   return args;
 }
@@ -61,9 +65,9 @@ async function main() {
   console.log('Authenticating with Azure AD (app-only)...');
   const accessToken = await getAppOnlyToken({ tenantId, clientId, clientSecret });
 
-  console.log('Listing files in the OneDrive/SharePoint sync folder...');
-  const files = await listFolderChildren({ accessToken, driveId, folderId });
-  console.log(`Found ${files.length} file(s) in the folder.`);
+  console.log(`Listing files in the OneDrive/SharePoint sync folder (subfolders up to ${args.maxDepth} levels)...`);
+  const files = await listFolderChildren({ accessToken, driveId, folderId, maxDepth: args.maxDepth });
+  console.log(`Found ${files.length} file(s) in the folder tree.`);
 
   const state = loadSyncState(STATE_PATH);
   let changed = diffAgainstState(files, state);
@@ -76,7 +80,7 @@ async function main() {
 
   if (args.dryRun) {
     console.log('--dry-run: listing only, no download/extraction/writes.');
-    for (const f of changed) console.log(`  would process: ${f.name} (${f.id})`);
+    for (const f of changed) console.log(`  would process: ${f.path} (${f.id})`);
     return;
   }
 
@@ -94,7 +98,7 @@ async function main() {
   const newRecords = [];
 
   for (const f of changed) {
-    console.log(`Downloading ${f.name}...`);
+    console.log(`Downloading ${f.path}...`);
     const buffer = await downloadFileContent({ accessToken, driveId, itemId: f.id });
     const pdfBase64 = buffer.toString('base64');
 
@@ -114,6 +118,7 @@ async function main() {
     newRecords.push({
       id: `pr-${f.id}`,
       sourceFile: { name: f.name, webUrl: f.webUrl, itemId: f.id },
+      sourcePath: f.path,
       extracted: validation.data,
       status: 'pending',
       extractedAt: new Date().toISOString(),
@@ -121,7 +126,7 @@ async function main() {
   }
 
   for (const f of changed) {
-    state[f.id] = { eTag: f.eTag, lastModifiedDateTime: f.lastModifiedDateTime, name: f.name };
+    state[f.id] = { eTag: f.eTag, lastModifiedDateTime: f.lastModifiedDateTime, name: f.name, path: f.path };
   }
   savePendingReview(PENDING_REVIEW_PATH, [...pending, ...newRecords]);
   saveSyncState(STATE_PATH, state);

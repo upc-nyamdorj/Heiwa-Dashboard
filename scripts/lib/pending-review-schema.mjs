@@ -87,6 +87,9 @@ export const ExtractionResultSchema = z.discriminatedUnion('targetCollection', [
 export const PendingReviewRecordSchema = z.object({
   id: z.string(),
   sourceFile: z.object({ name: z.string(), webUrl: z.string(), itemId: z.string() }),
+  // Location inside the sync folder, e.g. "1. Ажил гүйцэтгэгч/x.pdf" — display
+  // only; kept off sourceFile because that object is copied into the dataset.
+  sourcePath: z.string().optional(),
   extracted: ExtractionResultSchema,
   status: z.enum(['pending', 'approved', 'rejected', 'extraction-error']),
   extractedAt: z.string(),
