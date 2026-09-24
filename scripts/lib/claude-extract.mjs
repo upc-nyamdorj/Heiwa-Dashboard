@@ -1,8 +1,41 @@
 import Anthropic from '@anthropic-ai/sdk';
 import { zodOutputFormat } from '@anthropic-ai/sdk/helpers/zod';
+import { z } from 'zod';
 import { ExtractionResultSchema } from './pending-review-schema.mjs';
 
 const MODEL = 'claude-opus-5';
+
+/**
+ * What Claude is asked to return. The union sits inside an object because a
+ * structured-outputs schema needs `type: "object"` at the root, not a bare
+ * `anyOf`. extractFromPdf unwraps it, so callers still get the union.
+ */
+export const ExtractionEnvelopeSchema = z.object({ document: ExtractionResultSchema });
+
+/**
+ * Replaces every `{ $ref: "#/$defs/x" }` with the definition it points at and
+ * drops `$defs`. zodOutputFormat always emits refs (it asks zod for
+ * `reused: 'ref'`), and the API rejects them next to `anyOf`:
+ * "output_config.format.schema: For 'anyOf', '$defs' is not supported".
+ * Safe because the extraction schema is not recursive.
+ */
+export function inlineRefs(schema) {
+  const defs = schema.$defs ?? {};
+  const walk = (node) => {
+    if (Array.isArray(node)) return node.map(walk);
+    if (!node || typeof node !== 'object') return node;
+    const { $ref, ...rest } = node;
+    delete rest.$defs;
+    const resolved = $ref ? { ...walk(defs[$ref.replace('#/$defs/', '')]), ...rest } : rest;
+    return Object.fromEntries(Object.entries(resolved).map(([k, v]) => [k, walk(v)]));
+  };
+  return walk(schema);
+}
+
+export function extractionOutputFormat() {
+  const format = zodOutputFormat(ExtractionEnvelopeSchema);
+  return { ...format, schema: inlineRefs(format.schema) };
+}
 
 const SYSTEM_PROMPT = `You are extracting structured data from one scanned, Mongolian-language \
 construction-project document for the "HEIWA RESIDENCE & CARE HOME" archive. Documents are \
@@ -37,14 +70,14 @@ export async function extractFromPdf({ apiKey, filename, pdfBase64, client }) {
         ],
       },
     ],
-    output_config: { format: zodOutputFormat(ExtractionResultSchema) },
+    output_config: { format: extractionOutputFormat() },
   });
 
   if (!response.parsed_output) {
     throw new Error(`Claude returned no parsed output for ${filename} (stop_reason: ${response.stop_reason})`);
   }
 
-  return { parsed: response.parsed_output, usage: response.usage };
+  return { parsed: response.parsed_output.document, usage: response.usage };
 }
 
 /** $/1M tokens, Claude Opus 5. */

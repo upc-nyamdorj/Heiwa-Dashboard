@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { extractFromPdf, estimateCostUsd } from './claude-extract.mjs';
+import { extractFromPdf, estimateCostUsd, extractionOutputFormat, inlineRefs } from './claude-extract.mjs';
 
 describe('extractFromPdf', () => {
   it('sends the PDF as a native document block and returns parsed_output + usage', async () => {
@@ -10,10 +10,12 @@ describe('extractFromPdf', () => {
           capturedParams = params;
           return {
             parsed_output: {
-              targetCollection: 'contracts', party: 'Тест ХХК', contractNo: null,
-              signedDate: null, start: null, end: null, value: 1000, currency: 'MNT',
-              vatIncluded: null, advancePercent: null, retentionPercent: null,
-              scope: null, notes: null,
+              document: {
+                targetCollection: 'contracts', party: 'Тест ХХК', contractNo: null,
+                signedDate: null, start: null, end: null, value: 1000, currency: 'MNT',
+                vatIncluded: null, advancePercent: null, retentionPercent: null,
+                scope: null, notes: null,
+              },
             },
             usage: { input_tokens: 1234, output_tokens: 56 },
             stop_reason: 'end_turn',
@@ -44,6 +46,36 @@ describe('extractFromPdf', () => {
     await expect(extractFromPdf({
       apiKey: 'unused', filename: 'bad.pdf', pdfBase64: 'ZmFrZQ==', client: fakeClient,
     })).rejects.toThrow(/no parsed output/);
+  });
+});
+
+describe('extraction output schema', () => {
+  // The API rejected the first real run with
+  // "output_config.format.schema: For 'anyOf', '$defs' is not supported".
+  it('has an object root and no $defs, which structured outputs rejects', () => {
+    const { schema } = extractionOutputFormat();
+    expect(schema.type).toBe('object');
+    expect(JSON.stringify(schema)).not.toContain('$defs');
+    expect(JSON.stringify(schema)).not.toContain('$ref');
+    expect(schema.properties.document.anyOf).toHaveLength(6);
+  });
+
+  it('keeps each inlined field intact, description included', () => {
+    const contracts = extractionOutputFormat().schema.properties.document.anyOf[0];
+    expect(contracts.properties.signedDate.anyOf).toEqual([{ type: 'string' }, { type: 'null' }]);
+    expect(contracts.properties.signedDate.description).toMatch(/ISO date/);
+    expect(contracts.additionalProperties).toBe(false);
+  });
+
+  it('inlineRefs resolves nested refs and keeps sibling keys', () => {
+    expect(inlineRefs({
+      $defs: { a: { type: 'string' }, b: { anyOf: [{ $ref: '#/$defs/a' }, { type: 'null' }] } },
+      type: 'object',
+      properties: { x: { $ref: '#/$defs/b', description: 'd' } },
+    })).toEqual({
+      type: 'object',
+      properties: { x: { anyOf: [{ type: 'string' }, { type: 'null' }], description: 'd' } },
+    });
   });
 });
 
