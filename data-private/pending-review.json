@@ -24,5 +24,314 @@
     },
     "status": "pending",
     "extractedAt": "2026-09-24T07:37:39.473Z"
+  },
+  {
+    "id": "pr-01NARTQN7VIGBJ7GDO3VAJ24KWK3KCXB3H",
+    "sourceFile": {
+      "name": "25-003 GUM Ажил гүйцэтгэх гэрээ Электросеть проект ХХК 20250616.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/5.%20%D0%97%D1%83%D1%80%D0%B0%D0%B3%20%D0%B7%D0%BE%D1%85%D0%B8%D0%BE%D0%B3%D1%87/2.%20%D0%AD%D0%BB%D1%8C%D0%BA%D1%82%D1%80%D0%BE%20%D0%A1%D0%B5%D1%82%D1%8C%20%D0%A5%D0%A5%D0%9A-%20%D0%93%D0%B0%D0%B4%D0%BD%D0%B0%20%D1%86%D0%B0%D1%85%D0%B8%D0%BB%D0%B3%D0%B0%D0%B0%D0%BD/25-003%20GUM%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D1%85%20%D0%B3%D1%8D%D1%80%D1%8D%D1%8D%20%D0%AD%D0%BB%D0%B5%D0%BA%D1%82%D1%80%D0%BE%D1%81%D0%B5%D1%82%D1%8C%20%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%20%D0%A5%D0%A5%D0%9A%2020250616.pdf",
+      "itemId": "01NARTQN7VIGBJ7GDO3VAJ24KWK3KCXB3H"
+    },
+    "sourcePath": "5. Зураг зохиогч/2. Эльктро Сеть ХХК- Гадна цахилгаан/25-003 GUM Ажил гүйцэтгэх гэрээ Электросеть проект ХХК 20250616.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Электросеть проект\" ХХК (Гүйцэтгэгч); Захиалагч: \"ГУМ\" ХХК",
+      "contractNo": "25-003",
+      "signedDate": "2025-06-16",
+      "start": null,
+      "end": null,
+      "value": 77100000,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 66.66,
+      "retentionPercent": null,
+      "scope": "Ажил гүйцэтгэх гэрээ (зураг төсөл боловсруулах): \"Хэйва\" (Heiwa care home) төслийн гадна цахилгаан хангамжийн зураг (10 кВ ЦДКШ, 10/0.4 кВ 2*630 кВА дэд станц, РП өргөтгөл), 0.4 кВ кабель шугамын ажлын зураг, гадна холбооны ажлын зураг, геодезийн хэмжилт, техникийн нөхцөл авах, магадлалаар батлуулах, зохиогчийн хяналт. Хан-Уул дүүрэг, 8-р хороо.",
+      "notes": "Гэрээний огноо нүүр хуудсанд гараар бичигдсэн бөгөөд бүрэн уншигдахгүй (\"2025 оны .. сарын .. өдөр\", №..../003); зөвшөөрлийн хуудсан дээрх гарын үсгийн огноо 2025.06.16 бөгөөд файлын нэр 25-003 / 20250616-г баталж байна — хүний нүдээр шалгах. Төлбөр 100% бартераар: \"Фирма мараско\" ХХК-ийн 3 ширхэг Toyota Prius 30S тээврийн хэрэгсэл (тус бүр 25,700,000₮; ZVW30-1950416, ZVW30-1897259, ZVW30-1542661). Урьдчилгаа 66.66% буюу 51,400,000₮ (2 машин), эцсийн санхүүжилт 33.34% буюу 25,700,000₮ (1 машин). Нийт үнэд НӨАТ 7,009,091₮, магадлалын төлбөр 6% (3,930,331₮), нормчлолын сангийн төлбөр 1% (655,055₮) багтсан. Хугацаа: ТН авах 30 хоног, ажил дуусгах ТН гарснаас 60 хоног. Хожимдолын алданги 0.1%/хоног, дээд хязгаар 20%. Хавсралтад 2025.05.20-ны 76,026,764₮-ийн үнийн санал хавсаргасан (гэрээний дүнгээс зөрүүтэй)."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:56:26.871Z"
+  },
+  {
+    "id": "pr-01NARTQN5WMX6MQOJ42RDY7B5YPPRUZW5R",
+    "sourceFile": {
+      "name": "087 UPC contract Авто зам, замын байгууламжийн зураг төсөл боловсруулах гэрээ Арт трасс ХХК 20260527.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/5.%20%D0%97%D1%83%D1%80%D0%B0%D0%B3%20%D0%B7%D0%BE%D1%85%D0%B8%D0%BE%D0%B3%D1%87/6.%20%D0%90%D1%80%D1%82%20%D1%82%D1%80%D0%B0%D1%81%D1%81%20%D0%A5%D0%A5%D0%9A-%20%D0%90%D0%B2%D1%82%D0%BE%20%D0%B7%D0%B0%D0%BC/087%20UPC%20contract%20%D0%90%D0%B2%D1%82%D0%BE%20%D0%B7%D0%B0%D0%BC,%20%D0%B7%D0%B0%D0%BC%D1%8B%D0%BD%20%D0%B1%D0%B0%D0%B9%D0%B3%D1%83%D1%83%D0%BB%D0%B0%D0%BC%D0%B6%D0%B8%D0%B9%D0%BD%20%D0%B7%D1%83%D1%80%D0%B0%D0%B3%20%D1%82%D3%A9%D1%81%D3%A9%D0%BB%20%D0%B1%D0%BE%D0%BB%D0%BE%D0%B2%D1%81%D1%80%D1%83%D1%83%D0%BB%D0%B0%D1%85%20%D0%B3%D1%8D%D1%80%D1%8D%D1%8D%20%D0%90%D1%80%D1%82%20%D1%82%D1%80%D0%B0%D1%81%D1%81%20%D0%A5%D0%A5%D0%9A%2020260527.pdf",
+      "itemId": "01NARTQN5WMX6MQOJ42RDY7B5YPPRUZW5R"
+    },
+    "sourcePath": "5. Зураг зохиогч/6. Арт трасс ХХК- Авто зам/087 UPC contract Авто зам, замын байгууламжийн зураг төсөл боловсруулах гэрээ Арт трасс ХХК 20260527.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Арт трасс\" ХХК (Art Trass LLC) — contractor; Захиалагч: \"Юнайтэд прожектс корпорэйшн\" ХХК",
+      "contractNo": "UPC 26/087",
+      "signedDate": "2026-05-27",
+      "start": null,
+      "end": null,
+      "value": 45809418,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 30,
+      "retentionPercent": null,
+      "scope": "Авто зам, замын байгууламжийн зураг төсөл боловсруулах (Heiwa Residence & Care Home): замын зураг төсөл, цахилгаан, гэрэлтүүлэг, гадаргуун ус зайлуулах байгууламжийн зураг төсөл, геодезийн байр зүйн судалгаа, техникийн тодорхойлолт. Ажлыг 65 хоногт багтаан магадлалаар баталгаажуулан хүлээлгэн өгнө.",
+      "notes": "Signed date is handwritten and partly illegible (\"2026 оны 05 сарын 0?/2? өдөр\"); filename and approval sheet (2026.05.26 approvals) suggest 2026-05-27 — worth human verification. Contract number also handwritten as \"№ UPC 26/087\". No calendar start/end dates printed; duration stated as 65 days from contract approval/advance payment. Payment schedule: 30% advance 13,742,826; 40% interim 18,323,768; 30% final 13,742,826. Annex 1 total shows 45,809,419 (1 MNT rounding difference vs clause 2.3 figure of 45,809,418). VAT 10% = 4,164,493 included. Package also contains contractor's price offer letter No. 89/26 dated 2026-05-13, state registration certificate and special permit 2025/01/052."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:56:56.598Z"
+  },
+  {
+    "id": "pr-01NARTQN3JNXFY6K5IBRCKIPNV4ZDXIHK2",
+    "sourceFile": {
+      "name": "004 UPH CMA Сандуйдорж Баттогтох  20260901.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/6.%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%20%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%20%D1%82%D2%AF%D1%80%D1%8D%D1%8D%D1%81/4.%20%D0%91.%D0%91%D0%B0%D1%82%D1%82%D0%BE%D0%B3%D1%82%D0%BE%D1%85%20-%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%20%D1%82%D2%AF%D1%80%D1%8D%D1%8D%D1%81%20UPH/004%20UPH%20CMA%20%D0%A1%D0%B0%D0%BD%D0%B4%D1%83%D0%B9%D0%B4%D0%BE%D1%80%D0%B6%20%D0%91%D0%B0%D1%82%D1%82%D0%BE%D0%B3%D1%82%D0%BE%D1%85%20%2020260901.pdf",
+      "itemId": "01NARTQN3JNXFY6K5IBRCKIPNV4ZDXIHK2"
+    },
+    "sourcePath": "6. Машин механизм түрээс/4. Б.Баттогтох - Машин түрээс UPH/004 UPH CMA Сандуйдорж Баттогтох  20260901.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "Сандуйдорж Баттогтох (иргэн, ДД62020536) — Түрээслүүлэгч; Түрээслэгч: \"Юнайтэдпропертийз холдинг\" ХХК",
+      "contractNo": "24/104",
+      "signedDate": "2026-09-01",
+      "start": "2026-09-01",
+      "end": "2026-12-31",
+      "value": 300000,
+      "currency": "MNT",
+      "vatIncluded": null,
+      "advancePercent": null,
+      "retentionPercent": null,
+      "scope": "Автомашин түрээслэх гэрээ — Toyota Prius Alpha-XW, улсын дугаар ДАН 99-70, сувдан цагаан өнгөтэй авто тээврийн хэрэгслийг жолоочийн хамт 4 сарын хугацаагаар түрээслүүлэх",
+      "notes": "Value shown (300,000₮) is the MONTHLY rent per clause 2.3, not a total contract value; no total sum is printed. Clause 2.3 states the payment includes the driver's salary, personal income tax (ХАОАТ) and all other taxes/fees plus fuel costs — VAT treatment not explicitly stated. Contract number is handwritten and partly illegible (read as \"24/104\"); the date line is handwritten as 20_26_ оны _09_ сарын _01_ өдөр. Payment due within the last 7 days of each month to Khan Bank acc. 430006040 (С.Баттогтох). Attached: vehicle technical certificate (VIN ZVW41296697, 2013) and citizen ID copy (illegible)."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:57:14.790Z"
+  },
+  {
+    "id": "pr-01NARTQN7HUWKHF6N6AVG3FWNGOPVCDAW3",
+    "sourceFile": {
+      "name": "Attachment.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/6.%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%20%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%20%D1%82%D2%AF%D1%80%D1%8D%D1%8D%D1%81/4.%20%D0%91.%D0%91%D0%B0%D1%82%D1%82%D0%BE%D0%B3%D1%82%D0%BE%D1%85%20-%20%D0%9C%D0%B0%D1%88%D0%B8%D0%BD%20%D1%82%D2%AF%D1%80%D1%8D%D1%8D%D1%81%20UPH/Attachment.pdf",
+      "itemId": "01NARTQN7HUWKHF6N6AVG3FWNGOPVCDAW3"
+    },
+    "sourcePath": "6. Машин механизм түрээс/4. Б.Баттогтох - Машин түрээс UPH/Attachment.pdf",
+    "extracted": {
+      "targetCollection": "unclassifiable",
+      "reason": "Document is not a construction-project record. Page 1 is a Mongolian vehicle technical specification / registration certificate (No. 06791872, plate 9970ДАН, Toyota Prius Alpha-XW, owner \\\"НЭГ КАПИТАЛ МОБАЙЛ\\\" ХХК, issued by Дархан-Уул registration authority); pages 2-3 are the front and back of a Mongolian citizen identity card (Олгонууд Сандуйдорж, ID 11163905115, issued 2025-06-10). Contains personal/identity data, not contract, payment, correspondence, quality or drawing information."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:57:27.347Z"
+  },
+  {
+    "id": "pr-01NARTQN5R4ERPMZEMTJBZRAO3DP2AFX4Q",
+    "sourceFile": {
+      "name": "Хүрэл Гарьд ХХК Торгууль.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/7.%20%D0%A5%D0%B0%D1%80%D1%83%D1%83%D0%BB,%20%D1%85%D0%B0%D0%BC%D0%B3%D0%B0%D0%B0%D0%BB%D0%B0%D0%BB%D1%82/1.%20%D0%A5%D2%AF%D1%80%D1%8D%D0%BB%20%D0%B3%D0%B0%D1%80%D0%B4%D0%B8%20%D0%A5%D0%A5%D0%9A/%D0%A5%D2%AF%D1%80%D1%8D%D0%BB%20%D0%93%D0%B0%D1%80%D1%8C%D0%B4%20%D0%A5%D0%A5%D0%9A%20%D0%A2%D0%BE%D1%80%D0%B3%D1%83%D1%83%D0%BB%D1%8C.pdf",
+      "itemId": "01NARTQN5R4ERPMZEMTJBZRAO3DP2AFX4Q"
+    },
+    "sourcePath": "7. Харуул, хамгаалалт/1. Хүрэл гарди ХХК/Хүрэл Гарьд ХХК Торгууль.pdf",
+    "extracted": {
+      "targetCollection": "quality",
+      "party": "Хүрэл Гарьд ХХК",
+      "date": "2026-08-08",
+      "block": null,
+      "amount": 300000,
+      "notes": "Торгуулийн хуудас (penalty notice) issued by Юнайтед Проперти Холдинг ХХК to Хүрэл Гарьд ХХК. Violation (handwritten): smoking on the work site / repeated breach (\"Ажлын талбайд тамхи татсан... давтан зөрчсөн (3 хүн)\") — 3 persons. Penalty 300,000 MNT; \"Бүгд үнэ\" total line left blank. Signed by HSE (ХАБЭА) engineer and received party (signatures illegible). Penalty number (№) not filled in. NOTE: the whole page is struck through with a large red diagonal line, suggesting the notice may have been cancelled/voided — human check advised. Handwritten year digits read as \"26\" (2026) which may be a mis-write for 2025 — verify."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:57:42.517Z"
+  },
+  {
+    "id": "pr-01NARTQN475YZSXVAZEJFKBPIARMDSEMHO",
+    "sourceFile": {
+      "name": "008-001 BI CWA Дельта констракшн ХХК 20260401.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/1.%20%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%93%D1%8D%D1%80%D1%8D%D1%8D/008-001%20BI%20CWA%20%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A%2020260401.pdf",
+      "itemId": "01NARTQN475YZSXVAZEJFKBPIARMDSEMHO"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/1. Дельта констракшн ХХК/Гэрээ/008-001 BI CWA Дельта констракшн ХХК 20260401.pdf",
+    "extracted": {
+      "targetCollection": "contracts",
+      "party": "\"Дельта Констракшн\" ХХК",
+      "contractNo": "26/008-01",
+      "signedDate": "2026-08-27",
+      "start": "2026-08-28",
+      "end": "2026-09-15",
+      "value": 40348000,
+      "currency": "MNT",
+      "vatIncluded": true,
+      "advancePercent": 0,
+      "retentionPercent": 5,
+      "scope": "Амендмент (нэмэлт, өөрчлөлт) ажил гүйцэтгэх гэрээнд: HEIWA RESIDENCE & CARE HOME төслийн ус цуглуулах танк (гадна тохижилт) — төмөр бетон суурийн ажил 72 м2, B1 давхрын угсралт 72 м2, парпет 34 м",
+      "notes": "Amendment to base contract No. 26/008 dated 2026-04-01 between \"Баясах ирээдүй\" ХХК (employer) and \"Дельта Констракшн\" ХХК (contractor). Signed date handwritten and partly illegible (read as 2026-08-27; approval signatures dated 2026-08-31). Contract end stated as \"from approval date until 2026-09-15\"; budget sheet shows work start 2026-08-28, finish 2026-09-15. Payment: 5% guarantee/retention = 2,017,400 (released 1.7%/1.7%/1.6% over 3 years), 95% financing = 38,330,600 on approved act. Price proposal shows advance 0%. Handwritten budget approval figure \"40,500,000\" noted on page 2."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:58:01.959Z"
+  },
+  {
+    "id": "pr-01NARTQN65QW63ZEJR55FLP6MNBZGHPUUV",
+    "sourceFile": {
+      "name": "002 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260828.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/1.%20%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80/002%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80%20to%20%D0%93%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87%20%D0%BD%D0%B0%D1%80%D1%82%2020260828.pdf",
+      "itemId": "01NARTQN65QW63ZEJR55FLP6MNBZGHPUUV"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/1. Дельта констракшн ХХК/Талбайн даалгавар/002 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260828.pdf",
+    "extracted": {
+      "targetCollection": "correspondence",
+      "party": "Гүйцэтгэгч компаниуд: \"Уулын тэнгэрийн бэлэг\" ХХК, \"Тунгаа гэрэлт мандал\" ХХК, \"Эрдэм санитари\" ХХК, \"Тунга дане\" ХХК, \"БТПК\" ХХК, \"ИХ ЭБ\" ХХК, \"Бат ану нарак\" ХХК, \"Дельта констракшн\" ХХК (захиалагч \"Баясах Ирээдүй\" ХХК)",
+      "direction": "out",
+      "date": "2026-08-28",
+      "docNo": "002"
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:58:16.801Z"
+  },
+  {
+    "id": "pr-01NARTQN6XA4WB4O5MWFEJUWVSDBIWB2ES",
+    "sourceFile": {
+      "name": "004 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260902.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/1.%20%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80/004%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80%20to%20%D0%93%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87%20%D0%BD%D0%B0%D1%80%D1%82%2020260902.pdf",
+      "itemId": "01NARTQN6XA4WB4O5MWFEJUWVSDBIWB2ES"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/1. Дельта констракшн ХХК/Талбайн даалгавар/004 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260902.pdf",
+    "extracted": {
+      "targetCollection": "quality",
+      "party": "\"Баясах Ирээдүй\" ХХК (issued to Төслийн гүйцэтгэгч нар / all project contractors)",
+      "date": "2026-09-02",
+      "block": "A1-A6",
+      "amount": null,
+      "notes": "Site instruction / non-conformance notice No. 004 (\"Барилгын талбайн даалгавар\"), project \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\". Violation: walking on and transporting materials over freshly poured, not fully cured black screed, and failure to clear waste from the work area before screed pouring — repeated occurrences. Required actions: improve coordination between trades and avoid damaging completed work; prohibit traffic/material transport over uncured screed; fully clean the area (waste, materials, obstructions) before screed pouring; on repeat violations the offending company will be recorded and the cost of re-repair per 1 m2 deducted from that company's payment. Compliance date: 2026-09-03. Issued by П.Төмөрхүү, Project Manager, stamped \"Юнайтэд Пропертиз Холдинг\" ХХК; receipt section (name/signature/date) left blank. \"Хариутай эсэх\" (response required) checkboxes left unmarked."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:58:35.505Z"
+  },
+  {
+    "id": "pr-01NARTQN2MWZ6CDDIUIRCJN7RFJO3C56RK",
+    "sourceFile": {
+      "name": "005 UPH Талбайн захиа from-Дельта констракшн ХХК 20260902.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/1.%20%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B7%D0%B0%D1%85%D0%B8%D0%B0/005%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B7%D0%B0%D1%85%D0%B8%D0%B0%20from-%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A%2020260902.pdf",
+      "itemId": "01NARTQN2MWZ6CDDIUIRCJN7RFJO3C56RK"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/1. Дельта констракшн ХХК/Талбайн захиа/005 UPH Талбайн захиа from-Дельта констракшн ХХК 20260902.pdf",
+    "extracted": {
+      "targetCollection": "correspondence",
+      "party": "\"Дельта Констракшн\" ХХК",
+      "direction": "in",
+      "date": "2026-09-02",
+      "docNo": "08"
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:58:41.392Z"
+  },
+  {
+    "id": "pr-01NARTQN6U2GYQZRHNPNFZZAUCLYYRTKAT",
+    "sourceFile": {
+      "name": "Дельта констракшн ххк.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/1.%20%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%BE%D1%80%D0%B3%D1%83%D1%83%D0%BB%D1%8C/%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D1%85%D1%85%D0%BA.pdf",
+      "itemId": "01NARTQN6U2GYQZRHNPNFZZAUCLYYRTKAT"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/1. Дельта констракшн ХХК/Торгууль/Дельта констракшн ххк.pdf",
+    "extracted": {
+      "targetCollection": "quality",
+      "party": "Дельта Констракшн ХХК",
+      "date": "2026-05-31",
+      "block": "A3, A4",
+      "amount": 2000000,
+      "notes": "Two-page HSE (ХАБЭА) record: (1) \"Торгуулийн хуудас\" (penalty sheet) issued by UPH to Дельта Констракшн ХХК dated 2026.05.31 — violation: \"Шатнаас унасан (A-3 блок)\" (fall from ladder, block A-3), penalty 2,000,000 (currency not printed, presumably MNT); \"Бүгд үнэ\" total line left blank. (2) \"ХАБЭА-н инженерийн албан шаардлага\" No. 2, same date, regarding an accident caused by the Бат-Оршихбригад working on blocks A3 and A4: HSE engineer had previously warned about working on the site; requirement to wear fall-protection harness above 1.3 m and to inspect ladder footing, joints, legs before use was not complied with, leading to a fall accident; note \"(Торгуулийн хуудас хавсаргав)\" — penalty sheet attached. Recipient signature Б.Пүрэвсүрэн; countersignature dated 2026.06.02. Both pages struck through with a diagonal red line — status unclear (possibly voided). Handwritten; issuing organisation on penalty sheet read as \"UPH\" — verify."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:58:56.729Z"
+  },
+  {
+    "id": "pr-01NARTQN35HLG6OE4J4ZEYYQDXVTTQKCVF",
+    "sourceFile": {
+      "name": "А1 А2 гадна хана.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/1.%20%D0%94%D0%B5%D0%BB%D1%8C%D1%82%D0%B0%20%D0%BA%D0%BE%D0%BD%D1%81%D1%82%D1%80%D0%B0%D0%BA%D1%88%D0%BD%20%D0%A5%D0%A5%D0%9A/%D2%AE%D0%BB%20%D1%82%D0%BE%D1%85%D0%B8%D1%80%D0%BE%D0%BB%D1%8B%D0%BD%20%D1%82%D0%B0%D0%B9%D0%BB%D0%B0%D0%BD/%D0%901%20%D0%902%20%D0%B3%D0%B0%D0%B4%D0%BD%D0%B0%20%D1%85%D0%B0%D0%BD%D0%B0.pdf",
+      "itemId": "01NARTQN35HLG6OE4J4ZEYYQDXVTTQKCVF"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/1. Дельта констракшн ХХК/Үл тохиролын тайлан/А1 А2 гадна хана.pdf",
+    "extracted": {
+      "targetCollection": "quality",
+      "party": "\"Дельта Констракшн\" ХХК",
+      "date": "2026-08-16",
+      "block": "A1-A2",
+      "amount": null,
+      "notes": "Cover title: \"А1, А2 БЛОКЫН ГАДНА СИКАНЫ АЖИЛ\", Ulaanbaatar, 2026. Quality control sheets \"БЕТОНЫ СОГОГ ЗАСВАРЛАХ АЖЛЫГ ШАЛГАХ, ХААХ ХУУДАС\" for project HEIWA RESIDENCE & CARE HOME; work type \"Сика засвар\" (external patch repair, Гадна нөхөөс засвар); one sheet notes \"А1, Гадна нөхөөс засвар 415\\\". Before/after photos of defects labelled A1-F1 №1-3, A1-F3 №1-2 & №4, A1-F5 №3-4, №8, №11, A2-F1 №1, A2-F2 №3-7, A2-F4, A2-F5 №1. Inspection-type checkboxes (Эхний/Давтан шалгалт) and per-sheet Огноо/Date fields left blank. Signatures page: Н.Түвшинтөгс, Инженер, \"Эн Эс Эс Ти\" ХХК — 2026.08.16; Г.Төгөлдөр, Ахлах инженер, \"Цэлмэгтэнгэрийн бэрээ\" ХХК — 2026.08.16; Г.Уранчимэг, Чанарын инженер (Захиалагч) — date partly illegible, appears as \"...19\". Stamped by Дельта Констракшн ХХК. No monetary amount printed."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:59:22.903Z"
+  },
+  {
+    "id": "pr-01NARTQN66X6T7RDTB2FDZYIFJ2C74TQNI",
+    "sourceFile": {
+      "name": "052 BI IPR-01 Бат Ану Наран ХХК 20260829.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/10.%20%D0%91%D0%B0%D1%82%20%D0%B0%D0%BD%D1%83%20%D0%BD%D0%B0%D1%80%D0%B0%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A1%D0%B0%D0%BD%D1%85%D2%AF%D2%AF%D0%B6%D0%B8%D0%BB%D1%82%D0%B8%D0%B9%D0%BD%20%D1%82%D0%B0%D0%B9%D0%BB%D0%B0%D0%BD/052%20BI%20IPR-01%20%D0%91%D0%B0%D1%82%20%D0%90%D0%BD%D1%83%20%D0%9D%D0%B0%D1%80%D0%B0%D0%BD%20%D0%A5%D0%A5%D0%9A%2020260829.pdf",
+      "itemId": "01NARTQN66X6T7RDTB2FDZYIFJ2C74TQNI"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/10. Бат ану наран ХХК/Санхүүжилтийн тайлан/052 BI IPR-01 Бат Ану Наран ХХК 20260829.pdf",
+    "extracted": {
+      "targetCollection": "payments",
+      "party": "\"БАТ-АНУ-НАРАН\" ХХК",
+      "contractNo": "26/052",
+      "workName": "A1-A6, C1, G1-G4 барилгын өрлөг, шавардлага",
+      "date": "2026-08-29",
+      "workPeriodStart": "2026-07-20",
+      "workPeriodEnd": "2026-08-29",
+      "amount": 349350920,
+      "notes": "IPR-01 (1st financing) performance report; employer \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; amount marked VAT-inclusive (НӨАТ-тай); work duration 41 days; contract end date 2027-01-30; performance act dated 2026-08-26/31, employer approval signed 2026-09-03. Payment computation section: 0% advance deduction, retention (Чанарын батал58 хугацааны дараах) percentage handwritten and hard to read (appears \"5%\"); handwritten margin notes appear to show 50,000,000 and 17,467,546 deductions and net figures 281,883,xxx / 1,180,000 / 280,383,373 — handwritten and not fully legible, needs human check."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:59:40.431Z"
+  },
+  {
+    "id": "pr-01NARTQN26A72R3V7PANHIX32RVFDAHVWM",
+    "sourceFile": {
+      "name": "002 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260828.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/10.%20%D0%91%D0%B0%D1%82%20%D0%B0%D0%BD%D1%83%20%D0%BD%D0%B0%D1%80%D0%B0%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80/002%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80%20to%20%D0%93%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87%20%D0%BD%D0%B0%D1%80%D1%82%2020260828.pdf",
+      "itemId": "01NARTQN26A72R3V7PANHIX32RVFDAHVWM"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/10. Бат ану наран ХХК/Талбайн даалгавар/002 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260828.pdf",
+    "extracted": {
+      "targetCollection": "correspondence",
+      "party": "\"Баясах Ирээдүй\" ХХК (Төслийн менежментийн газар) — олон гүйцэтгэгч байгууллагад (гарын үсэг: \"Уулын төмөрлөгийн дархан\" ХХК, \"Тунгаа гэрэлт мандал\" ХХК, \"Оршил санитари\" ХХК, \"Тунга данс\" ХХК, \"БТТК\" ХХК, \"ИХЖБ\" ХХК, \"Бат ану наран\" ХХК, \"Дайта констракшн\" ХХК)",
+      "direction": "out",
+      "date": "2026-08-28",
+      "docNo": "002"
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T07:59:51.080Z"
+  },
+  {
+    "id": "pr-01NARTQN7HYR6F2QS4KNGZTADBYACWXERV",
+    "sourceFile": {
+      "name": "004 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260902.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/10.%20%D0%91%D0%B0%D1%82%20%D0%B0%D0%BD%D1%83%20%D0%BD%D0%B0%D1%80%D0%B0%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80/004%20UPH%20%D0%A2%D0%B0%D0%BB%D0%B1%D0%B0%D0%B9%D0%BD%20%D0%B4%D0%B0%D0%B0%D0%BB%D0%B3%D0%B0%D0%B2%D0%B0%D1%80%20to%20%D0%93%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87%20%D0%BD%D0%B0%D1%80%D1%82%2020260902.pdf",
+      "itemId": "01NARTQN7HYR6F2QS4KNGZTADBYACWXERV"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/10. Бат ану наран ХХК/Талбайн даалгавар/004 UPH Талбайн даалгавар to Гүйцэтгэгч нарт 20260902.pdf",
+    "extracted": {
+      "targetCollection": "quality",
+      "party": "\"Баясах Ирээдүй\" ХХК",
+      "date": "2026-09-02",
+      "block": "A1-A6",
+      "amount": null,
+      "notes": "Барилгын талбайн даалгавар (site instruction) №004, issued by Төслийн менежментийн газар (UPH project manager П.Төмөрхүү, stamped \"Юнайтэд Пропертийз Холдинг\" ХХК) to all project contractors (Төслийн гүйцэтгэгч нарт). Project: \"Хэйва хотхон, асаргаа, сувилахуйн үйлчилгээтэй орон сууц\". Compliance/implementation date: 2026-09-03. Defect: repeated violations of walking/transporting materials over freshly poured, not fully cured black screed (хар шал) and failure to clear rubbish from the work area before pouring. Corrective measures: improve coordination between contractors and avoid damaging completed work; prohibit traffic and material transport over uncured screed; fully clean the area of debris/materials before pouring; on repeat offences the offending company will be registered by name and the cost of re-repair per 1 m2 will be calculated and deducted from that company's payment. Acceptance section (position, name, signature, date of receiving party) left blank. No shifr/code, approval date, section (хэсэг) or floor (давхар) printed."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:00:09.637Z"
+  },
+  {
+    "id": "pr-01NARTQN4WIYMBURY72RDZLNKRK2PPGHSG",
+    "sourceFile": {
+      "name": "Бат ану наран ххк.pdf",
+      "webUrl": "https://upgmn.sharepoint.com/sites/HeiwaDashboard/Shared%20Documents/Heiwa%20Dashboard%20Sync/1.%20%D0%90%D0%B6%D0%B8%D0%BB%20%D0%B3%D2%AF%D0%B9%D1%86%D1%8D%D1%82%D0%B3%D1%8D%D0%B3%D1%87/10.%20%D0%91%D0%B0%D1%82%20%D0%B0%D0%BD%D1%83%20%D0%BD%D0%B0%D1%80%D0%B0%D0%BD%20%D0%A5%D0%A5%D0%9A/%D0%A2%D0%BE%D1%80%D0%B3%D1%83%D1%83%D0%BB%D1%8C/%D0%91%D0%B0%D1%82%20%D0%B0%D0%BD%D1%83%20%D0%BD%D0%B0%D1%80%D0%B0%D0%BD%20%D1%85%D1%85%D0%BA.pdf",
+      "itemId": "01NARTQN4WIYMBURY72RDZLNKRK2PPGHSG"
+    },
+    "sourcePath": "1. Ажил гүйцэтгэгч/10. Бат ану наран ХХК/Торгууль/Бат ану наран ххк.pdf",
+    "extracted": {
+      "targetCollection": "quality",
+      "party": "БАТ АНУ НАРАН ХХК",
+      "date": "2026-08-12",
+      "block": "A3",
+      "amount": 1500000,
+      "notes": "Торгуулийн хуудас (fine notice) + ХАБЭА-н инженерийн албан шаардлага №5 + фото баримт №1, all dated 2026-08-12. Violation: подонтой (перонтой) блок 4-р давхраас алдаж унгаасан — near-miss/accident when a pallet/block was dropped from the 4th floor of block A3 during \"Дотор засал\" (interior finishing) work. Requirements listed: 1) no HSE engineer on site; 2) area beneath not cordoned off/safe passage not ensured; 3) all workers to be re-briefed on floor-level responsibility and photo report submitted. Fine amount 1,500,000 (currency not printed, presumably MNT); \"Бүгд үнэ\" total row left blank. Pages 1-2 are struck through with a large red diagonal line — possibly cancelled/voided; worth human verification. Stamped by ХАБЭА mergeshsen mergejilten Дорждэрэм Гайбаяр, seal №19. Handwritten text partly illegible."
+    },
+    "status": "pending",
+    "extractedAt": "2026-09-24T08:00:21.504Z"
   }
 ]
