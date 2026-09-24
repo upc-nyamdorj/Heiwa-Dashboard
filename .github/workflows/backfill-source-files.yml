@@ -11,6 +11,11 @@ on:
         required: false
         type: boolean
         default: false
+      relink:
+        description: 'Also re-match rows whose link points at a file no longer in the folder'
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -38,6 +43,7 @@ jobs:
         run: |
           ARGS=""
           if [ "${{ inputs.write }}" = "true" ]; then ARGS="--write"; fi
+          if [ "${{ inputs.relink }}" = "true" ]; then ARGS="$ARGS --relink"; fi
           node scripts/backfill-source-files.mjs $ARGS
 
       - name: Commit the links

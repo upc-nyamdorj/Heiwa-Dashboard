@@ -73,14 +73,20 @@ export function toSourceFile(file) {
 /**
  * Works out what the backfill would change. Never mutates the dataset — the
  * caller applies `updates`, so a dry run is the same code path as a real one.
+ *
+ * With `relink`, a row whose link names an item that is no longer in the
+ * folder (deleted, or replaced by another copy) is matched again like an
+ * unlinked row; links to items still present are left alone.
  */
-export function planBackfill(dataset, files, { collections = BACKFILLABLE } = {}) {
+export function planBackfill(dataset, files, { collections = BACKFILLABLE, relink = false } = {}) {
   const byName = indexByName(files);
+  const liveIds = new Set(files.map((f) => f.id));
   const plan = {
     updates: [],
     unmatched: [],
     ambiguous: [],
     skipped: { alreadyLinked: 0, noFilename: 0, notBackfillable: 0 },
+    relinked: 0,
     skippedCollections: [],
     filesUsed: new Set(),
   };
@@ -93,23 +99,25 @@ export function planBackfill(dataset, files, { collections = BACKFILLABLE } = {}
       continue;
     }
     rows.forEach((row, index) => {
-      if (row?.sourceFile) { plan.skipped.alreadyLinked += 1; return; }
+      const stale = relink && row?.sourceFile && !liveIds.has(row.sourceFile.itemId);
+      if (row?.sourceFile && !stale) { plan.skipped.alreadyLinked += 1; return; }
       if (!row?.filename) { plan.skipped.noFilename += 1; return; }
 
       const candidates = byName.get(normaliseName(row.filename)) ?? [];
       if (candidates.length === 0) {
-        plan.unmatched.push({ collection, index, filename: row.filename });
+        plan.unmatched.push({ collection, index, filename: row.filename, ...(stale && { stale }) });
         return;
       }
       const file = resolveCandidate(row, candidates);
       if (!file) {
         plan.ambiguous.push({
           collection, index, filename: row.filename,
-          candidates: candidates.map((c) => c.folderPath),
+          candidates: candidates.map((c) => c.folderPath), ...(stale && { stale }),
         });
         return;
       }
       plan.filesUsed.add(file.id);
+      if (stale) plan.relinked += 1;
       plan.updates.push({ collection, index, sourceFile: toSourceFile(file) });
     });
   }

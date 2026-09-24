@@ -12,6 +12,9 @@
  *
  *   node scripts/backfill-source-files.mjs            # report only
  *   node scripts/backfill-source-files.mjs --write    # apply
+ *
+ * --relink also re-matches rows whose stored link names an item that is no
+ * longer in the folder (e.g. the copy it pointed at was deleted as a duplicate).
  */
 
 import { readFileSync, writeFileSync } from 'node:fs';
@@ -33,6 +36,7 @@ function report(plan, totalRows) {
   const linked = plan.updates.length;
   console.log('');
   console.log(`  rows linked         ${linked}`);
+  console.log(`  of which relinked   ${plan.relinked}  (old link pointed at a missing item)`);
   console.log(`  already linked      ${plan.skipped.alreadyLinked}`);
   console.log(`  no filename to use  ${plan.skipped.noFilename}`);
   console.log(`  not backfillable    ${plan.skipped.notBackfillable}  [${plan.skippedCollections.join(', ')}]`);
@@ -44,7 +48,7 @@ function report(plan, totalRows) {
 
   if (plan.unmatched.length) {
     console.log('\n  No file in the folder matched these — check whether they were renamed or removed:');
-    for (const u of plan.unmatched.slice(0, 20)) console.log(`    ${u.collection}[${u.index}]  ${u.filename}`);
+    for (const u of plan.unmatched.slice(0, 20)) console.log(`    ${u.collection}[${u.index}]  ${u.filename}${u.stale ? '  (keeps its dead link)' : ''}`);
     if (plan.unmatched.length > 20) console.log(`    … and ${plan.unmatched.length - 20} more`);
   }
   if (plan.ambiguous.length) {
@@ -57,7 +61,9 @@ function report(plan, totalRows) {
 }
 
 async function main() {
-  const write = process.argv.slice(2).includes('--write');
+  const argv = process.argv.slice(2);
+  const write = argv.includes('--write');
+  const relink = argv.includes('--relink');
 
   const accessToken = await getAppOnlyToken({
     tenantId: requireEnv('AZURE_TENANT_ID'),
@@ -78,7 +84,7 @@ async function main() {
     .filter(Array.isArray)
     .reduce((n, rows) => n + rows.length, 0);
 
-  const plan = planBackfill(dataset, files);
+  const plan = planBackfill(dataset, files, { relink });
   report(plan, totalRows);
 
   if (!write) {
