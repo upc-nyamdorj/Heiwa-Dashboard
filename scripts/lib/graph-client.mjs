@@ -25,10 +25,12 @@ export async function getAppOnlyToken({ tenantId, clientId, clientSecret, fetchI
   return data.access_token;
 }
 
-/** Files (not subfolders) directly inside the sync folder, paginated via @odata.nextLink. */
-export async function listFolderChildren({ accessToken, driveId, folderId, fetchImpl = fetch }) {
-  let url = `${GRAPH_BASE}/drives/${driveId}/items/${folderId}/children`
-    + '?$select=id,name,eTag,lastModifiedDateTime,size,webUrl,file';
+/** Default recursion cap for listFolderChildren — deep enough for any real filing scheme. */
+export const DEFAULT_MAX_DEPTH = 8;
+
+/** Every page of one folder's children, following @odata.nextLink. */
+async function fetchAllChildren({ accessToken, driveId, itemId, select, fetchImpl }) {
+  let url = `${GRAPH_BASE}/drives/${driveId}/items/${itemId}/children?$select=${select}`;
   const items = [];
   while (url) {
     const res = await fetchImpl(url, { headers: { Authorization: `Bearer ${accessToken}` } });
@@ -39,40 +41,60 @@ export async function listFolderChildren({ accessToken, driveId, folderId, fetch
     items.push(...(data.value ?? []));
     url = data['@odata.nextLink'] ?? null;
   }
-  return items.filter((i) => i.file);
+  return items;
+}
+
+/**
+ * Every file under the sync folder, descending into subfolders — the real
+ * folder keeps its PDFs in per-category subfolders ("1. Ажил гүйцэтгэгч/…"),
+ * so a top-level-only listing finds nothing. Each file is tagged with `path`,
+ * its location relative to the sync folder (e.g. "1. Ажил гүйцэтгэгч/x.pdf").
+ *
+ * Top-level children are depth 1. Folders deeper than `maxDepth` are not
+ * entered; each one skipped is reported via `onWarn` so a too-low cap shows up
+ * in the log instead of silently dropping files.
+ */
+export async function listFolderChildren({
+  accessToken, driveId, folderId, maxDepth = DEFAULT_MAX_DEPTH,
+  fetchImpl = fetch, onWarn = (msg) => console.warn(msg),
+}) {
+  const out = [];
+  const queue = [{ id: folderId, path: '', depth: 1 }];
+
+  while (queue.length) {
+    const { id, path: folderPath, depth } = queue.shift();
+    const items = await fetchAllChildren({
+      accessToken, driveId, itemId: id, fetchImpl,
+      select: 'id,name,eTag,lastModifiedDateTime,size,webUrl,file,folder',
+    });
+    for (const item of items) {
+      const childPath = folderPath ? `${folderPath}/${item.name}` : item.name;
+      if (item.file) {
+        out.push({ ...item, path: childPath });
+      } else if (item.folder) {
+        if (depth < maxDepth) queue.push({ id: item.id, path: childPath, depth: depth + 1 });
+        else onWarn(`Warning: "${childPath}" is deeper than the ${maxDepth}-level limit — its contents were not listed.`);
+      }
+    }
+  }
+  return out;
 }
 
 /**
  * Every file under the sync folder, recursively, each tagged with the folder
- * path it was found in (relative to the sync folder, "" at the top).
- *
- * listFolderChildren above is deliberately shallow — the daily sync only looks
- * at the top level. The one-off backfill needs the whole tree, because the
- * paths recorded in the dataset are nested.
+ * path it was found in (relative to the sync folder, "" at the top). Used by
+ * the one-off backfill, which matches on folderPath.
  */
 export async function listFolderTree({ accessToken, driveId, folderId, fetchImpl = fetch }) {
-  const out = [];
-  const queue = [{ id: folderId, path: '' }];
+  const files = await listFolderChildren({ accessToken, driveId, folderId, fetchImpl });
+  return files.map(({ id, name, webUrl, path: filePath }) => ({
+    id, name, webUrl, folderPath: filePath.slice(0, Math.max(0, filePath.length - name.length - 1)),
+  }));
+}
 
-  while (queue.length) {
-    const { id, path: folderPath } = queue.shift();
-    let url = `${GRAPH_BASE}/drives/${driveId}/items/${id}/children`
-      + '?$select=id,name,webUrl,file,folder';
-    while (url) {
-      const res = await fetchImpl(url, { headers: { Authorization: `Bearer ${accessToken}` } });
-      if (!res.ok) {
-        throw new Error(`Graph list children failed: ${res.status} ${await res.text()}`);
-      }
-      const data = await res.json();
-      for (const item of data.value ?? []) {
-        const childPath = folderPath ? `${folderPath}/${item.name}` : item.name;
-        if (item.folder) queue.push({ id: item.id, path: childPath });
-        else if (item.file) out.push({ id: item.id, name: item.name, webUrl: item.webUrl, folderPath });
-      }
-      url = data['@odata.nextLink'] ?? null;
-    }
-  }
-  return out;
+/** Only PDFs go to extraction — the tree also holds .DS_Store, .xlsx, .jpg etc. */
+export function isPdf(item) {
+  return item.file?.mimeType === 'application/pdf' || /\.pdf$/i.test(item.name ?? '');
 }
 
 export async function downloadFileContent({ accessToken, driveId, itemId, fetchImpl = fetch }) {

@@ -94,4 +94,24 @@ describe('planning a backfill', () => {
     expect(twice.updates).toHaveLength(0);
     expect(twice.skipped.alreadyLinked).toBe(3);
   });
+
+  it('relink re-matches rows whose linked item is gone, and leaves live links alone', () => {
+    const stale = { name: '004.pdf', webUrl: 'old', itemId: 'deleted-copy' };
+    const ds = {
+      documents: [
+        { filename: '004.pdf', path: 'Тал/Гэрээ/004.pdf', sourceFile: stale },
+        { filename: '004.pdf', path: 'Тал/Гэрээ/004.pdf', sourceFile: { name: '004.pdf', webUrl: 'w', itemId: 'item-004' } },
+        { filename: 'missing.pdf', path: 'Тал/missing.pdf', sourceFile: { ...stale, itemId: 'also-gone' } },
+      ],
+    };
+    expect(planBackfill(ds, files).updates).toHaveLength(0);
+
+    const plan = planBackfill(ds, files, { relink: true });
+    expect(plan.relinked).toBe(1);
+    expect(plan.updates).toEqual([
+      { collection: 'documents', index: 0, sourceFile: { name: '004.pdf', webUrl: 'https://sp/item-004', itemId: 'item-004' } },
+    ]);
+    expect(plan.skipped.alreadyLinked).toBe(1);
+    expect(plan.unmatched).toEqual([{ collection: 'documents', index: 2, filename: 'missing.pdf', stale: true }]);
+  });
 });

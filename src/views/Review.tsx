@@ -9,6 +9,7 @@ import { RECORD_TEMPLATES } from '@/lib/review-templates';
 interface PendingRecord {
   id: string;
   sourceFile: { name: string; webUrl: string; itemId: string };
+  sourcePath?: string;
   extracted: { targetCollection: string; [key: string]: unknown };
   status: string;
   extractedAt: string;
@@ -138,7 +139,7 @@ function ReviewRecordCard({ record, onDone }: { record: PendingRecord; onDone: (
   return (
     <Card
       title={record.sourceFile.name}
-      subtitle={`Ангилал: ${collection} · ${new Date(record.extractedAt).toLocaleString('mn-MN')}`}
+      subtitle={`${record.sourcePath ? `${record.sourcePath} · ` : ''}Ангилал: ${collection} · ${new Date(record.extractedAt).toLocaleString('mn-MN')}`}
       right={
         <a href={record.sourceFile.webUrl} target="_blank" rel="noreferrer" className="text-xs underline"
           style={{ color: 'var(--series-1)' }}>

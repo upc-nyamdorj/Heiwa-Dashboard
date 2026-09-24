@@ -15,6 +15,12 @@ on:
         required: false
         type: boolean
         default: false
+      seed_state:
+        description: 'Record files as already synced WITHOUT extracting them (one-off adoption). all = every PDF; linked = only PDFs the dataset already links to.'
+        required: false
+        type: choice
+        options: ['', linked, all]
+        default: ''
 
 permissions:
   contents: write
@@ -44,6 +50,7 @@ jobs:
           ARGS=""
           if [ "${{ inputs.dry_run }}" = "true" ]; then ARGS="$ARGS --dry-run"; fi
           if [ -n "${{ inputs.limit }}" ]; then ARGS="$ARGS --limit=${{ inputs.limit }}"; fi
+          if [ -n "${{ inputs.seed_state }}" ]; then ARGS="$ARGS --seed-state=${{ inputs.seed_state }}"; fi
           node scripts/sync-onedrive.mjs $ARGS
 
       - name: Commit and push changes
