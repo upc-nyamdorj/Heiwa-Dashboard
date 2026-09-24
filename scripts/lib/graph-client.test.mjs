@@ -2,7 +2,7 @@ import { describe, it, expect } from 'vitest';
 import { readFileSync } from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
-import { listFolderChildren, listFolderTree, getAppOnlyToken } from './graph-client.mjs';
+import { listFolderChildren, listFolderTree, getAppOnlyToken, isPdf } from './graph-client.mjs';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 const sample = JSON.parse(
@@ -135,5 +135,15 @@ describe('listFolderTree', () => {
       { id: 'f0', name: 'top.pdf', webUrl: 'https://x/f0', folderPath: '' },
       { id: 'f1', name: 'one.pdf', webUrl: 'https://x/f1', folderPath: 'a' },
     ]);
+  });
+});
+
+describe('isPdf', () => {
+  it('accepts PDFs by mime type or extension and rejects everything else', () => {
+    expect(isPdf({ name: 'a.pdf', file: { mimeType: 'application/pdf' } })).toBe(true);
+    expect(isPdf({ name: 'B.PDF', file: {} })).toBe(true);
+    expect(isPdf({ name: '.DS_Store', file: { mimeType: 'application/octet-stream' } })).toBe(false);
+    expect(isPdf({ name: 'Зургийн бүртгэл.xlsx', file: { mimeType: 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet' } })).toBe(false);
+    expect(isPdf({ name: 'letter.jpg', file: { mimeType: 'image/jpeg' } })).toBe(false);
   });
 });

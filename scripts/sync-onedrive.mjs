@@ -23,7 +23,7 @@
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import {
-  getAppOnlyToken, listFolderChildren, downloadFileContent, DEFAULT_MAX_DEPTH,
+  getAppOnlyToken, listFolderChildren, downloadFileContent, isPdf, DEFAULT_MAX_DEPTH,
 } from './lib/graph-client.mjs';
 import { loadSyncState, saveSyncState, diffAgainstState } from './lib/sync-state.mjs';
 import { loadPendingReview, savePendingReview } from './lib/pending-review-store.mjs';
@@ -66,8 +66,12 @@ async function main() {
   const accessToken = await getAppOnlyToken({ tenantId, clientId, clientSecret });
 
   console.log(`Listing files in the OneDrive/SharePoint sync folder (subfolders up to ${args.maxDepth} levels)...`);
-  const files = await listFolderChildren({ accessToken, driveId, folderId, maxDepth: args.maxDepth });
-  console.log(`Found ${files.length} file(s) in the folder tree.`);
+  const allFiles = await listFolderChildren({ accessToken, driveId, folderId, maxDepth: args.maxDepth });
+  const files = allFiles.filter(isPdf);
+  console.log(`Found ${allFiles.length} file(s) in the folder tree, ${files.length} of them PDF.`);
+  if (files.length < allFiles.length) {
+    console.log(`Skipping ${allFiles.length - files.length} non-PDF file(s) (e.g. ${allFiles.find((f) => !isPdf(f)).path}).`);
+  }
 
   const state = loadSyncState(STATE_PATH);
   let changed = diffAgainstState(files, state);

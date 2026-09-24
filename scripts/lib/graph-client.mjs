@@ -92,6 +92,11 @@ export async function listFolderTree({ accessToken, driveId, folderId, fetchImpl
   }));
 }
 
+/** Only PDFs go to extraction — the tree also holds .DS_Store, .xlsx, .jpg etc. */
+export function isPdf(item) {
+  return item.file?.mimeType === 'application/pdf' || /\.pdf$/i.test(item.name ?? '');
+}
+
 export async function downloadFileContent({ accessToken, driveId, itemId, fetchImpl = fetch }) {
   const res = await fetchImpl(`${GRAPH_BASE}/drives/${driveId}/items/${itemId}/content`, {
     headers: { Authorization: `Bearer ${accessToken}` },
