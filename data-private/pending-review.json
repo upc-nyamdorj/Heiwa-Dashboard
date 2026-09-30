@@ -22,7 +22,7 @@
       "scope": "C1, G1-G4 барилгуудын салхивч, агаар сэлгэлтийн хоолойн үйлдвэрлэл, угсралт, суурилуулалтын ажил (ventilation/air-conditioning duct fabrication and installation), Heiwa Residence & Care Home",
       "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract number and signing date are handwritten (26/060; 2026.08.17) — worth verifying. Start date not a fixed date: work starts from the date the contract is approved. Price breakdown: C1 block 206,662,100.70 + G1-G4 blocks 338,756,070.32 = 545,418,171.02; VAT 10% = 54,541,817.10; subtotal 599,959,988.12; discount 3.20% = 19,198,719.62; total incl. VAT 580,761,268.50. Payment schedule: advance 30% = 174,228,380.55; financing 65% = 377,494,824.53; 5% guarantee retained over 3 years (1.5% = 8,711,419.03; 1.5% = 8,711,419.03; 2.0% = 11,615,225.37). Attached approval sheet lists budget 785,882,829 and special licence БУ18-105/23; work order sheet (Юнайтэд пропертниз холдинг ХХК, 2026.07.23) gives work start 2026.08.03."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:37:39.473Z"
   },
   {
@@ -48,7 +48,7 @@
       "scope": "Ажил гүйцэтгэх гэрээ (зураг төсөл боловсруулах): \"Хэйва\" (Heiwa care home) төслийн гадна цахилгаан хангамжийн зураг (10 кВ ЦДКШ, 10/0.4 кВ 2*630 кВА дэд станц, РП өргөтгөл), 0.4 кВ кабель шугамын ажлын зураг, гадна холбооны ажлын зураг, геодезийн хэмжилт, техникийн нөхцөл авах, магадлалаар батлуулах, зохиогчийн хяналт. Хан-Уул дүүрэг, 8-р хороо.",
       "notes": "Гэрээний огноо нүүр хуудсанд гараар бичигдсэн бөгөөд бүрэн уншигдахгүй (\"2025 оны .. сарын .. өдөр\", №..../003); зөвшөөрлийн хуудсан дээрх гарын үсгийн огноо 2025.06.16 бөгөөд файлын нэр 25-003 / 20250616-г баталж байна — хүний нүдээр шалгах. Төлбөр 100% бартераар: \"Фирма мараско\" ХХК-ийн 3 ширхэг Toyota Prius 30S тээврийн хэрэгсэл (тус бүр 25,700,000₮; ZVW30-1950416, ZVW30-1897259, ZVW30-1542661). Урьдчилгаа 66.66% буюу 51,400,000₮ (2 машин), эцсийн санхүүжилт 33.34% буюу 25,700,000₮ (1 машин). Нийт үнэд НӨАТ 7,009,091₮, магадлалын төлбөр 6% (3,930,331₮), нормчлолын сангийн төлбөр 1% (655,055₮) багтсан. Хугацаа: ТН авах 30 хоног, ажил дуусгах ТН гарснаас 60 хоног. Хожимдолын алданги 0.1%/хоног, дээд хязгаар 20%. Хавсралтад 2025.05.20-ны 76,026,764₮-ийн үнийн санал хавсаргасан (гэрээний дүнгээс зөрүүтэй)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:56:26.871Z"
   },
   {
@@ -74,7 +74,7 @@
       "scope": "Авто зам, замын байгууламжийн зураг төсөл боловсруулах (Heiwa Residence & Care Home): замын зураг төсөл, цахилгаан, гэрэлтүүлэг, гадаргуун ус зайлуулах байгууламжийн зураг төсөл, геодезийн байр зүйн судалгаа, техникийн тодорхойлолт. Ажлыг 65 хоногт багтаан магадлалаар баталгаажуулан хүлээлгэн өгнө.",
       "notes": "Signed date is handwritten and partly illegible (\"2026 оны 05 сарын 0?/2? өдөр\"); filename and approval sheet (2026.05.26 approvals) suggest 2026-05-27 — worth human verification. Contract number also handwritten as \"№ UPC 26/087\". No calendar start/end dates printed; duration stated as 65 days from contract approval/advance payment. Payment schedule: 30% advance 13,742,826; 40% interim 18,323,768; 30% final 13,742,826. Annex 1 total shows 45,809,419 (1 MNT rounding difference vs clause 2.3 figure of 45,809,418). VAT 10% = 4,164,493 included. Package also contains contractor's price offer letter No. 89/26 dated 2026-05-13, state registration certificate and special permit 2025/01/052."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:56:56.598Z"
   },
   {
@@ -100,7 +100,7 @@
       "scope": "Автомашин түрээслэх гэрээ — Toyota Prius Alpha-XW, улсын дугаар ДАН 99-70, сувдан цагаан өнгөтэй авто тээврийн хэрэгслийг жолоочийн хамт 4 сарын хугацаагаар түрээслүүлэх",
       "notes": "Value shown (300,000₮) is the MONTHLY rent per clause 2.3, not a total contract value; no total sum is printed. Clause 2.3 states the payment includes the driver's salary, personal income tax (ХАОАТ) and all other taxes/fees plus fuel costs — VAT treatment not explicitly stated. Contract number is handwritten and partly illegible (read as \"24/104\"); the date line is handwritten as 20_26_ оны _09_ сарын _01_ өдөр. Payment due within the last 7 days of each month to Khan Bank acc. 430006040 (С.Баттогтох). Attached: vehicle technical certificate (VIN ZVW41296697, 2013) and citizen ID copy (illegible)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:57:14.790Z"
   },
   {
@@ -115,7 +115,7 @@
       "targetCollection": "unclassifiable",
       "reason": "Document is not a construction-project record. Page 1 is a Mongolian vehicle technical specification / registration certificate (No. 06791872, plate 9970ДАН, Toyota Prius Alpha-XW, owner \\\"НЭГ КАПИТАЛ МОБАЙЛ\\\" ХХК, issued by Дархан-Уул registration authority); pages 2-3 are the front and back of a Mongolian citizen identity card (Олгонууд Сандуйдорж, ID 11163905115, issued 2025-06-10). Contains personal/identity data, not contract, payment, correspondence, quality or drawing information."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T07:57:27.347Z"
   },
   {
@@ -134,7 +134,7 @@
       "amount": 300000,
       "notes": "Торгуулийн хуудас (penalty notice) issued by Юнайтед Проперти Холдинг ХХК to Хүрэл Гарьд ХХК. Violation (handwritten): smoking on the work site / repeated breach (\"Ажлын талбайд тамхи татсан... давтан зөрчсөн (3 хүн)\") — 3 persons. Penalty 300,000 MNT; \"Бүгд үнэ\" total line left blank. Signed by HSE (ХАБЭА) engineer and received party (signatures illegible). Penalty number (№) not filled in. NOTE: the whole page is struck through with a large red diagonal line, suggesting the notice may have been cancelled/voided — human check advised. Handwritten year digits read as \"26\" (2026) which may be a mis-write for 2025 — verify."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T07:57:42.517Z"
   },
   {
@@ -160,7 +160,7 @@
       "scope": "Амендмент (нэмэлт, өөрчлөлт) ажил гүйцэтгэх гэрээнд: HEIWA RESIDENCE & CARE HOME төслийн ус цуглуулах танк (гадна тохижилт) — төмөр бетон суурийн ажил 72 м2, B1 давхрын угсралт 72 м2, парпет 34 м",
       "notes": "Amendment to base contract No. 26/008 dated 2026-04-01 between \"Баясах ирээдүй\" ХХК (employer) and \"Дельта Констракшн\" ХХК (contractor). Signed date handwritten and partly illegible (read as 2026-08-27; approval signatures dated 2026-08-31). Contract end stated as \"from approval date until 2026-09-15\"; budget sheet shows work start 2026-08-28, finish 2026-09-15. Payment: 5% guarantee/retention = 2,017,400 (released 1.7%/1.7%/1.6% over 3 years), 95% financing = 38,330,600 on approved act. Price proposal shows advance 0%. Handwritten budget approval figure \"40,500,000\" noted on page 2."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:58:01.959Z"
   },
   {
@@ -178,7 +178,7 @@
       "date": "2026-08-28",
       "docNo": "002"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:58:16.801Z"
   },
   {
@@ -197,7 +197,7 @@
       "amount": null,
       "notes": "Site instruction / non-conformance notice No. 004 (\"Барилгын талбайн даалгавар\"), project \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\". Violation: walking on and transporting materials over freshly poured, not fully cured black screed, and failure to clear waste from the work area before screed pouring — repeated occurrences. Required actions: improve coordination between trades and avoid damaging completed work; prohibit traffic/material transport over uncured screed; fully clean the area (waste, materials, obstructions) before screed pouring; on repeat violations the offending company will be recorded and the cost of re-repair per 1 m2 deducted from that company's payment. Compliance date: 2026-09-03. Issued by П.Төмөрхүү, Project Manager, stamped \"Юнайтэд Пропертиз Холдинг\" ХХК; receipt section (name/signature/date) left blank. \"Хариутай эсэх\" (response required) checkboxes left unmarked."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:58:35.505Z"
   },
   {
@@ -215,7 +215,7 @@
       "date": "2026-09-02",
       "docNo": "08"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:58:41.392Z"
   },
   {
@@ -234,7 +234,7 @@
       "amount": 2000000,
       "notes": "Two-page HSE (ХАБЭА) record: (1) \"Торгуулийн хуудас\" (penalty sheet) issued by UPH to Дельта Констракшн ХХК dated 2026.05.31 — violation: \"Шатнаас унасан (A-3 блок)\" (fall from ladder, block A-3), penalty 2,000,000 (currency not printed, presumably MNT); \"Бүгд үнэ\" total line left blank. (2) \"ХАБЭА-н инженерийн албан шаардлага\" No. 2, same date, regarding an accident caused by the Бат-Оршихбригад working on blocks A3 and A4: HSE engineer had previously warned about working on the site; requirement to wear fall-protection harness above 1.3 m and to inspect ladder footing, joints, legs before use was not complied with, leading to a fall accident; note \"(Торгуулийн хуудас хавсаргав)\" — penalty sheet attached. Recipient signature Б.Пүрэвсүрэн; countersignature dated 2026.06.02. Both pages struck through with a diagonal red line — status unclear (possibly voided). Handwritten; issuing organisation on penalty sheet read as \"UPH\" — verify."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:58:56.729Z"
   },
   {
@@ -253,7 +253,7 @@
       "amount": null,
       "notes": "Cover title: \"А1, А2 БЛОКЫН ГАДНА СИКАНЫ АЖИЛ\", Ulaanbaatar, 2026. Quality control sheets \"БЕТОНЫ СОГОГ ЗАСВАРЛАХ АЖЛЫГ ШАЛГАХ, ХААХ ХУУДАС\" for project HEIWA RESIDENCE & CARE HOME; work type \"Сика засвар\" (external patch repair, Гадна нөхөөс засвар); one sheet notes \"А1, Гадна нөхөөс засвар 415\\\". Before/after photos of defects labelled A1-F1 №1-3, A1-F3 №1-2 & №4, A1-F5 №3-4, №8, №11, A2-F1 №1, A2-F2 №3-7, A2-F4, A2-F5 №1. Inspection-type checkboxes (Эхний/Давтан шалгалт) and per-sheet Огноо/Date fields left blank. Signatures page: Н.Түвшинтөгс, Инженер, \"Эн Эс Эс Ти\" ХХК — 2026.08.16; Г.Төгөлдөр, Ахлах инженер, \"Цэлмэгтэнгэрийн бэрээ\" ХХК — 2026.08.16; Г.Уранчимэг, Чанарын инженер (Захиалагч) — date partly illegible, appears as \"...19\". Stamped by Дельта Констракшн ХХК. No monetary amount printed."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:59:22.903Z"
   },
   {
@@ -275,7 +275,7 @@
       "amount": 349350920,
       "notes": "IPR-01 (1st financing) performance report; employer \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; amount marked VAT-inclusive (НӨАТ-тай); work duration 41 days; contract end date 2027-01-30; performance act dated 2026-08-26/31, employer approval signed 2026-09-03. Payment computation section: 0% advance deduction, retention (Чанарын батал58 хугацааны дараах) percentage handwritten and hard to read (appears \"5%\"); handwritten margin notes appear to show 50,000,000 and 17,467,546 deductions and net figures 281,883,xxx / 1,180,000 / 280,383,373 — handwritten and not fully legible, needs human check."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T07:59:40.431Z"
   },
   {
@@ -293,7 +293,7 @@
       "date": "2026-08-28",
       "docNo": "002"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T07:59:51.080Z"
   },
   {
@@ -312,7 +312,7 @@
       "amount": null,
       "notes": "Барилгын талбайн даалгавар (site instruction) №004, issued by Төслийн менежментийн газар (UPH project manager П.Төмөрхүү, stamped \"Юнайтэд Пропертийз Холдинг\" ХХК) to all project contractors (Төслийн гүйцэтгэгч нарт). Project: \"Хэйва хотхон, асаргаа, сувилахуйн үйлчилгээтэй орон сууц\". Compliance/implementation date: 2026-09-03. Defect: repeated violations of walking/transporting materials over freshly poured, not fully cured black screed (хар шал) and failure to clear rubbish from the work area before pouring. Corrective measures: improve coordination between contractors and avoid damaging completed work; prohibit traffic and material transport over uncured screed; fully clean the area of debris/materials before pouring; on repeat offences the offending company will be registered by name and the cost of re-repair per 1 m2 will be calculated and deducted from that company's payment. Acceptance section (position, name, signature, date of receiving party) left blank. No shifr/code, approval date, section (хэсэг) or floor (давхар) printed."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:00:09.637Z"
   },
   {
@@ -331,7 +331,7 @@
       "amount": 1500000,
       "notes": "Торгуулийн хуудас (fine notice) + ХАБЭА-н инженерийн албан шаардлага №5 + фото баримт №1, all dated 2026-08-12. Violation: подонтой (перонтой) блок 4-р давхраас алдаж унгаасан — near-miss/accident when a pallet/block was dropped from the 4th floor of block A3 during \"Дотор засал\" (interior finishing) work. Requirements listed: 1) no HSE engineer on site; 2) area beneath not cordoned off/safe passage not ensured; 3) all workers to be re-briefed on floor-level responsibility and photo report submitted. Fine amount 1,500,000 (currency not printed, presumably MNT); \"Бүгд үнэ\" total row left blank. Pages 1-2 are struck through with a large red diagonal line — possibly cancelled/voided; worth human verification. Stamped by ХАБЭА mergeshsen mergejilten Дорждэрэм Гайбаяр, seal №19. Handwritten text partly illegible."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:00:21.504Z"
   },
   {
@@ -349,7 +349,7 @@
       "date": "2026-09-01",
       "docNo": "003"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:01:54.968Z"
   },
   {
@@ -375,7 +375,7 @@
       "scope": "A1-A6 барилгуудын салхивч, агаар сэлгэлтийн хоолойн үйлдвэрлэл, угсралт, суурилуулалтын ажил (HEIWA RESIDENCE & CARE HOME) — ventilation/air-conditioning ductwork fabrication and installation for blocks A1-A6",
       "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract no. is handwritten, read as 26/059 (filename 059). Start date not a fixed date — counted from contract approval date. Price breakdown: A1-A4 59,956,054.00 each, A5 78,397,998.00, A6 90,731,328.40; subtotal 408,953,542.40; VAT 10% 40,895,354.24; total 449,848,896.64; discount 5% 22,492,444.83; final 427,356,451.81. Payment schedule: advance 30% = 128,206,935.54; financing 65% = 277,781,693.68; retention 5% released in 3 instalments (1.5% 6,410,346.78; 1.5% 6,410,346.78; 2% 8,547,129.04). Approval sheet lists budget line \"6. Ventilation\" 2,699,347,416 and special permit ЗТ19-846/22. Attached work-order sheet (Юнайтэд пропертийз холдинг ХХК) dated 2026-07-23 shows work start 2026-08-03. BOQ annex table headed \"Про эм эс ХХК\" — possible template/name inconsistency worth checking."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:02:31.975Z"
   },
   {
@@ -401,7 +401,7 @@
       "scope": "Хороолол доторх гадна ИШС угсралтын ажил - гадна дулаан, ус хангамж, ариутгах татуургын материалтай ажил гүйцэтгэх (дулааны худаг ДХ-1, ДХ-2, ДХ-3, шинээр хийх шугамын дулаан хангамж, барилга дотор явах шугамын дулаан, халуун/хүйтэн ус хангамж, ариутгах татуурга/гадна бохир)",
       "notes": "Захиалагч: \"Баясах ирээдүй\" ХХК. Гэрээний дугаар гараар бичсэн, \"26/068\" (эсвэл \"261/068\") гэж уншигдаж байгаа тул шалгах шаардлагатай; файлын нэрэнд 068. Хугацаа: гадна дулаан, ус хангамж 2026.08.28-2026.10.09; гадна бохир 2026.08.28-2026.09.12. Төлбөрийн график: урьдчилгаа 30% (310,560,486.81), дундын санхүүжилт 60% (621,120,973.62), үлдэгдэл/сүүлийн санхүүжилт 5% (51,760,081.14), баталгаат хугацааны барьцаа 5% (1.5%-15,528,024.34; 1.5%-15,528,024.34; 2%-20,704,032.45). НӨАТ болон бусад татвар нийт үнэд багтсан. Тусгай зөвшөөрөл БУ19-334/22."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:03:01.996Z"
   },
   {
@@ -427,7 +427,7 @@
       "scope": "Interior sanitary/plumbing installation works (heating, cold & hot water, sewerage) for buildings A1-A4 and G1-G3 — A1-A4 at 3,675.00 m2 each @ 46,044 MNT = 169,211,700 each; G1-G3 at 1,006.00 m2 each @ 18,417 MNT = 18,527,502 each. Client: \"Баясах ирээдүй\" ХХК.",
       "notes": "Contract number printed handwritten as \"26/058\"; signature date handwritten, read as 2026-08-06 (matches filename 20260806). Start date not fixed — contract states work period counted from date contract is approved. Payment schedule: 95% financing (695,807,840.70) paid per approved acts; 5% guarantee/retention released after warranty period, split 1.5% (10,986,439.59) year 1, 1.5% (10,986,439.59) year 2, 2% (14,648,586.12) year 3. Attached A1-block breakdown sheet shows \"Урьдчилгаа\" 16,921,170 and \"Барьцаа\" 8,460,585 (10% and 5% of the A1 block sum) — advance percent not stated in the contract body, worth human check. G1-G3 attachment shows 3,018.00 m2 total and 55,582,506, consistent with the three G blocks. Filename notes original copy is missing (\"эх хувь байхгүй\"). Bank: Худалдаа хөгжлийн банк, acct 27 000 4000 499212883. Penalty 0.3%/day both ways."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:03:31.004Z"
   },
   {
@@ -445,7 +445,7 @@
       "date": "2026-08-28",
       "docNo": "002"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:03:45.103Z"
   },
   {
@@ -464,7 +464,7 @@
       "amount": null,
       "notes": "\"Барилгын талбайн даалгавар\" (site instruction) No. 004, version/№ 004, project \"Хэйва хотхон, асаргаа, сувилын үйлчилгээтэй орон сууц\", client \"Баясах Ирээдүй\" ХХК. Non-conformance: walking on freshly poured/not fully cured black floor slab and transporting materials over it; failure to clear waste from the work area before slab pouring — repeated occurrences. Corrective measures required: (1) improve coordination and avoid damaging other contractors' completed work; (2) no traffic/material transport over uncured slab after pouring; (3) fully clean the work area (waste, materials, obstructions) before pouring; (4) on repeat occurrence the offending company will be registered, per-m2 rework cost calculated and deducted from that company's payment. Compliance date (\"Хэрэгжилт хангах огноо\"): 2026-09-03. Approval date field blank; no \"Шифр\" printed; recipient acknowledgement section (position, name, signature, date) left blank. Stamp/signature of Төслийн менежер dated 2026.09.02. No monetary amount stated."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:04:02.040Z"
   },
   {
@@ -490,7 +490,7 @@
       "scope": "A1-A6 блокын ашиглалтгүй дээвэр болон C1 блок ашиглалттай дээврийн ажил (roofing works – non-trafficable roofs of blocks A1-A6 and trafficable roof of block C1)",
       "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract no. and signing date are handwritten: № 26/071, 2026.09.0? (filename indicates 2026-09-03; approval sheet signatures dated 2026.09.01 and 2026.09.03). Contract clause 2.2 states work end date 2026.10.01, but the attached approval sheet (page 7) states 10/15/2026 and the order sheet/schedule also show 2026.10.15 — discrepancy to verify. Net before VAT 447,286,521.00; VAT 10% = 44,728,652.10. Retention: 2.32% of total (= 5% of labour value) released in 3 annual instalments (0.7%/3,423,120; 0.7%/3,423,120; 0.93%/4,564,160). Advance 50% = 246,007,586.55; interim financing 30% = 147,604,551.93; final payment 17.68% = 86,992,634.63. Bank: Голомт банк, acct 76001500-1102027263. Special permit БУ19-171/22. Attachments include order sheet dated 2026-07-23 (work start 2026.08.09), schedules, price offers (C1 block 96,044,168; total 492,015,176 — slightly differs from contract total)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:04:34.599Z"
   },
   {
@@ -516,7 +516,7 @@
       "scope": "А3 цэвэр усны узель материал нийлүүлэлт, угсралт, суурилуулалт (HEIWA RESIDENCE &amp; CARE HOME)",
       "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract number and date handwritten on cover page (26/032, 2026.09.15). Price build-up: materials 200,168,793 + labour 49,335,000 = 249,503,793, less 15.83% discount (39,503,793) = 210,000,000 total incl. VAT. Payment schedule: 5% guarantee/retention 10,500,000 (released 1 year after warranty period per Construction Law 14.3), advance 47.62% = 100,000,000, interim 23.81% = 50,000,000, final 23.57% = 49,500,000. Approval sheet lists budget residual (Төсвийн үлдэгдэл) 288,002,400. Attached price quotation No. 260813T7 dated 2026-08-13 (total 249,503,793 incl. VAT 22,682,163). Contractor special permit БУ12-482/24."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:04:56.287Z"
   },
   {
@@ -531,7 +531,7 @@
       "targetCollection": "unclassifiable",
       "reason": "This is a Mongolian State Registration Certificate of a Legal Entity (Хуулийн этгээдийн улсын бүртгэлийн гэрчилгээ, No. 0001169073) for \"Бэзү технологи\" LLC (registration no. 6168671, entity no. 9011669011, registered 2017-04-05, re-issued 2018-07-30), plus page 2 listing registered amendments to the founding documents (director appointments, shareholder/charter changes dated 2024-08-01). It is a corporate registration/company credential document, not a contract, payment or invoice, correspondence/RFI, quality or defect record, or drawing-register entry."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:05:03.530Z"
   },
   {
@@ -546,7 +546,7 @@
       "targetCollection": "unclassifiable",
       "reason": "Document is a government-issued special license/permit certificate (Тусгай зөвшөөрөл No. БУ12-482/24) from the Ministry of Urban Development, Construction and Housing to \"Бззу технологи\" ХХК (state reg. 9011669011, registry 6168671), covering activity classes БА-6.1 (internal water supply/sewerage networks and equipment, external branch lines) and, by amendment БА-6.2 (internal heating/ventilation networks, refrigeration installations and equipment, external branch lines). Valid five years from 2024-05-09; signed by Minister Ж.Батсуурь on 2024-10-02, with an annexed certificate supplement and a blank contract-completion log page. It is a licensing/permit record, not a contract, payment/invoice, correspondence, quality record or drawing-register entry, so none of the available collections apply."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:05:15.858Z"
   },
   {
@@ -572,7 +572,7 @@
       "scope": "Ус дулаан дамжуулах төв узель болон блокуудын холих насосны узелийн материал нийлүүлэлт, угсралт суурилуулалтын ажил (HEIWA RESIDENCE & CARE HOME) - blocks A1, A2, G1 / C1 / A3, A4, G2, G3 / A5, A6, G4",
       "notes": "Client: \"Баясах ирээдүй\" ХХК (order sheet issued by \"Юнайтэд пропертийз холдинг\" ХХК dated 2026-07-23 with work period 2026.09.14–2026.10.12, which differs from contract dates). Contract no. and date are handwritten: № 26-085, 2026 оны 09 сарын 16. Price breakdown: material 419,611,046.50 + labour 49,408,000 = 469,019,046.50 after 3.5% discount (17,011,053.50) from 486,030,100. Payment schedule: guarantee/retention 4.47% (20,980,552.33, 5% of material total, held 1 year after completion per Construction Law 14.3), advance 50% (234,509,523.25/234,509,523.5), interim 10% (46,901,904.65) at 60% progress, interim 15% (70,352,856.98) at 90% progress, final 20.53% (96,274,209.30). Attachments include price proposal dated 2026-08-15, company registration certificate, special permits БУ16-115/24 and ТЗ 040/22 (issued to \"Одконхолдинг\" ХХК)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:05:56.009Z"
   },
   {
@@ -587,7 +587,7 @@
       "targetCollection": "unclassifiable",
       "reason": "This is a Mongolian State Registration Certificate of a Legal Entity (Хуулийн этгээдийн улсын бүртгэлийн гэрчилгээ, No. 000244606) for \"Одкон сервис энд КО\" LLC (registry no. 6829481, entity no. 9011836768, registered 2022-03-01), plus a page recording an amendment registering the executive director. It is a company registration/corporate document, not a contract, payment/invoice, correspondence, quality record, or drawing-register entry."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:06:03.865Z"
   },
   {
@@ -613,7 +613,7 @@
       "scope": "Барилгын үйл ажиллагааны тусгай зөвшөөрөл (БУАТЗ) олгох, түүний үндсэн дээр хариуцагч (Монголын барилгын үндэсний ассоциаци ТББ) болон тусгай зөвшөөрөл эзэмшигч хоорондын гэрээ. Зөвшөөрөгдсөн ажлын төрөл: БА-2.2 (усны барилга байгууламжийн угсралт, өргөтгөл, шинэчлэл), БА-3.3 (ус хангамж, ариутгах татуургын магистраль шугам сүлжээ), БА-3.5 (цахилгаан дамжуулах шугам сүлжээ, дэд станц), БА-5.4 (дулааны магистраль шугам сүлжээ), БА-6.1, БА-6.2, БА-6.3, БА-6.4 (барилгын доторх ус хангамж/ариутгал, халаалт-салхивч, гэрэлтүүлэг-цахилгаан, холбоо дохиолол-галын аюулгүй байдлын системийн угсралт).",
       "notes": "Энэ бол барилгын тусгай зөвшөөрлийн гэрчилгээ (Барилга, хот байгуулалтын яам, гэрчилгээний дугаар 0012380, зөвшөөрлийн дугаар БУ16-115/24) болон түүнд хавсаргасан МБҮА ТББ-тай байгуулсан гэрээ. Зөвшөөрлийг 2024-02-07-ны өдрөөс таван жилийн хугацаатай олгосон боловч дуусах огноо тодорхой хэвлэгдээгүй тул end=null (тооцвол ойролцоогоор 2029-02-07). Гэрээний үнийн дүн байхгүй; зөвхөн Улсын тэмдэгтийн хураамж 1,750,000 төгрөг (Чингэлтэй дүүргийн Татварын хэлтэст төлсөн) гэж заасан — энэ нь гэрээний үнэ биш тул value=null. Тусгай зөвшөөрөл эзэмшигчийг төлөөлж захирал М.Наранбат, олгогчийг төлөөлж МБҮА ТББ-ын БУАТЗХ-ийн дарга Х.Гүлбарша гарын үсэг зурсан. Гэрчилгээг Барилга, хот байгуулалтын сайд Ц.Даваасүрэн 2024-02-07-нд гарын үсэг зурсан (сайдын 29 дүгээр тушаал). Улсын бүртгэлийн дугаар 9011085080, регистрийн дугаар 2020289. Хаяг: УБ, СБД, 7 хороо, 11 хороолол, 17 байр."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:06:48.181Z"
   },
   {
@@ -639,7 +639,7 @@
       "scope": "Тусгай зөвшөөрөл эзэмших, эзэмшүүлэх гэрээ (Energy Ministry special licence No. 040/22 for \"Одконхолдинг\" ХХК): ТЗ-2.2 0.4-35 kV power transmission lines and substation installation/repair and testing; ТЗ-3.3 0.07-8.0 MPa boiler installation/repair and testing; ТЗ-5.3 0.07-8.0 MPa heating pipelines and heat distribution centre installation/repair and testing; ТЗ-7.1 equipment operating up to 4.0 MPa installation/repair and testing",
       "notes": "Document bundle: Energy Ministry special permit certificate No. 040/22 (issued 2022-03-11, valid 5 years, serial 01411, signed by Minister Н.Тавинбэх) plus the licence-holding contract No. ТЗ/Г-22/-41, Ulaanbaatar. Contract signing day is handwritten and not clearly legible (\"2022 оны 3 дугаар сарын 2?-ны өдөр\") — left null; the year/month is 2022-03. Contract is valid from signature until 2027-03-11. Clause 3.1: fee of 13,000,000 MNT to be transferred to KHAAN Bank account 5173077945 by a handwritten date in March 2022 (appears to be the 25th, not fully legible). Licensee: \"Одкон Холдинг\" ХХК (registration 2020289); signed for licensee by М.Ариунтуяа (chief finance) and Б.Золбаяр (chief engineer), approved by CEO М.Наранбат; for licensor by director М.Түмэнжаргал, Х.Самбалхүндэв, Л.Энхцэцэг, Ж.Бадамлянхуа. VAT treatment not stated."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-24T08:07:14.828Z"
   },
   {
@@ -665,7 +665,7 @@
       "scope": "Supply and installation of fire alarm, public address/notification, interior and exterior CCTV, outdoor vehicle barrier and garage licence-plate recognition systems for blocks A1-A6 and G1-G4 (Heiwa Residence & Care Home). Client: \"Баясах ирээдүй\" ХХК.",
       "notes": "Contract no. handwritten as \"26/075\"; contract date handwritten 2026.09.08. Start stated as \"from the date the contract is approved\". Multiple completion milestones: fire alarm/notification/indoor CCTV/smart systems/garage plate recognition equipment 2026-12-01; exterior CCTV 2026-10-01; exterior vehicle barrier 2026-10-30; conduit/cable-pull related material delivery 2026-09-25. Payment schedule: 5% retention guarantee paid over 3 years (1.5% / 1.5% / 2.0% = 10,752,926.25 / 10,752,926.25 / 14,337,235.00), barter 55.59% = 398,520,000 (United Project Corporation C2 block, bldg 731, apt 5, 49.2 m2 at 8,100,000/m2), advance 15% = 107,529,262.5, interim financing 10% = 71,686,175.00, final payment 14.41% = 103,283,225.00. Approval sheet (p.30) shows budget line 9. Telecommunication estimate value 1,530,785,073.17 and completion date 10/15/2026, which differs from contract clause 2.3 — worth checking. Attached quotations ref AEZ-21-01 dated 31-Aug-26, effective to 21-Sep-26."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-24T08:07:50.229Z"
   },
   {
@@ -691,7 +691,7 @@
       "scope": "Бараа материал худалдах, худалдан авах, угсралтын ажил гүйцэтгэх гэрээ — \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\" төслийн гадна хаалга: 246 ш гадна хаалга (HHS-1, RAL7021, 1000*2400) 637,632,000₮ ба 2 ш гаражийн хаалга (3500*3000, RAL9002/SPU 42) 50,970,000₮; нийлүүлэлт, угсралт, 1 жилийн баталгаа",
       "notes": "Худалдан авагч: \"Баясах ирээдүй\" ХХК. Гэрээний дугаар гараар бичсэн \"26/081\". Эхлэх хугацаа тодорхой огноогүй — гэрээ батлагдаж урьдчилгаа шилжсэн өдрөөс тооцно. Төлбөрийн хуваарь: урьдчилгаа 40% (275,440,800₮), дундын санхүүжилт 40% (275,440,800₮), үлдэгдэл 17% (117,062,340₮), баталгаа 3% (20,658,060₮). Угсралтын хугацаа: гаражийн хаалга 11-р сарын 03-ны дотор, гадна хаалга 11-р сарын 10-ны дотор нийлүүлж 25 хоногт багтаан актаар хүлээлгэн өгөх. Алданги хоног тутамд 0.1%, нийт дүнгийн 50%-иас хэтрэхгүй. Хавсралтууд: үнийн тариф, хаалганы тоо хэмжээний жагсаалт, зураг, компанийн гэрчилгээ, ISO гэрчилгээнүүд, Hörmann дилерийн гэрчилгээ, гэрээний нөхцөл батлуулах зөвшөөрлийн хуудас (2026-09-08 / 2026-09-10)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:26:33.086Z"
   },
   {
@@ -717,7 +717,7 @@
       "scope": "Гадна тохижилтын явган замын хавтан болон модон зам суулгалт, тоглоомын талбайн EPDM хучилтын ажил: EPDM шал 408.07 м2, явган замын хавтан 3,670 м2, модон шал 397.87 м2 (A1-A6, C1 гадна тохижилт)",
       "notes": "Захиалагч: \"Баясах ирээдүй\" ХХК. Contract no. handwritten, read as 26/084 (filename shows 084). Contract start clause 2.2 states start counted from date advance paid; approval sheet states 2026-09-15 start / 2026-10-30 finish. Payment schedule: advance 40% = 136,737,096; balance 55% = 188,013,507; retention/guarantee 5% = 17,092,137 held 2 years after completion. Approval sheet shows budget remaining (Төсвийн үлдэгдэл) 531,348,480. Package includes work order sheet (2026-09-04), state registration & special permit ЗТ16-1013/23, a wood-road drawing (04/21, 2026-08-31) and EPDM colour schedule."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:26:56.872Z"
   },
   {
@@ -743,7 +743,7 @@
       "scope": "G1-G4, C1 хүзүүвчний ашиглалттай дээврийн ажил (usable/green roof works) — G1-G4 blocks 45,202,025 each; C1 block collar roof 39,925,952. Client: \"Баясах ирээдүй\" ХХК, HEIWA RESIDENCE & CARE HOME project.",
       "notes": "Contract number is handwritten and partly illegible (read as 26/076; filename indicates 076). No advance payment: payment is 95% financing (209,697,349) against certified acts, plus 5% warranty retention (3,311,011 yr1 1.5%, 3,311,011 yr2 1.5%, 4,414,681 yr3 2.0%) released per Construction Law 14.3. Attached approval sheet shows project budget for G1-G4 of 222,835,436 vs contract 220,734,052. Attachments include Tulga Khan budget calcs (C1 38,008,652 and 1,917,300; G1-4 174,062,900 and 6,745,200), work order dated 2026-08-19, state registration and special permit BУ19-561/22. Company name appears as both \"Тулгахань\" and \"Тулга хань\"."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:27:17.673Z"
   },
   {
@@ -769,7 +769,7 @@
       "scope": "Хотхоны ус цуглуулах шүүрлийн систем материалтай угсралтын ажил (site stormwater collection/drainage filter system supply & installation) — гадна тохижилт, A1-A6, C1 blocks; includes earthworks, HDPE Ø150/Ø300 piping, 29 wells, geotextile, planter",
       "notes": "Client: \"Баясах ирээдүй\" ХХК. Employer's copy (Захиалагчийн хувь) ticked. Contract value breakdown: labour 150,479,164.00 + materials 149,827,600.00 + ХАБЭА 1% 1,504,791.64 + transport 3,300,000.00 = 305,111,555.64 (VAT-inclusive). Payment schedule: advance 25.09% = 76,563,800; progress/financing 72.44% = 221,023,797.44; warranty retention = 5% of labour cost, released in 3 annual instalments after the 5-year guarantee period per Construction Law 14.3 (0.74% = 2,257,187.46; 0.74% = 2,257,187.46; 0.99% = 3,009,583.28). Contractor's own budget estimate (Дугаар БА-2026090301, dated 2026-09-03) shows a slightly different total of 305,441,555.64 — discrepancy worth checking. Contract signed for the contractor by Б.Батсайхан although the front page/first signature block names director Л.Баттулга; handwritten note on approval sheet asks that the owner's decision covering the change of signatory (amount and signatory name) be obtained/appended. Approval sheet signed 2026-09-18 (finance director Н.Урантуяа) and 2026-09-21 (operations director Э.Ундрах). Contractor special permit БУ19-561/22; state reg. 9011121057 / 2741296. Attachments: work order sheet dated 2026-09-08 (planned works 2026-09-10 to 2026-10-01), layout drawings, well schedule, registration certificate and licence."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:27:53.044Z"
   },
   {
@@ -788,7 +788,7 @@
       "amount": 3000000,
       "notes": "Penalty sheet (Торгуулийн хуудас) issued by НҮБ/HSE engineer (stamp: Дорждэрэм Ганбаяр, мэргэшсэн мэргэжилтэн № 19) to Тулга хань ХХК for fire safety violation: while applying waterproofing foam on block A3, axis B-1 exterior water insulation work, fire safety was not ensured and at 15:45 on 2026-08-07 a fire broke out and the building was burned. Penalty amount 3,000,000 (currency not printed; \"Бүгд үнэ\" total line left blank). Accompanied by HSE engineer official requirement (Албан шаардлага) No. 3 dated 2026-08-07 requiring a corrective action plan within 5 working days, relocation of flammable materials, and repeated safety training; a note states the instruction logbook (зааварчилгааны дэвтэр) was checked/entered on 2026-08-04. Photo record sheet with 2 photos, work name \"Ус тусгаарлалт\", location A3 блок, signed 2026-08-07. Issuing organization name handwritten as abbreviation (appears \"УРН\") — partly illegible; handwriting is faint in places and the page is crossed out with a red diagonal line, which may indicate cancellation — worth human verification."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:28:07.342Z"
   },
   {
@@ -814,7 +814,7 @@
       "scope": "Гадна тохижилтын төмөрбетон түшиц ханын цутгалтын ажил (HEIWA RESIDENCE & CARE HOME) — суурийн ухмал цэвэрлэх, ханын арматур, хэв хашмал, бетон цутгалт, лак түрхэлт, ГШ-1, ГШ-3, ГШ-4 шатны ажил",
       "notes": "Employer: \"Баясах ирээдүй\" ХХК. Payment terms: advance 20% = 65,218,760; progress/remaining 77% = 251,092,226; warranty (баталгаа) 3% = 9,782,814 released 1% per year over 3 years. Contractor signature page dated 2026.08.21; budget sheet dated 8/20/2026 (exchange rate 534.58). Attached contractor quotation (Rev 01, 2026.8.20) totals 610,000.00 CNY — different currency, cross-check. Work order sheet (2026.08.20) lists work period 2026.09.01–2026.09.20, differing from contract dates. Includes drawing set EF-004/26 and schedule annexes."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:28:34.637Z"
   },
   {
@@ -840,7 +840,7 @@
       "scope": "Supply and installation of balcony railings (тагтны хашлага) for blocks A1-A6 of the Heiwa Residence & Care Home project, Khan-Uul district 8th khoroo, 2.6 ha site; total 228 units (170 pcs 1.5mm*3mm, 58 pcs 1.5mm*4mm), unit price 1,109,913.82 MNT",
       "notes": "Employer: \"Баясах ирээдүй\" ХХК. Contract no. and date handwritten (\"26/070\", 2026.09.03). Advance 20% = 38,205,420 MNT and interim financing 77% = 147,090,867 MNT are percentages of the MATERIAL total (191,027,100), not the contract total; final payment 23.78% = 60,172,252.50; guarantee/retention 3% = 7,591,810.50 of total contract value. Warranty period 36 months. Attached price proposal (page 20) is in CNY totalling 473,010 CNY. Signature page dates on approval sheet: 2026-09-01/2026-09-02."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:29:00.622Z"
   },
   {
@@ -855,7 +855,7 @@
       "targetCollection": "unclassifiable",
       "reason": "Document is a government e-permit system reference form — a construction special licence certificate (Тусгай зөвшөөрлийн гэрчилгээ) issued to \"ЦЭЛМЭГТЭНГЭРИЙН БЭРЭЭ\" foreign-invested LLC (reg. 5798299), licence BA-4.1 for building erection/extension/renovation, valid 2026-06-06 to 2031-06-06, printed 2026.08.18. It is a licence/credential record, not a contract, payment/invoice, correspondence, quality record or drawing-register entry."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:29:09.609Z"
   },
   {
@@ -873,7 +873,7 @@
       "date": "2026-08-28",
       "docNo": "002"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:29:23.564Z"
   },
   {
@@ -892,7 +892,7 @@
       "amount": null,
       "notes": "Барилгын талбайн даалгавар №004 (Хувилбар/№ 004), төсөл: \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\". Захиалагч: \"Баясах Ирээдүй\" ХХК; гүйцэтгэгч: Төслийн гүйцэтгэгч нарт. Хэрэгжилт хангах огноо 2026-09-03. Зөрчил: хар шал цутгасны дараа бүрэн хатаагүй шал дээгүүр зорчих, бараа материал зөөвөрлөх, цутгалтын өмнө ажлын талбайн хог хаягдлыг цэвэрлээгүй байх нь давтагдан гарч байна. Авах арга хэмжээ 4 заалт, дахин зөрчил гаргавал 1м2 талбайн дахин засварын тооцоог гаргаж тухайн компанийн гүйцэтгэлээс суутгана. Даалгавар өгсөн: П.Төмөрхүү (Төслийн менежер), тамга: Юнайтэд Пропертиз Холдинг ХХК, огноо 2026.09.02. Хүлээн авсан талын хэсэг хоосон/гарын үсэггүй. Шифр, батлагдсан огноо бөглөгдөөгүй."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:29:36.942Z"
   },
   {
@@ -910,7 +910,7 @@
       "date": "2026-09-03",
       "docNo": "006"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:29:46.766Z"
   },
   {
@@ -929,7 +929,7 @@
       "amount": 9802021,
       "notes": "Торгууль тавих акт (penalty act), document No. 002, approved 2026-09-07. Client: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; contract No. 26/021. Reason: material lost/damaged by fire (\"Материал галд шатаасан\") — on 2026-09-07 a fire broke out near the foundation insulation/water-proofing works, destroying materials and works. Materials listed: ЭМП хар цаас, XPS хөөсөнцөр хавтан 100мм/50мм/150мм, хамгаалалтын плантер, шахдаг хөөс, наалдац хөөс, ПуГВ 1*2.5 36метр, Ф16 хар хоолой, экскаватор түрээс. Totals: material 7,097,096.0; labour/Цалин 3,113,450.0; Тээвэр 1,391,475.0; total penalty 9,802,021.0 (currency not printed, presumably MNT). Note: further use of fire extinguishers and protective measures required. Annex 1 contains photographs of the fire damage. Signed by engineer G.Togoldor, HSE engineer B.Khalyunaa, contractor manager Zhang Tao, quality inspection engineer G.Ureekhmaa(?), D.Boldkhuu, P.Temuujin."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:29:59.603Z"
   },
   {
@@ -951,7 +951,7 @@
       "amount": 81461835,
       "notes": "Интервал (дундын) санхүүжилтийн гүйцэтгэлийн тайлан, IPR 2 / 02 тоот санхүүжилт. Contract no. shown as 26/024-001 on cover and 26/024 in tables. Contract period 2026-05-20 to 2026-11-30; work execution duration stated as 60 хоног. Contract total 987,505,180 (VAT included box ticked); cumulative performance to date 125,325,900.00; prior performance 162,923,670.00 column shown. Deductions: урьдчилгаа 30.0% = 37,597,770.00; чанарын барьцаа 5% = 6,266,295.00. Захиалагч \"БАЯСАХ ИРЭЭДҮЙ\" ХХК approved 2026-09-02/2026-09-03. Includes ажлын гүйцэтгэлийн акт (гүйцэтгэлийн мэдэгдэл №2) and фото акт (photos dated 2026-08-15, 2026-08-20, blocks A1-A4)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:30:19.081Z"
   },
   {
@@ -969,7 +969,7 @@
       "date": "2026-08-28",
       "docNo": "002"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:30:31.226Z"
   },
   {
@@ -988,7 +988,7 @@
       "amount": null,
       "notes": "Барилгын талбайн даалгавар №004 (хувилбар/№ 004), төсөл: \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\". Зөрчил: хар шал цутгаж байхад бүрэн хатаагүй шал дээгүүр зорчих, бараа материал зөөврлөх, мөн цутгалтын өмнө ажлын талбайн хог хаягдлыг цэвэрлээгүй байх зөрчил давтагдан гарч байна. Авах арга хэмжээ 4 заалт: ажлын уялдаа холбоог сайжруулах, хатаагүй шал дээгүүр зорчихгүй байх, цутгалтын өмнө талбайг цэвэрлэх, зөрчил давтагдвал 1м2 талбайн дахин засварын тооцоог гаргаж тухайн компанийн гүйцэтгэлээс суутгах. Хэрэгжилт хангах огноо: 2026-09-03. Хариутай эсэх хэсэг болон хүлээн авсан талын гарын үсэг/огноо бөглөгдөөгүй. Батлагдсан огноо хоосон, шифр хоосон."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:30:44.232Z"
   },
   {
@@ -1006,7 +1006,7 @@
       "date": "2026-09-03",
       "docNo": "005"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:30:50.847Z"
   },
   {
@@ -1021,7 +1021,7 @@
       "targetCollection": "unclassifiable",
       "reason": "Document is a construction special-permit (tusgai zövshöörliin gerchilgee) certificate issued via the e-permit system for \"БҮГД ТӨГС ТЭРГҮҮН КОНСТРАКШН ХХК\" (reg. 6542034), valid 2026-07-09 to 2031-07-09, scope БА-6.3, БА-6.4. It is a regulatory licence/credential record, not a contract, payment/invoice, correspondence, quality/defect record, or drawing-register entry."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:30:58.519Z"
   },
   {
@@ -1039,7 +1039,7 @@
       "date": "2026-08-28",
       "docNo": "002"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:31:11.031Z"
   },
   {
@@ -1058,7 +1058,7 @@
       "amount": null,
       "notes": "Барилгын талбайн даалгавар №004, хувилбар 004, төсөл: \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\". Хэрэгжилт хангах огноо 2026-09-03. Зөрчил: хар шал цутгасны дараа бүрэн хатаагүй шал дээгүүр зорчих, бараа материал зөөвөрлөх, цутгалтын өмнө ажлын талбайн хог хаягдлыг цэвэрлээгүй байх зэрэг давтагдсан зөрчил. Авах арга хэмжээ 4 заалт: ажлын уялдаа холбоог сайжруулах, хатаагүй шал дээгүүр зорчихгүй байх, цутгалтын өмнө талбайг цэвэрлэх, зөрчил давтагдвал 1м2 талбайн дахин засварын тооцоог гаргаж тухайн компанийн гүйцэтгэлээс суутгах. Хүлээн авсан талын гарын үсэг, огноо хоосон; \"Хариутай эсэх\" сонголт тэмдэглэгдээгүй. Батлагдсан огноо хоосон. Мөнгөн дүн заагаагүй."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:31:24.728Z"
   },
   {
@@ -1080,7 +1080,7 @@
       "amount": 9046801,
       "notes": "Progress/financing report (\"Гэрээний эхний санхүүжилтийн гүйцэтгэлийн тайлан\"), marked as the 4th financing (4 дахь санхүүжилт) on the cover, while the performance sheet header says \"2 дахь санхүүжилт\" — discrepancy worth checking. Client: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК. Performance table: total 19,267,040.45; cumulative 18,303,688.43; other deductions 963,352.02; contractor payable 9,046,800.80 (rounded to 9,046,801 on summary page). VAT box \"НӨАТ-тай\" ticked. Client approval signed 2026-08-18."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:31:41.406Z"
   },
   {
@@ -1102,7 +1102,7 @@
       "amount": 10363834,
       "notes": "5th interim financing report (дундын санхүүжилт) for project \"HEIWA RESIDENCE & CARE HOME\", client \"БАЯСАХ ИРЭЭДҮЙ\" ХХК. Payment amount on cover sheet 10,363,834; detailed sheet shows 10,363,833.77 with prior cumulative 27,350,489.23 and totals 37,359,041.94 (retention/other deduction line 1,966,205.37 / 1,439,499.43 / 545,464.94). Work duration 14 days. Package includes work performance act, 4 photo-act pages and routing slip. Approved/signed by client 2026-09-03; contractor signature dated 2026-09-02; performance act signed 2026-08-31. Currency not explicitly printed (₮ symbol used, i.e. MNT)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:31:59.368Z"
   },
   {
@@ -1121,7 +1121,7 @@
       "amount": null,
       "notes": "Барилгын талбайн даалгавар №004 (хувилбар/№ 004), төсөл: \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\". Захиалагч \"Баясах Ирээдүй\" ХХК, Төслийн менежментийн газар; хаяглагдсан: Төслийн гүйцэтгэгч нарт. Хэрэгжилт хангах огноо: 2026-09-03. Зөрчил: хар шал цутгалт бүрэн хатаагүй байхад шал дээгүүр зорчих, бараа материал зөөх, цутгалтын өмнө ажлын талбайн хог хаягдлыг цэвэрлээгүй байх зөрчил давтагдан гарсан. Авах арга хэмжээ 4 зүйл: ажлын уялдаа холбоог сайжруулах, хатаагүй шал дээгүүр зорчихгүй байх, талбайг урьдчилан цэвэрлэх, зөрчил давтвал 1м2 талбайн дахин засварын тооцоог гаргаж тухайн компанийн гүйцэтгэлээс суутгах. Даалгавар өгсөн: П.Тэмүүжин (тамга: Юнайтэд Пропертиз Холдинг ХХК, Төслийн менежер), огноо 2026.09.02. Хүлээн авсан талын хэсэг бөглөгдөөгүй. Батлагдсан огноо болон шифр хоосон; мөнгөн дүн заагаагүй."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:32:14.495Z"
   },
   {
@@ -1139,7 +1139,7 @@
       "date": "2026-06-02",
       "docNo": "01/053"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:32:20.711Z"
   },
   {
@@ -1165,7 +1165,7 @@
       "scope": "Supply of sanitary ware for the Heiwa residence & care home project: 464 pcs toilets CW817REBT305/D106A @ CNY 2,150 and 458 pcs washbasins LW709RCB @ CNY 960. FOB Project Site, Ulaanbaatar, Mongolia; origin P.R. China; transport cycle 8-10 days.",
       "notes": "Buyer is BAYASAKH IREEDUI LLC. Handwritten \"26/066\" at top of contract. Seller signature block on page 1 reads \"Inner Mongolia Junyi International Trade Co., Ltd\" (differs from letterhead) - worth checking. Page 1 shows quantity 464 against CW817REBT305 and 458 against LW709RCB, while the attached Mongolian approval sheet (p.20) reverses these (458 pcs @ 960 = 439,680 and 464 pcs @ 2,150 = 997,600); line totals are identical either way and the total is CNY 1,437,280. Approval sheet states 50% advance (718,640) and 50% on delivery (718,640), delivery within 65 working days; budget line 1,041,395,400.00 (MNT) and a handwritten note \"768,944,800 ₮\". Package also contains TOTO test reports Nos. 2024050705 and 2025050433 and ISO 9001/14001 certificates."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:32:45.032Z"
   },
   {
@@ -1191,7 +1191,7 @@
       "scope": "Бараа материал бэлтгэн нийлүүлэх гэрээ — \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\" төслийн сангийн тоноглол (A1-A6, G1-G4, C1 блок): Tres брэндийн угаалтуурын холигч 21510310D (458 ш), ванны шүршүүр холигч 21617010 (214 ш), душны шүршүүр холигч 21639301 (242 ш)",
       "notes": "Захиалагч: \"Баясах ирээдүй\" ХХК. Эхлэх хугацаа нь \"Гэрээ батлагдсан өдрөөс эхлэн\" гэж бичигдсэн тул тодорхой огноо заагаагүй (гэрээний огноо 2026-08-27). Төлбөрийн хуваарь: урьдчилгаа 40% (183,927,944) 2026-08-27-нд, дундын төлбөр 40% (183,927,944), үлдэгдэл 20% (91,963,972). Гэрээний 2.9-д дундын төлбөрийг 2026-10-22, үлдэгдлийг 2026-11-26 гэж заасан бол зөвшөөрлийн хуудсанд 2026-10-20 ба 2026-11-25 гэж заасан — зөрүүтэй, шалгах шаардлагатай. Мөн 2.9-д урьдчилгааг 2026-08-27 гэж, зөвшөөрлийн хуудсанд 2026-08-25 гэж заасан. Үлдэгдэл 20% нь суутган авах барьцаа биш, эцсийн төлбөр. Хавсралтууд: материалын захиалгын хуудас (2026-08-25), улсын бүртгэл, татварын гэрчилгээ, TRES бүтээгдэхүүний гэрчилгээ. Төсвийн үлдэгдэл 1,464,787,928.00 гэж зөвшөөрлийн хуудсанд заасан."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:33:10.396Z"
   },
   {
@@ -1217,7 +1217,7 @@
       "scope": "Goods/material supply contract (Бараа материал бэлтгэн нийлүүлэх гэрээ) for \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\" project: EPS foam insulation boards for non-usable roof insulation of blocks A1-A6 — 1,020 m3 of 100mm thick and 150 m3 of 50mm thick EPS (25-26 kg/m3) at 260,000/m3, delivered to the Khan-Uul district 8th khoroo site.",
       "notes": "Client (Захиалагч): \"Баясах ирээдүй\" ХХК. Contract no. and date handwritten on cover (\"26/072\", cover date appears as 2026-09-02 while signature block/page 2 reads 2026-09-03; approval sheet signatures dated 2026-09-03) — worth verifying. Start date stated as running from the day the advance payment is transferred after contract approval (no calendar date). Payment terms: 15% advance 45,630,000; 45% interim financing 136,890,000; 40% barter 121,680,000 (settled after full delivery, proposed as vehicles). Late-delivery penalty 0.1% per day, capped at 50% of contract value. Attachments: price offer, material call-off schedule by block (A1-A6, 195 m3 each, 2026-09-05 to 2026-09-26), state registration certificate, conformity certificate 30/24 (valid to 2026-06-26). Approval sheet shows budget line 3. Architectural remaining balance 413,588,829.42."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:33:37.544Z"
   },
   {
@@ -1243,7 +1243,7 @@
       "scope": "Supply of glazed porcelain tile 300x600mm (item TT3602MG / TT61202MG), 7,840.80 m2 at 41.71 per m2 = 327,039.77, plus factory-to-Erenhot truck transport 78,880.00; for \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\" project finishing/АЦӨ tiling (blocks A1–A6, C1). FCA Erenhot (Incoterms 2020).",
       "notes": "Package = proforma invoice (PI No. WFM260803, dated 2026-08-31, signed Mike Chen) + Mongolian purchase/contract-terms approval sheet (\"Бараа материал бэлтгэн нийлүүлэх гэрээний нөхцөл батлуулах зөвшөөрлийн хуудас\") approved by L.Badamkhand 2026-09-01, N.Urantuya 2026-09-02, E.Undrakh 2026-09-01, ratified by CEO Ts.Uuganbayar; buyer is BAYASAKH IREEDUI LLC. No executed contract document itself — this is the approval of supply terms. Payment terms: 30% deposit 121,775.93; 70% balance 284,143.84 before shipping (T/T). Delivery to Erenhot within 35 days of receipt of advance. Amounts on the Mongolian sheet are labelled \"/төгрөг/\" but the figures match the RMB invoice values, so currency treated as CNY/RMB — worth checking. Budget line referenced: 929,255,823.13 (project tile purchase budget balance, MNT). Attachments: Chinese business licence, ISO 9001/14001/45001 certificates, Foshan Customs test report No. 25202003081, quantity take-off (total tile 7,840.425 m2) dated 8/31/2026, product data sheet. Handwritten ref \"26/069\"."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:34:12.759Z"
   },
   {
@@ -1269,7 +1269,7 @@
       "scope": "Бараа материал бэлтгэн нийлүүлэх гэрээ — supply of roofing materials (Primer 18l, XPS 100mm insulation, EMP 8m2, film 90m2, EPP, silicone 600ml, rake edge metal 2m) for \"Heiwa\" residence & care home project, roofing works, blocks A1-A6, G1-G4, C1",
       "notes": "Client: \"Баясах ирээдүй\" ХХК. Cover page handwritten contract date appears as 2026-09-09 while body states 2026-09-02; contract no. handwritten as 26/077 (partly overwritten). Delivery period stated as 58 days. Late-delivery penalty 0.1% per day, capped at 50% of contract value. Approval sheet (page 6) shows budget/estimate 434,651,914.00 for the material package and is signed 2026-09-03. Supplier invoice (page 13) dated 2026-08-26 totals 286,985,500 with differing quantities/items — does not match contract total 282,347,889; worth a human check. Payment after invoice with deduction per engineer's order; no advance or retention percentages printed."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:34:33.301Z"
   },
   {
@@ -1295,7 +1295,7 @@
       "scope": "Бараа материал бэлтгэн нийлүүлэх гэрээ — \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\" төсөл, A1-A6, C1, G1-4 блок: дотор сантехникийн цайрдсан болон ган шугам хоолой (цэвэр/бохир ус, халаалт)",
       "notes": "Захиалагч: \"Баясах ирээдүй\" ХХК. Гэрээний дугаар ба огноо гараар бичигдсэн (26/067, 26-82; 2026.08.27) — баталгаажуулах шаардлагатай. Эхлэх хугацаа огноогоор заагаагүй — \"Гэрээ батлагдсан өдрөөс эхлэн тооцно\". Төлбөрийн хуваарь: урьдчилгаа 50% = 46,841,688; дундын санхүүжилт 30% = 28,455,144; үлдэгдэл 20% = 19,085,526 (үлдэгдэл төлбөрийг retention гэж тооцов). Нийт дүн: НӨАТ-гүй 85,802,143.64 + НӨАТ 10% 8,580,214.36 = 94,382,358. Хавсралт нэхэмжлэх (2026-08-15) нийт дүн 95,042,928 бөгөөд гэрээний дүнгээс зөрүүтэй, мөн тоо хэмжээ зарим мөрөнд зөрүүтэй — хүн шалгах шаардлагатай."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:35:10.764Z"
   },
   {
@@ -1321,7 +1321,7 @@
       "scope": "Supply (purchase) of interior wooden doors and CPL boards for blocks A1-A6 and C1 of the \"Heiwa hotkhon, asargaa, suvillyn uilchilgeetei oron suuts\" project — HA-01 door leaves/frames various sizes (159+313+145+24+302+74+6 pcs) and 1,428 pcs CPL panels 1220*2745*18; EXW Holzer factory, Langfang, Hebei",
       "notes": "Buyer: \"Bayasakh ireedui\" LLC. Contract no. handwritten as 26/079; date handwritten 2026.09.09 (bilingual MN/CN). Payment: 50% advance (1,056,685 RMB), 50% balance before shipment; production within 55 days of receiving advance. Late-delivery penalty 0.1%/day capped at 50% of contract value; 1-year product quality warranty. Package also contains internal procurement approval sheet signed 2026-09-08 (project budget 1,456,615,846.60), door quantity schedules, supplier business license and CMA/CNAS test reports (WT2025B01A06952, ZX-WJJ25-0956(1), 2025-MM-003). VAT treatment not stated."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:35:42.009Z"
   },
   {
@@ -1347,7 +1347,7 @@
       "scope": "Supply, purchase and installation of goods/materials for the \"Heiwa khotkhon, asargaa, suvillyn üilchilgeetei oron suuts\" project — outdoor landscaping children's playground and fitness equipment (17 items incl. Vinci, Buglo, MMCite equipment), delivered and installed at the Khan-Uul district 8th khoroo site.",
       "notes": "Buyer: \"Баясах ирээдүй\" ХХК; Seller: \"Авико Хан Цэх\" ХХК. Contract no. handwritten as 26/080; date handwritten 2026-09-09. Payment terms (2.9): 30% advance = 195,268,788 ₮ after contract approval; 4.5% = 28,981,172 ₮ on delivery to site; 65.5% = 426,646,000 ₮ by barter (Heiwa project A4 block, 2nd floor, unit 10, 52.03 m2 at 8,200,000 ₮/m2). Total price includes VAT (НӨАТ 10% = 59,172,360), transport and installation. Late-delivery penalty 0.1%/day capped at 50% of contract value. Warranty 3 years. Attachments: approval sheet dated 2026-09-08, state registration certificate, special permit БУ16-773/25, tax certificate, product technical sheets and TÜV certificates, and price offer dated 31.08.2026. Contract table lists 17 rows but price-offer/approval sheet lists 16 items with the same total — worth double-checking item count."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:36:10.981Z"
   },
   {
@@ -1373,7 +1373,7 @@
       "scope": "Бараа материал бэлтгэн нийлүүлэх гэрээ — \"Хэйва хотхон, асаргаа, сувиллын үйлчилгээтэй орон сууц\" төслийн гадна тохижилтын явган замын чулуун хавтан (7 төрөл, нийт 4,404.4 м2) нийлүүлэх",
       "notes": "Захиалагч: \"Баясах ирээдүй\" ХХК. Гэрээний огноо болон дугаар гар бичмэлээр бичигдсэн (26/078, 2026.09.09). Эхлэх хугацаа нь урьдчилгаа төлбөр төлөгдсөн өдрөөс эхэлнэ тул тодорхой огноо заагаагүй. Төлбөр: урьдчилгаа 30% буюу 68,444,376₮, үлдэгдэл 70% буюу 159,703,544₮. Алданги хоног тутам 0.1%, нийт үнийн 50%-иас хэтрэхгүй. Баталгаат хугацаа 1 жил. Хавсралтууд: улсын бүртгэлийн гэрчилгээ, татвар төлөгчийн гэрчилгээ, тохирлын гэрчилгээ 028/25, лабораторийн шинжилгээний дүн 44/26 БДЛ, үнийн санал №26/1039 (нийт 232,552,320₮ — гэрээний дүнгээс зөрүүтэй), зөвшөөрлийн хуудас (төсвийн үлдэгдэл 184,476,096.00)"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:36:47.396Z"
   },
   {
@@ -1391,7 +1391,7 @@
       "date": "2026-05-28",
       "docNo": "01/051"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:36:53.215Z"
   },
   {
@@ -1439,7 +1439,7 @@
       "amount": 1650000,
       "notes": "IPR 005 interim financing performance report (005 тоот санхүүжилт) for \"БАЯСАХ ИРЭЭДҮЙ\" ХХК / HEIWA RESIDENCE project; contract duration 2026-05-11 – 2026-10-01, work period 30 days. VAT-inclusive box ticked (НӨАТ-тай). Cumulative figures shown in tables: contract total 10,959,000; previous performance 4,443,000; cumulative 3,618,000 (as printed, appears inconsistent — worth checking). Attachments: work completion act (dated 2026-06-08 on act header), photo report (2026-08-24 / 2026-08-27, blocks A5 and C1), sand-cone soil density test reports (contractor listed there as \"Тунсаг гарьд мандал\" ХХК), and two invoices of 825,000 each (dated 2026-08-27 and 2026-08-24, 5 x 165,000, VAT 75,000)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:37:42.042Z"
   },
   {
@@ -1461,7 +1461,7 @@
       "amount": 15125000,
       "notes": "IPR 004 interim financing/progress performance report; client \"Баясах Ирээдүй\" ХХК, HEIWA RESIDENCE project. Contract duration 38 days, contract period stated as from 2026/05/19 (per addendum). Contract total 43,500,000 with cumulative performance 28,360,000 and this period 15,125,000 (per contract performance sheet, VAT box marked \"НӨАТ-тай\"). Attached hanuvision invoice dated 2026-08-13: window vertical alignment survey 72 units = 9,000,000; rotation point setting-out /ventilation holes/ 42 = 5,250,000; rotation point setting-out /C1 retaining wall/ 7 = 875,000; total 15,125,000 with no VAT line filled. Includes photo report, act of work performed (blocks A1-A6, C1, G1-G4) and survey drawings."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:38:01.291Z"
   },
   {
@@ -1487,7 +1487,7 @@
       "scope": "Гадна тохижилтын зураг төсөл боловсруулах (загвар/эскиз ба ажлын зураг) болон зохиогчийн хяналт тавих гэрээ - HEIWA RESIDENCE &amp; CARE HOME төсөл (Хан-Уул дүүрэг, 8-р хороо). Хавсралт 1-д зохиогчийн хяналтын үе шатууд: гадна гэрэлтүүлэг, явган зам, өндөржилт, улаан шугам, хүүхдийн тоглоомын талбай, ус зайлуулах суваг, ногоон байгууламж, мод бут, хашлага/бетон хана, усалгаа, гадна цахилгаан, тохижилтын тавилгын угсралт.",
       "notes": "Захиалагч: \"Юнайтэд прожектс корпорэйшн\" ХХК (улсын бүртгэл 9011309085, регистр 5517427). Гүйцэтгэгч: \"И Эф Эй Би\" ХХК (улсын бүртгэл 9011474033, регистр 5822033). Гэрээний дугаар гараар бичигдсэн \"26/103\" - баталгаажуулах шаардлагатай. Хугацаа: 2026-06-02-оос 2026-08-31 хүртэл, ажлын 60 хоног (огнооны зөрүү анхаарах). Үнэ 230,000,000₮ НӨАТ болон бусад татвар багтсан. Хавсралт 2: зургийн нийт дүн 230,400,349; зохиогчийн хяналт 68,266,770; гэрээний дүн 298,667,119; санал болгож буй дүн /77%/ 230,000,000. Төлбөрийн график: тусдаа төлбөр барагдуулах гэрээгээр. Данс: Голомт банк 3455109810 (И Эф Эй Би ХХК). Урьдчилгаа/суутгалын хувь заагаагүй. Алданги 0.1%/хоног, дээд хэмжээ 20%."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:38:22.695Z"
   },
   {
@@ -1513,7 +1513,7 @@
       "scope": "Зохиогчийн хяналт (author/designer supervision) during construction and installation works of the \"Heiwa Residence and Care Home\" residential complex — blocks A1-A6, G1-G4, C1 (work codes EF-005/2025-A1-A6, EF-005/2025-G1-G4, EF-005/2025-C1), covering structural and architectural parts. Appendix 1 lists the supervision stages (foundation, reinforcement, walls/columns, facade, windows, doors, lift, interior, roof, etc.)",
       "notes": "Client (Захиалагч): \"Юнайтэд прожектс корпорэйшн\" ХХК (state reg. 9011309085, reg. no 5517427); supervisor: \"И Эф Эй Би\" ХХК (state reg. 9011474033, reg. no 5822033), signed by architect M.Tengis. Contract date and number are handwritten: date read as 2026-06-18 (month/day digits unclear; filename suggests 2026-06-22) and number read as \"26/104\" — both should be verified. No explicit start/end dates: term runs from the start of construction works until handover to the state commission. No advance or retention percentages printed; payment made per a separate \"Төлбөр барагдуулах гэрээ\" with penalties for late payment."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:38:42.773Z"
   },
   {
@@ -1539,7 +1539,7 @@
       "scope": "Ажил гүйцэтгэх гэрээ (зураг төсөл): \"Хэйва кэйр хоум\" ахмадуудад зориулсан үйлчилгээний төв бүхий орон сууцны цогцолбор (Хан-Уул дүүрэг, 8-р хороо) – ерөнхий төлөвлөгөө, эскиз зураг (180,328,595₮), ажлын зураг (БА, ББ, ХАС, ЦБУ, ХТ/ДГ, ХД, Автоматик, Спринклер – 644,113,087₮), барилгын ажлын явцад зохиогчийн хяналт (325,699,799₮). Блок A1, Б1, C1, C2, H1-H5, Терапи центр.",
       "notes": "Хугацаа: ерөнхий төлөвлөгөө/эскиз зураг — гэрээ байгуулснаас хойш 4 сар 18 хоног (тодорхой огноо заагаагүй); ажлын зураг болон зохиогчийн хяналтын хугацаа нэмэлт гэрээгээр тохирно. Хавсралт 1-ийн нийт дүн 1,150,141,481.22₮ (гэрээний тексэд 1,150,141,481₮). Ерөнхий төлөвлөгөө/эскизийн 180,328,595₮-ийг түрээсийн төлбөрт тооцохоор заасан (2024-02-01-ээс 2025-04-01 хүртэл, 215.37 м.кв оффис). Банк: Голомт, данс 3455109810. Гарын үсэг, тамга байгаа; VAT (НӨАТ 10%) дүнд багтсан."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:39:14.882Z"
   },
   {
@@ -1583,7 +1583,7 @@
       "date": "2026-05-28",
       "docNo": "01/052"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:39:43.506Z"
   },
   {
@@ -1601,7 +1601,7 @@
       "date": "2026-05-28",
       "docNo": "01/052"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:39:50.833Z"
   },
   {
@@ -1627,7 +1627,7 @@
       "scope": "\"Хэйва виллаж\" төслийн гадна шугам сүлжээний /УХАТ, ГДГ, ДМ/ зураг төсөл боловсруулах ажил: гадна бохир ус (510 у/м), гадна дулаан 1-р хэлхээ (60 у/м), гадна дулаан 2-р хэлхээ 5 хос шугам (500 у/м), УДДТ 3.4 Гкал/ц, цэвэр ус (600 у/м)",
       "notes": "Захиалагч: \"Юнайтэд прожектс корпорэйшн\" ХХК. Урьдчилгаа 60% (25,700,000₮) нь бартераар — Тоёота Приус 30S (арлын дугаар ZVW30-1734580) тээврийн хэрэгслээр төлнө. Сүүлийн санхүүжилт 40% = 17,360,078₮, ажил дууссаны дараа акт үндэслэн. Гэрээний хугацаа нь зөвшөөрөл авах болон магадлалаар хянуулах хугацааг хамаарахгүй. Хавсралт 1-д үнийн задаргаа. Гэрээг гүйцэтгэх захирал Ц.Ууганбаяр батлав, санхүү хариуцсан захирал Н.Урантуяа гарын үсэг зурсан. Зөвшөөрлийн хуудасны огноо 2026.02.12."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:40:07.048Z"
   },
   {
@@ -1642,7 +1642,7 @@
       "targetCollection": "unclassifiable",
       "reason": "Document is a Ministry of Construction and Urban Development \"Тусгай зөвшөөрөл\" (special operating licence) No. ЗТ11-449/22 issued 2022-07-04 to \"МИП дизайн\" ХХК (state reg. 9011405079, reg. no. 5706777) for five years, covering design/engineering activity classes ЗТ-3.4, ЗТ-3.5, ЗТ-6.1, ЗТ-6.2 (water supply, sewerage, heating, ventilation MEP design). It is a regulatory licence/certificate, not a contract, payment or invoice, correspondence/RFI, quality or defect record, or drawing-register entry, so it fits none of the available collections."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:40:17.107Z"
   },
   {
@@ -1668,7 +1668,7 @@
       "scope": "Амендмент к договору о совместной работе по интерьерному/дизайн-проекту: разработка интерьерных рабочих чертежей для 6 типов квартир (A, C, C1, D, E, F) блока A1 проекта HEIWA Residence, включая мебель/планировку, потолки, освещение, детали потолков, развёртки санузлов, Oak Wood TV стену, размеры/материалы; а также эскизный проект навеса-перголы (3D-модель, общая компоновка, кровля, разрезы, фасад, детали, материалы, 3D render). Также добавлены пункты о правах/обязанностях исполнителя (консультации по материалам, отделке, цвету, мебели и оборудованию).",
       "notes": "Амендмент (нэмэлт, өөрчлөлт оруулах гэрээ) к основному договору № 26/081 от 2026-05-13. Заказчик: \"Юнайтед прожектс корпорэйшин\" ХХК. Оплата по графику: 2026-09 — 16,000,000; 2026-10 — 10,000,000; 2026-11 — 10,000,000. Сумма без НДС. Чертежи должны быть сданы заказчику до 2026-11-30; дата начала не указана. Номер договора на скане рукописный: \"UPC 26/132\" (совпадает с именем файла). Пункт 3.3 основного договора остаётся без изменений."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:40:35.927Z"
   },
   {
@@ -1690,7 +1690,7 @@
       "amount": 24980000,
       "notes": "Interim (дундын) financing/performance report IPR-06, financing No. 06, for \"HEIWA RESIDENCE\" Хэйва хотхон; client \"БАЯСАХ ИРЭЭДҮЙ\" ХХК. Contract period 2026-04-11 to 2026-09-10. Work duration stated as 16 хоног on cover/report but 28 хоног on the work performance act (ажлын гүйцэтгэлийн акт) — worth checking. Contract number is handwritten and reads \"26/011\" (filename suggests 011). Cumulative totals: 205,735,000.00 (ГҮЙЦЭТГЭЛ нийт) / 180,755,000.00 previously; report total with VAT 24,980,000.00. Page 9 quantity table headed 2026/07/28 - 2026/08/14, differing from cover period start 2026/07/29. Includes photo report (blocks A4, A5, A6, C1, G2, G4) and handwritten sticky note."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:40:51.976Z"
   },
   {
@@ -1708,7 +1708,7 @@
       "date": "2026-07-27",
       "docNo": null
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:40:58.982Z"
   },
   {
@@ -1730,7 +1730,7 @@
       "amount": 3190000,
       "notes": "Гүйцэтгэлийн акт №01; захиалагч \"Баясах ирээдүй\" ХХК, төсөл \"HEIWA RESIDENCE & CARE HOME\" Хэйва хотхон. Үндэслэл: 2026.05.14, 15, 21. Contract lines total 2,430,000 vs executed total 3,190,000 (нийт дүн НӨАТ-тай) — line 3 (шаланг, 3.8 units) executed 2,090,000. Handwritten note \"110000 суутгав\" (deduction) next to lines 4-5; lines 4 and 5 show 0 executed quantity. Signature dates 2026.05.25 and 2026/05/26. Date field taken from signature date; act date not separately printed. Photo report (фото тайлан) attached for XPS хөөс тээвэр 2026.05.14/15 and арматур буулгах 2026.05.21 (140 тн, 3 шаланз арматур)."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:41:20.031Z"
   },
   {
@@ -1752,7 +1752,7 @@
       "amount": 5362500,
       "notes": "Гүйцэтгэлийн акт №01. Захиалагч: \"Баясах ирээдүй\" ХХК; гүйцэтгэгч: \"АШК\" ХХК. Төсөл: \"HEIWA RESIDENCE & CARE HOME\". Нийт дүн 5,362,500 (НӨАТ-тай), \"Гарт олгох\" талбарт гар бичмэлээр 5,362,500 гэж бичсэн. Мөрүүд: авто кран 25тн 7 м/цаг×137,500=962,500; 8 м/цаг×137,500=1,100,000 (3 удаа); мяти кран толгойтоос ниссэх 5тн=550,000; авто кран 25тн 4 м/цаг×137,500=550,000. Гэрээний ажлын хугацаа актад хоосон; ажлын хугацааг хавсралт фото тайлангийн огноонуудаас (2026.05.28–2026.06.13) авсан тул шалгах шаардлагатай. Гарын үсгийн огноо 2026.06.15."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:41:36.833Z"
   },
   {
@@ -1774,7 +1774,7 @@
       "amount": 19050000,
       "notes": "ГҮЙЦЭТГЭЛИЙН АКТ №07. Client: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, project \"HEIWA RESIDENCE & CARE HOME\" хотхон. Work dates listed: 2026.07.28, 07.30, 07.31, 08.04, 08.05, 08.06, 08.07 (rows only cover 07.28–08.07). Нийт дүн 19,050,000 marked НӨАТ-тай (VAT included); \"Гарт олгох\" also 19,050,000. Advance/retention/other deduction lines blank. Signed by client director Ц.Уранцэцэг 2026.08.13; contractor director Ч.Мөнх-Уянга 2026.08.07. Includes 12-photo фото тайлан annex (auto-crane and trailer hauling MAK blocks/rebar)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:41:50.439Z"
   },
   {
@@ -1796,7 +1796,7 @@
       "amount": 19350000,
       "notes": "Гүйцэтгэлийн акт №10. Захиалагч: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; төсөл: \"HEIWA RESIDENCE & CARE HOME\" хэйва хотхон. Нийт дүн /НӨАТ-тай/ 19,350,000; \"Гарт олгох\" талбарт 19,050,000 гэж бичигдсэн (зөрүүг хүн шалгах). Ажил гүйцэтгэсэн хугацаа 2026.08.22, 24, 25, 26, 27, 28. Захиалагчийн гарын үсэг 2026-09-03, гүйцэтгэгчийн 2026-08-28; нягтлан/санхүү 2026-09-02. Хавсралтад фото тайлан."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:42:10.284Z"
   },
   {
@@ -1818,7 +1818,7 @@
       "amount": 24350000,
       "notes": "Гүйцэтгэлийн акт №11. Захиалагч: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; төсөл: \"HEIWA RESIDENCE & CARE HOME\" хэйва хотхон. Ажил гүйцэтгэсэн хугацаа: 2026.08.29, 30, 2026.09.01, 02, 03, 04. Нийт дүн НӨАТ-тай 24,350,000; \"Гарт олгох\" 24,350,000. Урьдчилгаа/барьцаа/суутгал мөрүүд хоосон. Захиалагчийн гүйцэтгэх захирал Ц.Ууганбаяр 2026.9.10-нд гарын үсэг зурсан. Хавсралтаар 13 ажлын фото тайлан."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:42:24.353Z"
   },
   {
@@ -1840,7 +1840,7 @@
       "amount": 17950000,
       "notes": "Гүйцэтгэлийн акт №10 (act of completion) with attached photo report. Захиалагч: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; project \"HEIWA RESIDENCE & CARE HOME\" ХЭЙВА ХОТХОН, ХУД 8-р хороо. Work period printed as \"2026.08.08-11, 08-12.08-13\" but line items are dated 2026.08.08 through 2026.08.14 — worth checking. Line total \"Нийт дүн /НӨАТ-тай/\" = 17,950,000, however the \"Гарт олгох\" box states 19,050,000 — discrepancy, needs human verification. Client signature dated 2026.08.18; contractor signature dated 2026.08.14. Deduction rows (урьдчилгаа, баталгаа, дундын санхүүжилт, бусад суутгал) are blank."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:42:48.948Z"
   },
   {
@@ -1862,7 +1862,7 @@
       "amount": 15500000,
       "notes": "Гүйцэтгэлийн акт №11. Захиалагч: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; төсөл: \"HEIWA RESIDENCE & CARE HOME\" хотхон. Нийт дүн 15,500,000 (НӨАТ-тай гэж тэмдэглэсэн). Мөрүүд: 5 шаланз МАК блок тээвэр 2 удаа (5 рейс × 1,000,000 = 5,000,000 тус бүр), автокран 25 тонн 4 удаа (8 цаг × 137,500 = 1,100,000 тус бүр). Ажлын огноо: 2026.08.14, 15, 18, 19, 20, 21. Гарт олгох гар бичмэл дүн ойролцоогоор 15,500,0.. (бүрэн уншигдахгүй), хажууд 15,050,000 гэж бичсэн бололтой — хүн шалгах шаардлагатай. Захиалагчийн гарын үсэг 2026.08.25, гүйцэтгэгчийн 2026.08.21, бусад баталгаажуулалт 2026.08.27. Хавсралт: фото тайлан."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:43:04.428Z"
   },
   {
@@ -1884,7 +1884,7 @@
       "amount": 2750000,
       "notes": "Interim financing report IPR-01 (01 тоот санхүүжилт) for \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, HEIWA RESIDENCE project. Contract period 2026-04-03 – 2026-08-10. Amount is VAT-inclusive (НӨАТ-тай box ticked); no advance/retention deductions (0%). Work: авто крanаар талбайд арматур буулгах, 2.5 удаа at 1,100,000 unit price (2.5 × 1,100,000 = 2,750,000). Work duration stated as 14 хоног on cover/report but 10 хоног on the аct. Photos dated 2026-04-23, 2026-04-29, 2026-05-06, location blocks A1-A6. Act shows \"#DIV/0!\" errors in percentage column."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:43:20.289Z"
   },
   {
@@ -1906,7 +1906,7 @@
       "amount": 10100000,
       "notes": "Гүйцэтгэлийн акт №01. Захиалагч \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, төсөл \"HEIWA RESIDENCE & CARE HOME\" хэйва хотхон. Задаргаа: Садари том 4 өдөр x 600,000 = 2,400,000; Садари жижиг 14 өдөр x 550,000 = 7,700,000. \"Гарт олгох\" гараар бичсэн 10,100,000. Гэрээний дугаар гараар бичигдсэн тул баталгаажуулах шаардлагатай (26/064). НӨАТ-ын мөр хоосон. Хавсралт: 2026.08.06-2026.08.20 хооронд A1, A2, A4, A5 блокод хийгдсэн ажлын фото тайлан."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:43:33.665Z"
   },
   {
@@ -1928,7 +1928,7 @@
       "amount": 4000000,
       "notes": "Гүйцэтгэлийн акт №02. Захиалагч \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, төсөл \"HEIWA RESIDENCE & CARE HOME\" хэйва хотхон. Line items: Садари том 3.00 өдөр @600,000 = 1,800,000; Садари жижиг 4.00 өдөр @550,000 = 2,200,000. \"Гарт олгох\" handwritten 4,000,000. НӨАТ/баталгаа/суутгал fields blank. Customer signature dated 2026-08-26. Attached photo report (6 photos, A5 блок, 2026.08.21–2026.08.24); executor name shown as Т.Нямсүрэн on p.2 and Ч.Нямсүрэн on p.3 — worth checking."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:43:45.967Z"
   },
   {
@@ -1954,7 +1954,7 @@
       "scope": "Өргөх механизм (садари / автопомп, HYUNDAI 5TON, улсын дугаар УЕМ 1508) түрээслэх гэрээ жолоочийн хамт, 45 хоногийн хугацаанд \"HEIWA RESIDENCE & CARE HOME\" төслийн A1-A6, C1 блокийн талбайн зөөвөр, тээврийн ажилд ашиглах",
       "notes": "Захиалагч талын нэр гэрээнд \"Баясах ирээдүй\" ХХК (РД 6810977) гэж бичигдсэн; захиалгын хуудсыг \"Юнайтэд пропертийз холдинг\" ХХК гаргасан. Нийт гэрээний дүн хэвлэгдээгүй — зөвхөн нэгж үнэ: 53м сунал­ттай садари 600,000 (8 цаг/өдөр), 28м сунал­ттай садари 550,000 (8 цаг/өдөр). Батлуулах хуудсан дээр гар бичмэлээр \"Төсвийн нэгтгэлээр батлуулах 57.5 сая төгрөг\" гэсэн тэмдэглэл байгаа — баталгаажуулах шаардлагатай. Төлбөр: гүйцэтгэлээр 100%, актаар баталгаажуулсны дараа 14 хоногт 1 удаа. Захиалгын хуудсанд \"45м хүртэлх сундаг 16 давхарт гардаг\" гэж заасан нь гэрээний 53м/28м-ээс зөрүүтэй. Хавсралтад тээврийн хэрэгслийн гэрчилгээ (гэрчилгээн дээрх улсын дугаар 1508 УЕМ) болон жолоочийн үнэмлэх (Б.Амгаланбаатар) байна."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:44:09.529Z"
   },
   {
@@ -1976,7 +1976,7 @@
       "amount": 5400000,
       "notes": "Гүйцэтгэлийн акт №07 (Захиалагч: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, төсөл: \"HEIWA RESIDENCE & CARE HOME\" Хэйва хотхон), гэрээний огноо 2026.08.17, ажил гүйцэтгэсэн хугацаа \"2026 он\". Актад гэрээт ажлын нийт дүн /НӨАТ-тай/ 10,800,000 гэж хэвлэгдсэн ба гүйцэтгэл/урьдчилгаа мөрд 5,400,000. Нэхэмжлэх дүн 5,400,000 төгрөг (төлбөр 3 хоногийн дотор). Гар бичмэлээр \"Торгууль - 300,000\", \"Суутгал 300,0\", \"Гарт олгох 5,100,0\" гэж тэмдэглэсэн — 300,000 төгрөгийн торгуулийн хуудас (2026.08.08, ажлын талбайд согтууруулах ундаа хэрэглэсэн, 5 хүн) хавсаргасан боловч хуудас нь улаан зураасаар дарагдсан тул хүчинтэй эсэхийг шалгах шаардлагатай. Акт дээр \"нэхэмжлэх засах\" гэсэн гар бичмэл тэмдэглэл бий. Валют тодорхой бичигдээгүй ч төгрөг (MNT)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:44:26.713Z"
   },
   {
@@ -1998,7 +1998,7 @@
       "amount": 10800000,
       "notes": "Гүйцэтгэлийн акт №08. Захиалагч: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; төсөл: \"HEIWA RESIDENCE & CARE HOME\" хэйва хотхон. Ажил гүйцэтгэсэн хугацаа зөвхөн \"2026 он\" гэж бичигдсэн. Мөр 1: Пост 1, 3 үүлзэлт, 30 м/цаг, нэгж үнэ 180,000 = 5,400,000; мөр 2: Пост 2 мөн 5,400,000. Нийт дүн НӨАТ-тай 10,800,000. Төлбөр тооцоо — урьдчилгаа мөрөнд 5,400,000 бичигдсэн. Гарын үсэг/огноо: 2026.08.31, 2026.09.02, 26/09/02. Тамга: \"ХҮРЭЛ ГАРДИ\" ХХК."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:44:45.114Z"
   },
   {
@@ -2017,7 +2017,7 @@
       "amount": 300000,
       "notes": "Handwritten \"ТОРГУУЛИЙН ХУУДАС\" (penalty/fine sheet), number left blank. Issued by Юнайтед Проперти Холдинг ХХК (Байгууллагын нэр) to Хүрэл Гарьд (Хэнд). Violation: smoking on the work site / drinking(?) - \"Ажлын талбайд соруулах үндэд хэрэглэсэн (3 хүн)\" — 3 persons; penalty 300'000 төг. \"Бүгд үнэ\" row left empty. Signed by HSE (ХАБЭА) engineer and received-by signature (both illegible). Page struck through with a large red diagonal line, so the fine may have been cancelled/voided — worth human verification. Handwritten year digits read \"26\" (2026), date written as 2026-08-08 — verify year."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:45:01.557Z"
   },
   {
@@ -2035,7 +2035,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:45:09.778Z"
   },
   {
@@ -2053,7 +2053,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:45:18.625Z"
   },
   {
@@ -2075,7 +2075,7 @@
       "amount": 674797560,
       "notes": "Interim performance report (ДУНДЫН САНХҮҮЖИЛТИЙН ТАЙЛАН / INTERIM PERFORMANCE REPORT) No. 16 for contract 26/008; contract period 2026-04-10 to 2026-09-01; VAT-included box ticked (НӨАТ-тай). Client \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, project \"HEIWA RESIDENCE & CARE HOME\". Client approval signature dated 2026-08-13. Work-period dates differ between documents: cover page handwritten \"2026.07.09 - 2026.08.03\", report header \"2026/06/29 - 2026/07/08\", work-performance act \"2026/07/01 - 2026/07/31\" — needs human check. Handwritten margin note on p.2 appears to deduct 2 million (2 сая торгууль) giving 672,797,560 — the printed payment amount is 674,797,560.00; a penalty sheet (ТОРГУУЛИЙН ХУУДАС, 2026.05.31, A-3 block, ladder/safety violation) for 2,000,000 is attached (crossed out). Package also includes work-performance act, photo reports (blocks A3, A4, A5, A6, C1, G3), day-loss records, setting-out acts by \"ЛЭНД КООРДИНАТ\" ХХК, and a HSE official requirement No.2 dated 2026.05.31."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:45:51.080Z"
   },
   {
@@ -2097,7 +2097,7 @@
       "amount": 346484320,
       "notes": "Interim performance/financing report (ДУНДЫН САНХҮҮЖИЛТИЙН ГҮЙЦЭТГЭЛИЙН ТАЙЛАН) No. 17 for \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, HEIWA RESIDENCE & CARE HOME project. Contract period 2026-04-10 to 2026-09-01. Cover page dated 2026-08-19; report table date 2026-08-20; client approval signature dated 2026-08-25. VAT-inclusive box ticked (НӨАТ-тай). Contract performance summary: total performed to date 7,714,635,840 / 7,368,151,520; deductions — advance recovery (Урьдчилгаа) 15% = 1,285,606,893, current financing (Дуудын санхүүжилт) 80% = 7,285,105,727, retention (Чанарын баталгаат хугацааны дараах) 5% = 428,535,631. Includes work performance act, photo reports and geodetic/axis-setting acts by \"ЛЭНД КООРДИНАТ\" ХХК; some photo reports list \"Далайн Дөрвөн Цамхаг\" ХХК as executor for A5/A6 blocks."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:46:13.205Z"
   },
   {
@@ -2119,7 +2119,7 @@
       "amount": 327504320,
       "notes": "Interim performance report (ДУНДЫН САНХҮҮЖИЛТИЙН ТАЙЛАН), financing No. 18, contract 01. Employer: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК; project \"HEIWA RESIDENCE & CARE HOME\". Contract period 2026-04-10 to 2026-09-01. Total performance (Гүйцэтгэлийн дүн) 8,128,761,240.00; contract performance total 8,210,637,320.00; deductions listed: advance 15% 1,285,606,893; retention 80% 7,285,105,727; 5% quality guarantee 428,535,631. Approved by client 2026-09-10. Photo report pages name executor variously as \"Далайн Дөрвөн Цамхаг\" ХХК — worth checking."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:46:40.305Z"
   },
   {
@@ -2137,7 +2137,7 @@
       "date": null,
       "docNo": null
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:46:52.105Z"
   },
   {
@@ -2155,7 +2155,7 @@
       "date": "2026-08-12",
       "docNo": "93"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:46:59.100Z"
   },
   {
@@ -2173,7 +2173,7 @@
       "date": "2026-08-11",
       "docNo": "01/081"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:47:05.625Z"
   },
   {
@@ -2191,7 +2191,7 @@
       "date": "2026-08-13",
       "docNo": "02-22/126"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:47:12.473Z"
   },
   {
@@ -2209,7 +2209,7 @@
       "date": "2026-06-02",
       "docNo": "14/2026"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:47:18.886Z"
   },
   {
@@ -2227,7 +2227,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:47:25.167Z"
   },
   {
@@ -2245,7 +2245,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:47:32.574Z"
   },
   {
@@ -2271,7 +2271,7 @@
       "scope": "Гадна цахилгаан хангамжийн 10/0,4кВ-ын 2*800кВАХТП зөөх, шилжүүлэх, суурилуулах, кабель шугам татах ажил гүйцэтгэх (HEIWA RESIDENCE &amp; CARE HOME)",
       "notes": "Захиалагч: \"Баясах ирээдүй\" ХХК. Net price 105,080,800 + VAT 10,508,080 = 115,588,880. Payment: 30% advance = 34,676,664; 70% remaining financing = 80,912,216 (not a retention). Approval sheet (p.6) shows budget estimate 25,000,000 with handwritten note that the amount 90,588,880 exceeds the approved budget and requires justification — worth human review. Attachments include work order sheets dated 2026-09-03 and 2026-09-07, special permit 1080/21, and state registration certificate."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:47:47.627Z"
   },
   {
@@ -2289,7 +2289,7 @@
       "date": "2026-09-10",
       "docNo": "26/376"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:47:55.378Z"
   },
   {
@@ -2307,7 +2307,7 @@
       "date": "2026-07-27",
       "docNo": "01"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:48:01.616Z"
   },
   {
@@ -2325,7 +2325,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:48:07.851Z"
   },
   {
@@ -2343,7 +2343,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:48:15.375Z"
   },
   {
@@ -2365,7 +2365,7 @@
       "amount": 52526014.37,
       "notes": "Interim performance/financing report No. 05 (05 тоот санхүүжилт), cover page dated 2026-08-24, Ulaanbaatar. Client: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, project \"HEIWA RESIDENCE & CARE HOME\" хэйва хотхон. Contract period 2026-03-27 to 2026-08-10; work executed period 30 days. VAT included box (НӨАТ-тай) ticked. Contract performance summary shows total 1,053,251,905 / cumulative 992,161,158; deductions: advance (Урьдчилгаа) 30% 285,975,572 (checked 285,988,393), retention (Баталгаат) 5% 47,662,595 (checked 44,898,065); discount 9.4944%; some handwritten annotations on the totals page (e.g. 55,290,541.44 / 55,282,846.39, 52,581,893.26 / 52,526,014) — figures should be double-checked. Attachments: work performance act (signed 2026-08-24) and photo report (photos dated 2026-08-07, 08-10, 08-23) covering blocks A1-A6, G1-G4, C1. Client approval signed 2026-08-25."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:48:32.223Z"
   },
   {
@@ -2387,7 +2387,7 @@
       "amount": 290817064.96,
       "notes": "Interim performance report (ДУНДЫН САНХҮҮЖИЛТИЙН ТАЙЛАН / INTERIM PERFORMANCE REPORT) IPR-1, financing no. 01, for \"HEIWA RESIDENCE\" project, client \"БАЯСАХ ИРЭЭДҮЙ\" ХХК. Contract period printed as 2026.07.20-2026.09.20; work duration 35 days. Cover page date printed 9/4/2026. Contract total performance 584,674,437.00 with VAT (НӨАТ-тай box checked); prepayment 40.0% = 389,782,927.20, retention 10%, other deduction 100,000,000.00, handwritten figure ~59,999,996 next to retention line. Certified/approved signatures dated 2026-09-10 (client) and 2026-09-04. Handwritten note requests that in the next performance the excavation/rock volume be measured and confirmed by a geodesy company. Work items: Ухмалын ажил 902.56 m3 (60% executed, 541.54) and Эрсэн булалт /30см тутам нягтруулалттай/ 42,845.90 m3 (60%, 25,707.54). Photo report covers blocks A1, A2, A4, A5, A6, G4, dated 2026-08-20 to 2026-08-31."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:48:48.050Z"
   },
   {
@@ -2405,7 +2405,7 @@
       "date": "2026-06-16",
       "docNo": "26/06-16-01"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:48:54.720Z"
   },
   {
@@ -2423,7 +2423,7 @@
       "date": "2026-08-01",
       "docNo": "26/08-01 01"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:49:03.934Z"
   },
   {
@@ -2441,7 +2441,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:49:15.260Z"
   },
   {
@@ -2459,7 +2459,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:49:26.927Z"
   },
   {
@@ -2481,7 +2481,7 @@
       "amount": 28861920.29,
       "notes": "Interim performance/financing report No. 14 (14 тоот санхүүжилт), contract period 2026.04.17-2026.06.30. Printed payment amount 28,861,920.29 ₮. Handwritten annotations on pages 2 and 6 indicate a 3,000,000 ₮ deduction (penalty/торгууль) giving 25,861,920.29 ₮ — human verification recommended. Attachments include work performance act, photo acts, HSE official demand No.3 dated 2026-08-07 with a 3,000,000 ₮ penalty slip for a fire at block A-3 (slip struck through), and hidden-works acts No.56-59 (blocks A1-A4, A6) and No.58 (C1). Client: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК. Approval signatures dated 2026-08-08 / 2026-08-13."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:49:46.654Z"
   },
   {
@@ -2503,7 +2503,7 @@
       "amount": 20722611.25,
       "notes": "Interim performance/financing report (Дундын санхүүжилтийн гүйцэтгэлийн тайлан) for the HEIWA Residence & Care Home project; client \"БАЯСАХ ИРЭЭДҮЙ\" ХХК. Contract period printed as 2026.04.17-2026.06.30. Financing number is inconsistent: cover page shows handwritten \"15 тоот санхүүжилт\" while the performance sheet header states \"16 тоот санхүүжилт\" — worth verifying. Summary figures printed: total performance 559,223,946 / 559,030,345.50; VAT 10% 50,838,540.50 / 50,820,941; total 21,813,275.00 period sum; advance deduction 5% 27,961,197.28 / 27,951,517.28 (26,860,853.53); 95% retention line 1,090,663.75. Payment amount 20,722,611.25 (VAT included checkbox ticked). Contractor signed 2026-08-31, client executive director signed 2026-09-10. Attachments include work performance acts and photo acts (acts No. 60, 61, 62 dated 2026-08-15 for G3 and C1 blocks)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:50:09.526Z"
   },
   {
@@ -2521,7 +2521,7 @@
       "date": "2026-08-14",
       "docNo": "26/001"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:50:16.302Z"
   },
   {
@@ -2539,7 +2539,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:50:21.534Z"
   },
   {
@@ -2557,7 +2557,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:50:31.388Z"
   },
   {
@@ -2575,7 +2575,7 @@
       "date": "2026-08-13",
       "docNo": "01/082"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:50:39.535Z"
   },
   {
@@ -2594,7 +2594,7 @@
       "amount": 3000000,
       "notes": "HSE (ХАБЭА) penalty sheet (Торгуулийн хуудас) + HSE engineer's official requirement No. 7 dated 2026-09-07, issued on the Heiwa Residence & Care Home project by Юнайтэд пропертийз холдинг ХХК. Violation: welding/hot works on the A-4 block exterior facade at high level without fire-safety measures caused burning of block formwork/material at 15:29 on 2026-09-07; required fire-safety briefing, fire extinguisher on site and daily instruction. Penalty amount 3,000,000 (currency not printed, presumed MNT). Handwritten organization name on the penalty sheet reads like \"ИРН ХХС\" and is not clearly legible — counterparty taken from filename/annotation \"Цэлмэг тэнгэрийн бэрээ ХХК\". Stamp/signature: Д.Ганбаяр, certified professional No. 19. Document pages are struck through with a red diagonal line (possibly cancelled) — worth human verification. Page 3 contains \"Before\" site photos."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:50:52.477Z"
   },
   {
@@ -2613,7 +2613,7 @@
       "amount": 3000000,
       "notes": "HSE (ХАБЭА) violation package for facade works (ажлын нэр: фасад): (1) Торгуулийн хуудас (penalty sheet) dated 2026-07-28 issued by УБН(?) to Цэлмэг тэнгэрийн бэрээ — violation \"Ажлын байранд архидсан\" (drinking alcohol at workplace), penalty 3,000,000 (currency not printed, presumed MNT); \"Бүгд үнэ\" total line left blank. (2) ХАБЭА-н инженерийн албан шаардлага No.3 dated 2026-07-25: 25 workers of Цэлмэг тэнгэрийн бэрээ ХХК brought alcohol into the construction site camp without permission and were intoxicated; security/inspection staff recorded photo evidence and act; if repeated, measures will be taken up to removal of workers from site via authorities. Signed by HSE engineer Д. Ганбаяр; received by official (signature illegible). (3) Фото баримт sheet (Фасат ин МЖЛ ХХК / РЭНО ХХК letterhead, Шинэ Яармаг) with 2 photo entries dated 2026-07-25, location A5-A6. Documents are struck through with a large red diagonal line (possibly cancelled/void) — worth human verification. Organization name on penalty sheet handwritten and only partly legible (\"УБН\"/\"УРН\")."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:51:07.315Z"
   },
   {
@@ -2631,7 +2631,7 @@
       "date": "2026-05-06",
       "docNo": null
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:51:14.446Z"
   },
   {
@@ -2649,7 +2649,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:51:20.216Z"
   },
   {
@@ -2667,7 +2667,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:51:27.806Z"
   },
   {
@@ -2685,7 +2685,7 @@
       "date": "2026-08-13",
       "docNo": "01/083"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:51:35.882Z"
   },
   {
@@ -2703,7 +2703,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:51:43.029Z"
   },
   {
@@ -2721,7 +2721,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:51:50.137Z"
   },
   {
@@ -2743,7 +2743,7 @@
       "amount": 13413097.5,
       "notes": "Дундын санхүүжилтийн тайлан (interim financing/progress report) No. 02 for contract 26/036. Client: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, project \"HEIWA RESIDENCE\" Хэйва хотхон. Contract duration 2026-06-05 – 2027-02-27; work period 31 days. Summary line totals on p.7: гүйцэтгэл 351,775,488.58 cumulative-type column; advance deduction 0%, retention 5% (705,952.50), total payment 13,413,097.50. Includes ажлын гүйцэтгэлийн акт and 6-page photo report. Approved by client 2026-08-13; contractor signatures 2026-08-06."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:52:14.543Z"
   },
   {
@@ -2765,7 +2765,7 @@
       "amount": 15682973.35,
       "notes": "Interim performance/financing report No. 03 (03 тоот санхүүжилт) for contract 26/036; contract period 2026-06-05 - 2027-02-27; work duration 18 days. Client \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, project \"HEIWA RESIDENCE\" Хэйва хотхон. Package includes quantity/price calculation, work performance act and 6-page photo act. Retention/withholding line shows 5% (2,389,506.35 / 782,043.35 etc.); totals page partly rotated and hard to read — figures other than the payment amount should be verified. Client approval signed 2026-08-25."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:52:36.704Z"
   },
   {
@@ -2787,7 +2787,7 @@
       "amount": 12000000,
       "notes": "Interim financing report No. 01 (01тоот санхүүжилт) for client \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, HEIWA RESIDENCE project. Amount marked as НӨАТ-тай (VAT included). Work duration 5 days; 100% completion on blocks A1-A6 (2,000,000 each). Includes work-completion act and 3-page photo report (9 photos dated 2026.08.03). Signed by contractor 2026.08.06, approved by client 2026.08.13."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:52:49.169Z"
   },
   {
@@ -2809,7 +2809,7 @@
       "amount": 15322751.4,
       "notes": "Интерим (дундын) санхүүжилтийн тайлан №02; захиалагч \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, төсөл \"HEIWA RESIDENCE\" хэйва хотхон. Гэрээний хугацаа 2026.06.05 - 2027.02.27, ажил гүйцэтгэсэн хугацаа 31 хоног. Төлбөрийн хэмжээ гараар бичигдсэн (15,322,751.4 ₮) — хүний нүдээр шалгах нь зүйтэй. НӨАТ-гүй сонголт тэмдэглэгдсэн байх магадлалтай (хуудас 3-д НӨАТ-тай/НӨАТ-гүй сонголт бүрхэг). Захиалагчийн батламж 2026.08.13. Хавсралт: фото акт 6 хуудас (18 зураг)."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:53:18.142Z"
   },
   {
@@ -2831,7 +2831,7 @@
       "amount": 19844496,
       "notes": "Interim financing performance report (ДУНДЫН САНХҮҮЖИЛТИЙН ТАЙЛАН), 3rd financing (03тоот санхүүжилт). Client: \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, project \"HEIWA RESIDENCE\" Хэйва хотхон. Contract period 2026-06-05 – 2027-02-27; work duration 15 days. Attachments: quantity/price calculation, work performance act, photo act (6 pages listed). Client approval signature dated 2026-08-25. VAT marked as \"НӨАТ-тай\" (VAT included) in the calculation sheet."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:53:34.671Z"
   },
   {
@@ -2853,7 +2853,7 @@
       "amount": 13413097.5,
       "notes": "Интерим (дундын) санхүүжилтийн тайлан №02. Захиалагч \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, \"HEIWA RESIDENCE\" хотхон. Гэрээний хугацаа 2026-06-05 – 2027-02-27; ажил гүйцэтгэсэн хугацаа 31 хоног. Багц: гүйцэтгэлийн тооцоо, ажлын гүйцэтгэлийн акт, 6 хуудас фото акт. Тооцоонд урьдчилгаа 0%, чанарын барьцаа 5% (705,952.50) хасагдсан; гүйцэтгэгчийн олговор 13,413,097.50. Батлагдсан огноо 2026-08-13 (захиалагч), гарын үсэг 2026-08-06."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:53:47.576Z"
   },
   {
@@ -2875,7 +2875,7 @@
       "amount": 12000000,
       "notes": "Интерим (дундын) санхүүжилтийн тайлан №01; захиалагч \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, төсөл \"HEIWA RESIDENCE\" хэйва хотхон. Ажлын хугацаа 5 хоног, гүйцэтгэл 100% (A1-A6 блок тус бүр 2,000,000). Дүн НӨАТ-тай гэж тэмдэглэсэн. Баримтад ажлын гүйцэтгэлийн акт, 3 хуудас фото акт хавсаргасан. Гарын үсэг: гүйцэтгэгч 2026.08.06, захиалагч 2026.08.13."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:53:59.213Z"
   },
   {
@@ -2897,7 +2897,7 @@
       "amount": 15322751.4,
       "notes": "Интерим (дундын) санхүүжилтийн тайлан №02; захиалагч \"БАЯСАХ ИРЭЭДҮЙ\" ХХК, төсөл \"HEIWA RESIDENCE\" хэйва хотхон. Гэрээний хугацаа 2026.06.05 - 2027.02.27; ажил гүйцэтгэсэн хугацаа 31 хоног. Төлбөрийн хэмжээ гараар бичигдсэн (15,322,751.4 ₮) — хүний нүдээр дахин шалгах. Захиалагчийн гүйцэтгэх захирал Ц.Ууганбаяр 2026.08.13-нд баталсан. Хавсралт: гүйцэтгэлийн тооцоолол, ажлын гүйцэтгэлийн акт, 6 хуудас фото акт. НӨАТ-тай гэж тэмдэглэсэн."
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:54:22.180Z"
   },
   {
@@ -2915,7 +2915,7 @@
       "date": "2026-07-24",
       "docNo": "01/071"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:54:28.116Z"
   },
   {
@@ -2933,7 +2933,7 @@
       "date": "2026-07-07",
       "docNo": "01/076"
     },
-    "status": "pending",
+    "status": "rejected",
     "extractedAt": "2026-09-30T03:54:38.288Z"
   },
   {
@@ -2951,7 +2951,7 @@
       "date": "2026-05-27",
       "docNo": "2026/26"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:54:48.188Z"
   },
   {
@@ -2969,7 +2969,7 @@
       "date": "2026-06-10",
       "docNo": "01/50"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:54:55.419Z"
   },
   {
@@ -2987,7 +2987,7 @@
       "date": "2026-07-20",
       "docNo": "01/70"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:01.262Z"
   },
   {
@@ -3005,7 +3005,7 @@
       "date": "2026-07-20",
       "docNo": "01/70"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:07.288Z"
   },
   {
@@ -3023,7 +3023,7 @@
       "date": "2026-07-20",
       "docNo": "01/70"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:13.007Z"
   },
   {
@@ -3041,7 +3041,7 @@
       "date": "2026-09-20",
       "docNo": "01/86"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:19.210Z"
   },
   {
@@ -3059,7 +3059,7 @@
       "date": "2026-08-12",
       "docNo": "UPH-PMD-CT-RFI-26/008"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:26.831Z"
   },
   {
@@ -3077,7 +3077,7 @@
       "date": "2025-08-11",
       "docNo": "01/008"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:32.882Z"
   },
   {
@@ -3095,7 +3095,7 @@
       "date": "2026-06-12",
       "docNo": "12/26"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:38.057Z"
   },
   {
@@ -3113,7 +3113,7 @@
       "date": "2026-08-19",
       "docNo": "188/26"
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:46.922Z"
   },
   {
@@ -3135,7 +3135,7 @@
       "amount": 17845000,
       "notes": "ХХБ (TDB) банкны шилжүүлгийн мэдээлэл. Журналын № 972601440661, системийн огноо 2026.08.18 18:52:11. Илгээгч: ЮНАЙТЭДПРОЖЕКТС КОРПОРЭЙШН ХХК, данс 470006849. Хүлээн авагч: УЧРАЛ СУХБААТАР, Голомт төв банк (150000), данс MN680015001605033711. Гүйлгээний утга: \"ЕВ-5517427 Юнайтэд Прожектс Корпорэйшн ХХК 26/081 тоот \"Интерьер дизайны з\" — утга таслагдсан тул ажлын нэр бүрэн уншигдахгүй. Баталгаажуулах код: 479CEDE1CCF798D8."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:55:56.288Z"
   },
   {
@@ -3157,7 +3157,7 @@
       "amount": 35690000,
       "notes": "ХХБ (Худалдаа Хөгжлийн Банк) transfer confirmation, journal No. 348429185. Payer/sender: ЮНАЙТЭДПРОЖЕКТС КОРПОРЭЙШН ХХК, account 470006849. Recipient account MN680015001605033711 (Голомт банк, bank code 15). Purpose line: \"EB -5517427 UPC HEIWA 26/081 тоот гэрээний урьдчилгаа төлбөр\" — advance payment under contract 26/081. System date 2026-05-20; document printed/exported 2026-08-27 12:16:48. Amount in words confirms 35,690,000 MNT. Currency MNT, rate 1.00."
     },
-    "status": "pending",
+    "status": "approved",
     "extractedAt": "2026-09-30T03:56:04.592Z"
   }
 ]
