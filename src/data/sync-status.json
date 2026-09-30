@@ -1,7 +1,7 @@
 {
-  "lastRun": "2026-09-30T03:56:04.595Z",
+  "lastRun": "2026-09-30T05:54:57.215Z",
   "status": "success",
-  "message": "120 шинэ баримт задарч, баталгаажуулах жагсаалтад орлоо.",
-  "newFilesFound": 120,
-  "pendingReviewCount": 151
+  "message": "Шинэ файл алга.",
+  "newFilesFound": 0,
+  "pendingReviewCount": 0
 }
