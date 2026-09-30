@@ -53,7 +53,10 @@ jobs:
           if [ -n "${{ inputs.seed_state }}" ]; then ARGS="$ARGS --seed-state=${{ inputs.seed_state }}"; fi
           node scripts/sync-onedrive.mjs $ARGS
 
+      # Also after a failed sync: it saves the files that did validate before
+      # failing, and those must be committed so the next run skips them.
       - name: Commit and push changes
+        if: ${{ !cancelled() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

@@ -7,10 +7,11 @@
  * data-private/pending-review.json for human sign-off (Phase 3/4 add the
  * Cloudflare Functions + UI that read and act on that file).
  *
- * Any single extraction/validation failure aborts the WHOLE run with no
- * partial writes — sync-state.json and pending-review.json are only saved
- * once every changed file in this run succeeded, so a failure just means
- * "try again later," not "some silently-bad data got in."
+ * Any extraction/validation failure stops the run, but the files that already
+ * validated are saved first (records + sync state) so the next run resumes
+ * after them instead of paying to re-extract them — e.g. when the API spend
+ * limit is hit 45 files into a 120-file backlog. Only validated records are
+ * ever written, so a failure still never lets silently-bad data in.
  *
  * Required env: AZURE_TENANT_ID, AZURE_CLIENT_ID, AZURE_CLIENT_SECRET,
  * ONEDRIVE_DRIVE_ID, ONEDRIVE_FOLDER_ID, and (unless --dry-run) ANTHROPIC_API_KEY.
@@ -136,45 +137,60 @@ async function main() {
   let totalInputTokens = 0;
   let totalOutputTokens = 0;
   const newRecords = [];
+  const done = [];
 
-  for (const f of changed) {
-    console.log(`Downloading ${f.path}...`);
-    const buffer = await downloadFileContent({ accessToken, driveId, itemId: f.id });
-    const pdfBase64 = buffer.toString('base64');
+  const persist = () => {
+    for (const f of done) state[f.id] = stateEntry(f);
+    savePendingReview(PENDING_REVIEW_PATH, [...pending, ...newRecords]);
+    saveSyncState(STATE_PATH, state);
+    const cost = estimateCostUsd({ inputTokens: totalInputTokens, outputTokens: totalOutputTokens });
+    console.log(`Token usage: ${totalInputTokens} input, ${totalOutputTokens} output.`);
+    console.log(`Estimated cost this run: $${cost.toFixed(4)} (Claude Opus 5 pricing).`);
+  };
 
-    console.log(`Extracting ${f.name} via Claude (claude-opus-5)...`);
-    const result = await extractFromPdf({ apiKey, filename: f.name, pdfBase64 });
-    totalInputTokens += result.usage.input_tokens ?? 0;
-    totalOutputTokens += result.usage.output_tokens ?? 0;
+  try {
+    for (const f of changed) {
+      console.log(`Downloading ${f.path}...`);
+      const buffer = await downloadFileContent({ accessToken, driveId, itemId: f.id });
+      const pdfBase64 = buffer.toString('base64');
 
-    const validation = ExtractionResultSchema.safeParse(result.parsed);
-    if (!validation.success) {
-      // Abort the whole run — nothing gets written this time, per spec.
-      throw new Error(
-        `Extraction for "${f.name}" failed schema validation:\n${z.prettifyError(validation.error)}`,
-      );
+      console.log(`Extracting ${f.name} via Claude (claude-opus-5)...`);
+      const result = await extractFromPdf({ apiKey, filename: f.name, pdfBase64 });
+      totalInputTokens += result.usage.input_tokens ?? 0;
+      totalOutputTokens += result.usage.output_tokens ?? 0;
+
+      const validation = ExtractionResultSchema.safeParse(result.parsed);
+      if (!validation.success) {
+        throw new Error(
+          `Extraction for "${f.name}" failed schema validation:\n${z.prettifyError(validation.error)}`,
+        );
+      }
+
+      newRecords.push({
+        id: `pr-${f.id}`,
+        sourceFile: { name: f.name, webUrl: f.webUrl, itemId: f.id },
+        sourcePath: f.path,
+        extracted: validation.data,
+        status: 'pending',
+        extractedAt: new Date().toISOString(),
+      });
+      done.push(f);
     }
-
-    newRecords.push({
-      id: `pr-${f.id}`,
-      sourceFile: { name: f.name, webUrl: f.webUrl, itemId: f.id },
-      sourcePath: f.path,
-      extracted: validation.data,
-      status: 'pending',
-      extractedAt: new Date().toISOString(),
+  } catch (err) {
+    if (done.length === 0) throw err;
+    persist();
+    console.error(`Saved ${done.length} of ${changed.length} file(s) before the failure; the next run resumes after them.`);
+    writeSyncStatus(SYNC_STATUS_PATH, {
+      status: 'error',
+      message: `${done.length}/${changed.length} баримт хадгалагдсан, дараагийн sync үргэлжлүүлнэ. Алдаа: ${err.message}`,
+      newFilesFound: newRecords.length,
+      pendingReviewCount: pending.length + newRecords.length,
     });
+    err.syncStatusWritten = true;
+    throw err;
   }
 
-  for (const f of changed) {
-    state[f.id] = stateEntry(f);
-  }
-  savePendingReview(PENDING_REVIEW_PATH, [...pending, ...newRecords]);
-  saveSyncState(STATE_PATH, state);
-
-  const cost = estimateCostUsd({ inputTokens: totalInputTokens, outputTokens: totalOutputTokens });
-  console.log(`Token usage: ${totalInputTokens} input, ${totalOutputTokens} output.`);
-  console.log(`Estimated cost this run: $${cost.toFixed(4)} (Claude Opus 5 pricing).`);
-
+  persist();
   writeSyncStatus(SYNC_STATUS_PATH, {
     status: 'success',
     message: `${newRecords.length} шинэ баримт задарч, баталгаажуулах жагсаалтад орлоо.`,
@@ -185,6 +201,10 @@ async function main() {
 
 main().catch((err) => {
   console.error('Sync failed:', err.message);
+  if (err.syncStatusWritten) {
+    process.exitCode = 1;
+    return;
+  }
   try {
     writeSyncStatus(SYNC_STATUS_PATH, { status: 'error', message: err.message });
   } catch {
